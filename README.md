@@ -8,6 +8,7 @@ Install rails 5.1
 run bundle install
 
 Copy database.example.yml file to database.yml
+Copy .env-example file to .env file and set your DB settings
 configure postgres sql 
 set username and password
 run rake db:setup

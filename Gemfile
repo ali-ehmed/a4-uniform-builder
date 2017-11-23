@@ -35,6 +35,7 @@ gem 'activeadmin'
 
 # Plus integrations with:
 gem 'devise'
+gem 'pg'
 
 
 group :development, :test do
