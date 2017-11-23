@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/sports'
+
+  get 'pages/gender'
+
+  get 'pages/category'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, ActiveAdmin::Devise.config
