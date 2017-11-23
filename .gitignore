@@ -20,4 +20,3 @@ config/config.yml
 vendor/
 .env
 .idea
-.idea/vcs.xml
