@@ -5,7 +5,7 @@ body {
 	background: #efefef;
 }
 #wrapper {
-	background: url("../images/main-bg.jpg") no-repeat;
+	background: url("main-bg.jpg") no-repeat;
 	background-size: cover;
 	width: 100%;
 	overflow: hidden;
