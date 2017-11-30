@@ -10,4 +10,25 @@ class PagesController < ApplicationController
 
   def category
   end
+
+  def decoration
+  end
+
+  def design
+  end
+
+  def options
+  end
+
+  def style
+  end
+
+  def summary
+  end
+
+  def login
+  end
+
+  def register
+  end
 end
