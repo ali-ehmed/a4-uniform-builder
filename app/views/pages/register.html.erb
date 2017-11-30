@@ -2,14 +2,14 @@
   <div id="header">
     <ul class="login-area">
       <li class="item1"><a href="#">Item1</a></li>
-      <li class="signin"><a href="#">Sign In</a></li>
+      <li class="signin"><a href="#myModal" class="" data-toggle="modal" data-target="#myModal">Sign In</a></li>
       <li class="signin"><a href="#">Sign Out</a></li>
     </ul>
   </div>
   <main id="main">
     <div class="content">
       <div class="home-img-holder col-md-4">
-        <%= image_tag("img-01.png", :alt => "img description", :class => "img-responsive") %>
+        <img src="images/img-01.png" class="img-responsive" alt="img description">
       </div>
       <div class="detail-holder col-md-8">
         <div class="detail">
@@ -24,17 +24,17 @@
           <ul>
             <li>
               <div class="img-holder">
-                <%= image_tag("img-02.png", :alt => "img description") %>
+                <img src="images/img-02.jpg" alt="image description">
               </div>
             </li>
             <li>
               <div class="img-holder">
-                <%= image_tag("img-03.png", :alt => "img description") %>
+                <img src="images/img-03.jpg" alt="image description">
               </div>
             </li>
             <li>
               <div class="img-holder">
-                <%= image_tag("img-04.png", :alt => "img description") %>
+                <img src="images/img-04.jpg" alt="image description">
               </div>
             </li>
           </ul>
@@ -42,4 +42,28 @@
       </div>
     </div>
   </main>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <a class="navbar-brand" href="#"><img src="images/loginlogo.png" alt=""></a>
+        </div>
+        <div class="form-area">
+          <form>
+            <input type="text" name="username" placeholder="Email">
+            <input type="text" name="username" placeholder="Confirm Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Confirm Password">
+            <button type="button" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

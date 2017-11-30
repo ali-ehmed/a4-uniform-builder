@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'pages/decoration'
+
+  get 'pages/design'
+
+  get 'pages/options'
+
+  get 'pages/style'
+
+  get 'pages/summary'
+
+  get 'pages/login'
+
+  get 'pages/register'
+
   get 'pages/index'
 
   get 'pages/sports'
