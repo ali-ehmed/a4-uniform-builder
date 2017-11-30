@@ -9,7 +9,7 @@
   <main id="main">
     <div class="content">
       <div class="home-img-holder col-md-4">
-        <img src="images/img-01.png" class="img-responsive" alt="img description">
+        <%= image_tag("img-02.png", :alt => "img description", :class=>"img-responsive" ) %>
       </div>
       <div class="detail-holder col-md-8">
         <div class="detail">
@@ -24,17 +24,17 @@
           <ul>
             <li>
               <div class="img-holder">
-                <img src="images/img-02.jpg" alt="image description">
+                <%= image_tag("img-02.png", :alt => "img description") %>
               </div>
             </li>
             <li>
               <div class="img-holder">
-                <img src="images/img-03.jpg" alt="image description">
+                <%= image_tag("img-03.png", :alt => "img description") %>
               </div>
             </li>
             <li>
               <div class="img-holder">
-                <img src="images/img-04.jpg" alt="image description">
+                <%= image_tag("img-04.png", :alt => "img description") %>
               </div>
             </li>
           </ul>
@@ -52,7 +52,7 @@
       </div>
       <div class="modal-body">
         <div class="modal-logo">
-          <a class="navbar-brand" href="#"><img src="images/loginlogo.png" alt=""></a>
+          <a class="navbar-brand" href="#"><%= image_tag("loginlogo.png", :alt => "img description") %></a>
         </div>
         <div class="form-area">
           <form>
