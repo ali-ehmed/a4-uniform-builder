@@ -159,7 +159,7 @@ body.home-page{
 
 }
 .home-wrapper {
-    background:#efefef url("../images/main-bg.jpg") no-repeat 50% 100%;
+    background:#efefef url("main-bg.jpg") no-repeat 50% 100%;
     background-size: cover;
     overflow:hidden;
     height:auto;
@@ -261,7 +261,7 @@ body.home-page{
     position: absolute;
     left: 0;
     top: 0;
-    background: url("A4-img.png") no-repeat;
+    background-image: image_url("A4-img.png") no-repeat;
     width: 165px;
     height: 85px;
 }
