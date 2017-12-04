@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.4'
 #gem 'sqlite3'
 gem 'pg', '~> 0.20.0'
 gem 'devise'
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -44,3 +44,4 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 gem 'rails_12factor', group: :production
+gem 'carrierwave', '~> 1.0'
