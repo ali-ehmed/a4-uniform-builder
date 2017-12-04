@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123100123) do
+ActiveRecord::Schema.define(version: 20171204072331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,49 @@ ActiveRecord::Schema.define(version: 20171123100123) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "designs", force: :cascade do |t|
+    t.text "description"
+    t.string "name"
+    t.string "category"
+    t.string "colour"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gender_options", force: :cascade do |t|
+    t.string "name"
+    t.integer "gender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genders", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sports", force: :cascade do |t|
+    t.string "category"
+    t.string "image"
+    t.datetime "available_till"
+    t.integer "items_in_stock"
+    t.string "acs_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.text "description"
+    t.string "name"
+    t.string "category"
+    t.string "colour"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
