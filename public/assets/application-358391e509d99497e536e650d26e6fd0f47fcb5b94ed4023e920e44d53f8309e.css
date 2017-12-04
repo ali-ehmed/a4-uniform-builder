@@ -8807,12 +8807,12 @@ font-family: 'Roboto Condensed', sans-serif;*/
   font-weight: normal;
   font-style: normal;
 }
-/* line 144, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 144, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 html {
   height: 100%;
 }
 
-/* line 147, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 147, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 body {
   height: 100%;
   min-width: 320px;
@@ -8820,17 +8820,17 @@ body {
   font-family: 'robotocondensed';
 }
 
-/* line 153, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 153, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #wrapper {
   overflow: hidden;
 }
 
-/* line 156, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 156, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 body.home-page {
   height: 100%;
 }
 
-/* line 162, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 162, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .home-wrapper {
   background: #efefef url("../images/main-bg.jpg") no-repeat 50% 100%;
   background-size: cover;
@@ -8840,25 +8840,25 @@ body.home-page {
   position: relative;
 }
 
-/* line 170, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 170, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .home-wrapper .home-img-holder {
   text-align: center;
 }
 
-/* line 173, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 173, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .home-wrapper .home-img-holder img {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 177, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 177, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header {
   width: 100%;
   overflow: hidden;
   padding: 25px;
 }
 
-/* line 182, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 182, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area {
   margin: 0;
   padding: 0;
@@ -8867,7 +8867,7 @@ body.home-page {
   float: right;
 }
 
-/* line 189, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 189, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li {
   display: inline-block;
   vertical-align: middle;
@@ -8875,7 +8875,7 @@ body.home-page {
   position: relative;
 }
 
-/* line 195, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 195, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li.signin:after {
   content: "";
   height: 14px;
@@ -8887,12 +8887,12 @@ body.home-page {
   top: 4px;
 }
 
-/* line 205, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 205, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li:nth-of-type(2):after {
   display: none;
 }
 
-/* line 208, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 208, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li.item1 a {
   background: #d02030;
   padding: 6px 8px;
@@ -8904,7 +8904,7 @@ body.home-page {
   font-family: 'robotoregular';
 }
 
-/* line 221, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 221, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li.signin a {
   font-size: 13px;
   line-height: 16px;
@@ -8916,35 +8916,35 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 231, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 231, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li a:hover {
   text-decoration: none;
   color: #d02030;
 }
 
-/* line 235, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 235, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #header .login-area li.item1 a:hover {
   background: #6d6e71;
   color: #fff;
 }
 
-/* line 239, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 239, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #main {
   overflow: hidden;
 }
 
-/* line 242, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 242, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 #content {
   overflow: hidden;
 }
 
-/* line 245, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 245, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .custom-container {
   padding-left: 9%;
   margin-bottom: 50px;
 }
 
-/* line 249, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 249, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content h1 {
   font-size: 33px;
   line-height: 43px;
@@ -8956,7 +8956,7 @@ body.home-page {
   padding-top: 30px;
 }
 
-/* line 259, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 259, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content h1:after {
   content: "";
   display: block;
@@ -8968,12 +8968,12 @@ body.home-page {
   height: 85px;
 }
 
-/* line 269, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 269, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .detail-holder .detail {
   max-width: 850px;
 }
 
-/* line 272, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 272, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .detail-holder p {
   margin-bottom: 50px;
   font-family: 'robotoregular';
@@ -8983,27 +8983,27 @@ body.home-page {
   color: #6d6e71;
 }
 
-/* line 280, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 280, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .detail-holder .img-holder {
   overflow: hidden;
   margin-bottom: 0;
 }
 
-/* line 284, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 284, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .img-holder ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 289, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 289, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .img-holder ul li {
   float: left;
   width: 33%;
   padding: 5px;
 }
 
-/* line 294, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 294, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .img-holder ul li .img-holder {
   overflow: hidden;
   padding: 8px;
@@ -9019,19 +9019,19 @@ body.home-page {
   /* IE6-9 */
 }
 
-/* line 303, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 303, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .img-holder ul li .img-holder img {
   width: 100%;
   height: auto;
 }
 
-/* line 307, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 307, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .detail-holder .detail .btn-holder {
   overflow: hidden;
   margin-bottom: 20%;
 }
 
-/* line 311, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 311, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .detail-holder .detail .btn-holder .btn {
   float: left;
   font-size: 23px;
@@ -9048,19 +9048,19 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 326, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 326, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content .detail-holder .detail .btn-holder .btn:hover {
   background: #6d6e71;
 }
 
 /****Gender page style*****/
-/* line 330, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 330, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .gender #header {
   background: #d02030;
   padding: 15px;
 }
 
-/* line 334, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 334, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .gender #header .login-area li.item1 a {
   background: #e6e7e8;
   color: #d02030;
@@ -9069,40 +9069,40 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 341, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 341, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .gender #header .login-area li.item1 a:hover {
   background: #5d5d5d;
   color: #fff;
 }
 
-/* line 345, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 345, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .gender #header .login-area li.signin a {
   color: #fff;
 }
 
-/* line 348, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 348, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .gender #header .login-area li.signin a:hover {
   color: #000;
 }
 
-/* line 351, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 351, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .gender #header .login-area li.signin:after {
   background: #fff;
 }
 
-/* line 354, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 354, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar-default {
   background: none;
   border: none;
 }
 
-/* line 358, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 358, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar-brand {
   height: auto;
   padding: 0;
 }
 
-/* line 362, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 362, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar-nav {
   font-size: 15px;
   line-height: 18px;
@@ -9112,19 +9112,19 @@ body.home-page {
   width: 93%;
 }
 
-/* line 370, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 370, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar {
   margin-bottom: 40px;
 }
 
-/* line 373, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 373, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar-nav > li {
   display: inline-block;
   vertical-align: middle;
   float: none;
 }
 
-/* line 378, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 378, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar-default .navbar-nav > li > a {
   border: 1px solid #efefef;
   text-transform: uppercase;
@@ -9135,7 +9135,7 @@ body.home-page {
   padding: 5px 20px;
 }
 
-/* line 387, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 387, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   background: none;
@@ -9148,13 +9148,13 @@ body.home-page {
   z-index: 9;
 }
 
-/* line 398, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 398, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .main-heading {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 402, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 402, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .main-heading h1 {
   background: #5d5d5d;
   color: #fff;
@@ -9167,7 +9167,7 @@ body.home-page {
   margin: 0 0 60px;
 }
 
-/* line 413, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 413, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .list {
   text-align: center;
   margin: 0;
@@ -9176,7 +9176,7 @@ body.home-page {
   font-family: 'robotocondensed';
 }
 
-/* line 420, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 420, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .list li {
   text-transform: uppercase;
   font-size: 23px;
@@ -9185,7 +9185,7 @@ body.home-page {
   margin-bottom: 20px;
 }
 
-/* line 427, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 427, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .list li.heading {
   font-size: 37px;
   line-height: 40px;
@@ -9193,7 +9193,7 @@ body.home-page {
   margin-bottom: 30px;
 }
 
-/* line 433, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 433, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .list li a {
   color: #000;
   border: 1px solid #efefef;
@@ -9205,14 +9205,14 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 443, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 443, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .list li a:hover {
   border-color: #d02030;
   text-decoration: none;
 }
 
 /* Sports Page */
-/* line 448, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 448, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input[type="radio"],
 .nice-form input[type="checkbox"] {
   position: fixed;
@@ -9222,13 +9222,13 @@ body.home-page {
   z-index: -1;
 }
 
-/* line 456, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 456, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form .fake-input,
 .nice-form label {
   float: right;
 }
 
-/* line 460, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 460, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form .fake-input {
   display: inline-block;
   width: 25px;
@@ -9238,7 +9238,7 @@ body.home-page {
   background: transparent;
 }
 
-/* line 468, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 468, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .fake-label {
   text-align: center;
   display: block;
@@ -9249,7 +9249,7 @@ body.home-page {
   margin-left: -60px;
 }
 
-/* line 477, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 477, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .fake-label .image-holder {
   height: 144px;
   width: 110px;
@@ -9257,7 +9257,7 @@ body.home-page {
   margin: 0 auto 20px;
 }
 
-/* line 483, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 483, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .fake-label .image-holder img {
   width: auto;
   height: auto;
@@ -9265,7 +9265,7 @@ body.home-page {
   vertical-align: middle;
 }
 
-/* line 489, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 489, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .fake-label .text {
   font-size: 16px;
   line-height: 19px;
@@ -9274,12 +9274,12 @@ body.home-page {
   display: block;
 }
 
-/* line 496, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 496, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input[type=radio] + .fake-input {
   border-radius: 100%;
 }
 
-/* line 497, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 497, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input[type="checkbox"] + .fake-input:before {
   content: '';
   width: 12px;
@@ -9298,7 +9298,7 @@ body.home-page {
   z-index: 2;
 }
 
-/* line 514, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 514, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input[type="checkbox"] + .fake-input:after {
   background: #d02030;
   height: 25px;
@@ -9313,7 +9313,7 @@ body.home-page {
   border-radius: 50%;
 }
 
-/* line 527, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 527, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input[type="radio"] + .fake-input:before {
   content: '';
   position: absolute;
@@ -9326,7 +9326,7 @@ body.home-page {
   opacity: 0;
 }
 
-/* line 538, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 538, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input[type="checkbox"]:checked + .fake-input:after,
 .nice-form input[type="radio"]:checked + .fake-input:before,
 .nice-form input[type="checkbox"]:checked + .fake-input:before {
@@ -9335,13 +9335,13 @@ body.home-page {
 
 /*.nice-form input[type="radio"]:checked ~ .fake-label,
 .nice-form input[type="checkbox"]:checked ~ .fake-label {font-weight:bold; color:#f00}*/
-/* line 543, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 543, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .nice-form input:disabled + .fake-input,
 .nice-form input:disabled ~ .fake-label {
   opacity: .5;
 }
 
-/* line 545, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 545, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card-area {
   background: #e6e7e8;
   padding: 10px;
@@ -9350,13 +9350,13 @@ body.home-page {
 }
 
 /*category page style*/
-/* line 552, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 552, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .category-btn {
   max-width: 270px;
   margin: 0 auto;
 }
 
-/* line 556, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 556, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .category-btn .btn-primary,
 .category-btn .btn-default {
   background: #e6e7e8;
@@ -9370,7 +9370,7 @@ body.home-page {
   margin-bottom: 20px;
 }
 
-/* line 568, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 568, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .category-btn .btn-primary {
   background: #d02030;
   color: #fff;
@@ -9379,25 +9379,25 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 575, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 575, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .category-btn .btn-default:hover {
   background: #5d5d5d;
   color: #fff;
 }
 
-/* line 579, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 579, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .category-btn .btn-primary:hover {
   background: #5d5d5d;
 }
 
 /*Option style*/
-/* line 583, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 583, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn {
   overflow: hidden;
   text-align: center;
 }
 
-/* line 587, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 587, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-primary,
 .options-btn .btn-default {
   display: inline-block;
@@ -9418,7 +9418,7 @@ body.home-page {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#d1d3d4',GradientType=0 );
 }
 
-/* line 606, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 606, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-primary {
   background: #d02030;
   color: #fff;
@@ -9428,33 +9428,33 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 614, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 614, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-default:hover {
   background: #5d5d5d;
   color: #fff;
 }
 
-/* line 618, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 618, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-primary:hover {
   background: #5d5d5d;
   border-color: #5d5d5d;
 }
 
-/* line 622, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 622, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box {
   position: relative;
   padding: 40px;
   background: #fff;
 }
 
-/* line 627, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 627, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .image-holder img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* line 632, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 632, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner4,
 .box .corner3,
 .box .corner2,
@@ -9470,7 +9470,7 @@ body.home-page {
   border-color: #e6e7e8 transparent transparent transparent;
 }
 
-/* line 646, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 646, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner2 {
   left: auto;
   top: 0;
@@ -9479,7 +9479,7 @@ body.home-page {
   border-color: transparent #e6e7e8 transparent transparent;
 }
 
-/* line 653, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 653, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner3 {
   left: 0;
   top: auto;
@@ -9488,7 +9488,7 @@ body.home-page {
   border-color: transparent transparent transparent #e6e7e8;
 }
 
-/* line 660, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 660, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner4 {
   left: auto;
   right: 0;
@@ -9498,7 +9498,7 @@ body.home-page {
   border-color: transparent transparent #e6e7e8 transparent;
 }
 
-/* line 668, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 668, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner4.active,
 .box .corner3.active,
 .box .corner2.active,
@@ -9507,37 +9507,37 @@ body.home-page {
   border-color: #d02030 transparent transparent transparent;
 }
 
-/* line 675, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 675, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner2.active {
   border-width: 0 36px 36px 0;
   border-color: transparent #d02030 transparent transparent;
 }
 
-/* line 679, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 679, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner3.active {
   border-width: 36px 0 0 36px;
   border-color: transparent transparent transparent #d02030;
 }
 
-/* line 683, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 683, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .box .corner4.active {
   border-width: 0 0 36px 36px;
   border-color: transparent transparent #d02030 transparent;
 }
 
-/* line 687, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 687, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .scale {
   position: absolute;
   right: 15px;
   top: 50px;
 }
 
-/* line 692, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 692, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .scale .scaltext {
   color: #939598;
 }
 
-/* line 695, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 695, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .scale .scalslide {
   background: #939598;
   min-height: 200px;
@@ -9547,7 +9547,7 @@ body.home-page {
   margin-left: 2px;
 }
 
-/* line 703, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 703, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .scale .scalslide .slidebtn {
   position: absolute;
   left: -11px;
@@ -9561,19 +9561,19 @@ body.home-page {
   display: block;
 }
 
-/* line 715, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 715, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar-btn {
   width: 100%;
 }
 
-/* line 718, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 718, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar-btn .btn {
   width: 100%;
   margin: 0 0 20px;
   font-size: 15px;
 }
 
-/* line 723, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 723, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-heading {
   background: #d02030;
   color: #fff;
@@ -9581,46 +9581,46 @@ body.home-page {
   border-radius: 0;
 }
 
-/* line 729, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 729, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group .panel {
   background: none;
   border: none;
 }
 
-/* line 733, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 733, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-collapse {
   margin: 10px 0 20px;
 }
 
-/* line 736, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 736, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-body {
   background: #fff;
   box-shadow: 0 0 5px #ccc;
 }
 
-/* line 740, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 740, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .collapsed .glyphicon-plus {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 744, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 744, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .collapsed .glyphicon-minus {
   display: none;
 }
 
-/* line 747, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 747, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .glyphicon-minus {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 751, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 751, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .glyphicon-plus {
   display: none;
 }
 
-/* line 754, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 754, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .panel-title a {
   display: block;
   font-family: 'robotomedium';
@@ -9629,19 +9629,19 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 761, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 761, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .panel-title a:focus,
 .panel-title a:hover {
   text-decoration: none;
 }
 
-/* line 765, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 765, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .view {
   text-align: right;
   margin-bottom: 10px;
 }
 
-/* line 769, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 769, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .view a {
   color: #bcbec0;
   margin: 0 5px;
@@ -9650,13 +9650,13 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 776, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 776, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .view a:hover {
   text-decoration: none;
   color: #d02030;
 }
 
-/* line 780, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 780, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar input[type="color"] {
   border: none;
   padding: 0;
@@ -9664,7 +9664,7 @@ body.home-page {
   width: 20px;
 }
 
-/* line 786, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 786, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group2 .panel-heading {
   background: #efefef;
   color: #000;
@@ -9672,14 +9672,14 @@ body.home-page {
   padding: 0;
 }
 
-/* line 792, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 792, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group .tabtitle {
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
 }
 
-/* line 797, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 797, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group.panel-group2 .tabtitle {
   display: inline-block;
   vertical-align: middle;
@@ -9687,7 +9687,7 @@ body.home-page {
   margin-left: 10px;
 }
 
-/* line 803, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 803, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group2 .panel-heading .glyphicon {
   border-right: 1px solid #cecece;
   padding: 10px;
@@ -9698,80 +9698,80 @@ body.home-page {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#d1d3d4',GradientType=0 );
 }
 
-/* line 812, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 812, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group.panel-group2 .panel-collapse {
   margin: 0 0 20px;
   border: 1px solid #cecece;
   border-top: none;
 }
 
-/* line 817, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 817, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .panel-group.panel-group2 .panel-body {
   background: none;
   box-shadow: none;
   border: none;
 }
 
-/* line 822, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 822, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn.option-btn-side .btn-primary,
 .options-btn.option-btn-side .btn-default {
   margin-left: 8px;
   width: 130px;
 }
 
-/* line 827, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 827, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting {
   overflow: hidden;
 }
 
-/* line 830, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 830, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 835, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 835, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul li {
   float: left;
   width: 33%;
   text-align: center;
 }
 
-/* line 840, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 840, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul li:nth-child(2) img {
   padding: 6px;
 }
 
-/* line 843, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 843, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul li img {
   min-height: 52px;
   margin-bottom: 10px;
 }
 
-/* line 847, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 847, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul li a {
   color: #9d9cae;
   display: block;
 }
 
-/* line 851, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 851, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .table-area {
   margin-top: 20px;
 }
 
-/* line 854, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 854, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .table-area thead {
   background: #d02030;
   color: #fff;
 }
 
-/* line 858, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 858, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .table-area .table > thead > tr > th {
   border: none;
 }
 
-/* line 861, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 861, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
   border-top: none;
   font-size: 11px;
@@ -9779,36 +9779,36 @@ body.home-page {
   padding: 5px;
 }
 
-/* line 867, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 867, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .table-area tbody {
   background: #231f20;
   color: #fff;
 }
 
-/* line 871, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 871, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .table-area tbody input[type="color"] {
   border: none;
   padding: 0;
 }
 
-/* line 876, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 876, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul li a:hover {
   text-decoration: none;
   opacity: 0.6;
 }
 
-/* line 880, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 880, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .font-setting ul li a span {
   display: block;
 }
 
-/* line 883, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 883, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view {
   overflow: hidden;
   margin: 20px;
 }
 
-/* line 887, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 887, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view ul {
   margin: 0;
   padding: 0;
@@ -9816,14 +9816,14 @@ body.home-page {
   text-align: center;
 }
 
-/* line 893, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 893, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view ul li {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
 }
 
-/* line 898, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 898, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view ul li a {
   border: 1px solid #9d9cae;
   display: block;
@@ -9831,7 +9831,7 @@ body.home-page {
   width: 82px;
 }
 
-/* line 905, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 905, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view ul li a img {
   width: 100%;
   height: auto;
@@ -9839,12 +9839,12 @@ body.home-page {
   padding: 5px;
 }
 
-/* line 911, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 911, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view ul li a.active {
   border-color: #d02030;
 }
 
-/* line 914, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 914, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .tile-view ul li .tile-view-text {
   display: block;
   color: #9d9cae;
@@ -9853,19 +9853,19 @@ body.home-page {
 }
 
 /*decoration page*/
-/* line 921, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 921, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .tile-view ul li a {
   height: 60px;
   width: 58px;
 }
 
-/* line 925, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 925, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .sidebar .tile-view ul li .tile-view-text {
   margin: 2px 0 5px;
   font-size: 10px;
 }
 
-/* line 929, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 929, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-default.location {
   background: #5d5d5d;
   color: #fff;
@@ -9874,24 +9874,24 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 936, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 936, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-default.location:hover {
   background: #2d2d2d;
 }
 
 /*design page style*/
-/* line 940, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 940, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card {
   overflow: hidden;
 }
 
-/* line 943, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 943, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col {
   overflow: hidden;
   width: 100%;
 }
 
-/* line 947, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 947, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col {
   display: inline-block;
   vertical-align: middle;
@@ -9905,7 +9905,7 @@ body.home-page {
   color: #000;
 }
 
-/* line 959, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 959, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col .layout {
   opacity: 0;
   -moz-transition: all 0.3s;
@@ -9913,7 +9913,7 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 965, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 965, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col:hover .layout {
   background: rgba(230, 231, 232, 0.8);
   height: 100%;
@@ -9925,7 +9925,7 @@ body.home-page {
   opacity: 1;
 }
 
-/* line 976, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 976, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col:hover .design-info {
   position: absolute;
   z-index: 9;
@@ -9936,12 +9936,12 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 986, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 986, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col .image-holder {
   margin-bottom: 20px;
 }
 
-/* line 989, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 989, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col .image-holder img {
   width: 100%;
   height: auto;
@@ -9951,14 +9951,14 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 997, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 997, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .card .four-col .col:hover .image-holder img {
   -moz-transform: scale(0.7);
   -webkit-transform: scale(0.7);
   transform: scale(0.7);
 }
 
-/* line 1002, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1002, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .design-info {
   font-family: 'robotocondensed';
   text-transform: uppercase;
@@ -9972,30 +9972,30 @@ body.home-page {
   line-height: 21px;
 }
 
-/* line 1014, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1014, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .design-info .design-code {
   display: block;
   color: #d02030;
 }
 
-/* line 1018, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1018, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .design-info .style-link,
 .design-info .design-name {
   display: block;
 }
 
-/* line 1022, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1022, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .design-info .style-link {
   color: #2b3990;
   text-decoration: underline;
 }
 
-/* line 1026, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1026, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .design-info .style-link:hover {
   text-decoration: none;
 }
 
-/* line 1029, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1029, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content-info {
   overflow: hidden;
   width: 100%;
@@ -10006,18 +10006,18 @@ body.home-page {
   margin-bottom: 30px;
 }
 
-/* line 1038, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1038, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content-info .available-date {
   float: left;
 }
 
-/* line 1041, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1041, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .content-info .available-info {
   float: right;
 }
 
 /*summary page*/
-/* line 1045, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1045, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .link-area {
   overflow: hidden;
   width: 100%;
@@ -10025,7 +10025,7 @@ body.home-page {
   margin-bottom: 20px;
 }
 
-/* line 1051, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1051, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .link-area a.style-link {
   font-size: 17px;
   line-height: 20px;
@@ -10033,13 +10033,13 @@ body.home-page {
   text-decoration: underline;
 }
 
-/* line 1057, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1057, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .link-area a.style-link:hover {
   text-decoration: none;
   color: #000;
 }
 
-/* line 1061, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1061, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-default.summary-btn {
   background: #ddd;
   border: none;
@@ -10049,19 +10049,19 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 1069, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1069, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .options-btn .btn-default.summary-btn:hover {
   background: #d02030;
 }
 
-/* line 1072, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1072, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-content:after {
   display: block;
   content: "";
   clear: both;
 }
 
-/* line 1077, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1077, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-header .close {
   height: 65px;
   width: 65px;
@@ -10075,7 +10075,7 @@ body.home-page {
   color: #d02030;
 }
 
-/* line 1089, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1089, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-dialog {
   position: absolute;
   left: 50%;
@@ -10085,46 +10085,46 @@ body.home-page {
   width: 920px;
 }
 
-/* line 1097, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1097, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-header {
   background: #d02030;
   padding: 0;
   height: 55px;
 }
 
-/* line 1102, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1102, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-backdrop.in {
   opacity: 0.8;
 }
 
-/* line 1105, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1105, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-body {
   padding: 0 0 30px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* line 1110, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1110, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-body:after {
   display: block;
   content: "";
   clear: both;
 }
 
-/* line 1115, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1115, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .modal-logo {
   margin-bottom: 40px;
   overflow: hidden;
   margin-top: -1px;
 }
 
-/* line 1120, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1120, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .form-area {
   max-width: 495px;
   margin: 0 auto;
 }
 
-/* line 1124, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1124, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .form-area input {
   width: 100%;
   background: #f1f2f2;
@@ -10137,7 +10137,7 @@ body.home-page {
   margin-bottom: 20px;
 }
 
-/* line 1135, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1135, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .form-area .btn.btn-primary {
   float: left;
   font-size: 23px;
@@ -10154,13 +10154,13 @@ body.home-page {
   transition: all 0.3s;
 }
 
-/* line 1151, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1151, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .form-area .btn.btn-primary:hover {
   background: #6d6e71;
   color: #fff;
 }
 
-/* line 1155, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+/* line 1155, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
 .link-area a {
   display: block;
   margin-bottom: 10px;
@@ -10168,78 +10168,78 @@ body.home-page {
 
 /*media query*/
 @media only screen and (max-width: 1200px) {
-  /* line 1162, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1162, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-default .navbar-nav > li > a {
     padding: 5px 10px;
   }
 
-  /* line 1165, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1165, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-nav {
     width: 90%;
   }
 }
 @media only screen and (max-width: 1140px) {
-  /* line 1170, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1170, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .custom-container {
     padding-left: 0;
   }
 }
 @media only screen and (max-width: 991px) {
-  /* line 1175, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1175, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-nav {
     width: 100%;
   }
 
-  /* line 1178, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1178, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-default .navbar-nav > li > a {
     padding: 5px 5px;
   }
 
-  /* line 1181, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1181, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content .detail-holder .detail {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 1185, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1185, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content .detail-holder .detail .btn-holder {
     margin-bottom: 5%;
   }
 
-  /* line 1188, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1188, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .home-wrapper .home-img-holder img {
     max-width: 25%;
   }
 
-  /* line 1191, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1191, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-dialog {
     margin-left: -300px;
     margin-top: -225px;
     width: 600px;
   }
 
-  /* line 1196, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1196, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-body {
     max-width: 400px;
   }
 
-  /* line 1199, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1199, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-header {
     height: 35px;
   }
 
-  /* line 1202, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1202, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-logo {
     margin-bottom: 20px;
   }
 
-  /* line 1205, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1205, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-header .close {
     height: 45px;
     width: 45px;
   }
 
-  /* line 1209, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1209, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .form-area input {
     margin-bottom: 10px;
     padding: 10px 15px;
@@ -10248,18 +10248,18 @@ body.home-page {
     height: 45px;
   }
 
-  /* line 1216, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1216, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .form-area .btn.btn-primary {
     margin: 0 1% 20;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 1221, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1221, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-brand {
     margin-right: 0;
   }
 
-  /* line 1224, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1224, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover,
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     background: none;
@@ -10272,7 +10272,7 @@ body.home-page {
     z-index: 9;
   }
 
-  /* line 1235, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1235, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .navbar-nav > li {
     float: left;
     display: block;
@@ -10280,45 +10280,45 @@ body.home-page {
     text-align: left;
   }
 
-  /* line 1241, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1241, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .card .four-col .col {
     width: 32%;
   }
 
-  /* line 1244, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1244, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content .detail-holder .detail .btn-holder .btn {
     font-size: 12px;
     line-height: 15px;
   }
 
-  /* line 1248, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1248, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .home-wrapper .home-img-holder img {
     max-width: 40%;
   }
 
-  /* line 1253, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1253, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-dialog {
     margin-left: -150px;
     margin-top: -225px;
     width: 300px;
   }
 
-  /* line 1258, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1258, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-body {
     max-width: 270px;
   }
 
-  /* line 1261, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1261, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-header {
     height: 25px;
   }
 
-  /* line 1264, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1264, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-logo {
     margin-bottom: 10px;
   }
 
-  /* line 1267, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1267, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .modal-header .close {
     height: 30px;
     width: 30px;
@@ -10326,7 +10326,7 @@ body.home-page {
     margin-right: -10px;
   }
 
-  /* line 1273, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1273, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .form-area input {
     margin-bottom: 6px;
     padding: 7px 15px;
@@ -10335,23 +10335,23 @@ body.home-page {
     height: 35px;
   }
 
-  /* line 1280, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1280, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .form-area .btn.btn-primary {
     margin: 0 1% 20;
   }
 
-  /* line 1283, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1283, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .form-area .btn.btn-primary {
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 1288, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1288, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .card .four-col .col {
     width: 100%;
   }
 
-  /* line 1291, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1291, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content h1 {
     font-size: 20px;
     line-height: 30px;
@@ -10360,19 +10360,19 @@ body.home-page {
     padding-top: 5px;
   }
 
-  /* line 1298, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1298, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content h1:after {
     width: 80px;
     height: 85px;
     background-size: 100%;
   }
 
-  /* line 1303, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1303, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content .img-holder ul li {
     width: 100%;
   }
 
-  /* line 1306, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.scss */
+  /* line 1306, /home/ssi/Projects/bitbucket/A4-Configurator/app/assets/stylesheets/custom.css */
   .content .detail-holder .img-holder {
     margin-bottom: 15px;
   }
