@@ -1,5 +1,5 @@
 ActiveAdmin.register Order do
-  permit_params :customer_id, :design_id, :order_type, :status
+  permit_params :customer_id, :design_id, :type, :status
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
