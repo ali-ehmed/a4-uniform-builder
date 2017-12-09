@@ -1,0 +1,2 @@
+class UniformBuildersController < ApplicationController
+end
