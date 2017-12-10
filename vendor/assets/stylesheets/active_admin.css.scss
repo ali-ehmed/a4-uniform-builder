@@ -67,7 +67,7 @@ table.google-visualization-orgchart-table {
     background-image: linear-gradient(180deg, #FF0000, #dfe1e2);
 }
 #header ul.tabs > li ul {
-  background: #FF0000;
+  background: #7b8389;
 }
 #header a, #header a:link {
   color: #ffffff;
@@ -80,4 +80,7 @@ body.logged_out h2 {
 }
 form input[type=submit], form input[type=button], form button {
   background-image: linear-gradient(180deg, #FF0000, #414549);
+}
+#header ul.tabs>li ul li a {
+  background: #FF0000;
 }
