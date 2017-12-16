@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  decoration_available: MyString
+  stellar_code: MyString
+  standard_size: MyString
+  measurement: MyString
+
+two:
+  code: MyString
+  decoration_available: MyString
+  stellar_code: MyString
+  standard_size: MyString
+  measurement: MyString

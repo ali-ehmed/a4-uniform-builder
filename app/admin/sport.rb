@@ -1,4 +1,4 @@
 ActiveAdmin.register Sport do
   menu parent: "Others"
-  permit_params :category, :image,:available_till, :items_in_stock, :acs_code
+  permit_params :acs_sales_category_code, :acs_sales_category_description,:marketing_category, :image
 end

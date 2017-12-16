@@ -1,2 +1,0 @@
-class GenderOption < ApplicationRecord
-end

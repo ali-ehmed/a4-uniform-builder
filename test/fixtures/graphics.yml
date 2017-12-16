@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  group: MyString
+  type: 
+  sport_id: 1
+  gender_id: 1
+  size: MyString
+  price_by_method: MyString
+  price_to_factory: MyString
+  factory_graphic_code: MyString
+  image: MyString
+  decoration_id: 1
+  placement_id: 1
+  layout_factory_code: MyString
+  description: MyString
+
+two:
+  category: MyString
+  group: MyString
+  type: 
+  sport_id: 1
+  gender_id: 1
+  size: MyString
+  price_by_method: MyString
+  price_to_factory: MyString
+  factory_graphic_code: MyString
+  image: MyString
+  decoration_id: 1
+  placement_id: 1
+  layout_factory_code: MyString
+  description: MyString

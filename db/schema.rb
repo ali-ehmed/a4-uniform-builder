@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171209090515) do
+ActiveRecord::Schema.define(version: 20171216092242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,30 @@ ActiveRecord::Schema.define(version: 20171209090515) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "garment_category"
+    t.text "acs_garment_category_description"
+    t.string "acs_garment_category_code"
+    t.integer "gender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "colors", force: :cascade do |t|
+    t.string "color_code"
+    t.string "color_type"
+    t.string "color_description"
+    t.string "md_no"
+    t.string "pms_no"
+    t.string "image"
+    t.integer "text_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "decorations", force: :cascade do |t|
     t.string "code"
-    t.string "color"
-    t.integer "design_id"
-    t.integer "style_id"
-    t.integer "sport_id"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,15 +84,39 @@ ActiveRecord::Schema.define(version: 20171209090515) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "gender_options", force: :cascade do |t|
-    t.string "name"
-    t.integer "gender_id"
+  create_table "fonts", force: :cascade do |t|
+    t.string "code"
+    t.string "font_code"
+    t.string "font_file"
+    t.string "font"
+    t.integer "method_id"
+    t.integer "text_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "genders", force: :cascade do |t|
-    t.string "name"
+    t.string "gender"
+    t.string "acs_gender_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "graphics", force: :cascade do |t|
+    t.string "category"
+    t.string "group"
+    t.string "type"
+    t.integer "sport_id"
+    t.integer "gender_id"
+    t.string "size_id"
+    t.string "price_by_method"
+    t.string "price_to_factory"
+    t.string "factory_graphic_code"
+    t.string "image"
+    t.integer "decoration_id"
+    t.integer "placement_id"
+    t.string "layout_factory_code"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -99,6 +141,17 @@ ActiveRecord::Schema.define(version: 20171209090515) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "placements", force: :cascade do |t|
+    t.string "code"
+    t.string "decoration_available_image"
+    t.string "decoration_available_string"
+    t.string "stellar_code"
+    t.string "standard_size"
+    t.string "measurement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sales", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "order_id"
@@ -108,22 +161,66 @@ ActiveRecord::Schema.define(version: 20171209090515) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sports", force: :cascade do |t|
-    t.string "category"
-    t.string "image"
-    t.datetime "available_till"
-    t.integer "items_in_stock"
-    t.string "acs_code"
+  create_table "sizes", force: :cascade do |t|
+    t.string "size"
+    t.boolean "availble"
+    t.string "size_country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "styles", force: :cascade do |t|
-    t.text "description"
-    t.string "name"
-    t.string "category"
-    t.string "colour"
+  create_table "sports", force: :cascade do |t|
     t.string "image"
+    t.string "acs_sales_category_code"
+    t.text "acs_sales_category_description"
+    t.string "marketing_category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "style_methods", force: :cascade do |t|
+    t.string "code"
+    t.string "description"
+    t.integer "graphic_id"
+    t.integer "text_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.string "product_code"
+    t.string "stellar_code"
+    t.string "sport_code"
+    t.integer "method_id"
+    t.integer "gender_id"
+    t.string "price_by_method"
+    t.string "price_to_factory"
+    t.string "factory_graphic_code"
+    t.string "image"
+    t.integer "decoration_id"
+    t.integer "placement_id"
+    t.string "layout_factory_code"
+    t.string "svg"
+    t.string "layouts"
+    t.text "description"
+    t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.string "category"
+    t.string "group"
+    t.string "text_type"
+    t.integer "sport_id"
+    t.integer "gender_id"
+    t.string "size_id"
+    t.string "price_by_method"
+    t.string "factory_graphic_code"
+    t.integer "decoration_id"
+    t.integer "placement_id"
+    t.string "layout_factory_code"
+    t.text "decsription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

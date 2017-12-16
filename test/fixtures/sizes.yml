@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size: MyString
+  availble: false
+  size_country: MyString
+
+two:
+  size: MyString
+  availble: false
+  size_country: MyString
