@@ -1,6 +1,6 @@
 ActiveAdmin.register Placement do
   permit_params :code, :decoration_available_image, :decoration_available_string, :stellar_code,
-                :standard_size, :measurement
+                :standard_size, :measurement,:style_ids
   menu parent: "Others"
 
 

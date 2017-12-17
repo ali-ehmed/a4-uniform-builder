@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-  belongs_to :gender
+  belongs_to 	:gender
+  has_many 		:styles
 end

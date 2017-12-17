@@ -13,5 +13,6 @@ ActiveAdmin.register Color do
       f.input :image
       f.input :color_description
     end
+    f.actions
   end
 end

@@ -5,10 +5,11 @@ ActiveAdmin.register Category do
 
   form do |f|
     f.inputs "Details" do
-      f.input :gender_id, as: :select, collection: Gender.all.collect{|gender| [gender.name, gender.id]}
+      f.input :gender_id, as: :select, collection: Gender.all.collect{|gender| [gender.gender, gender.id]}
       f.input :garment_category
       f.input :acs_garment_category_description
       f.input :acs_garment_category_code
     end
+    f.actions 
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216092242) do
+ActiveRecord::Schema.define(version: 20171217183835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,13 @@ ActiveRecord::Schema.define(version: 20171216092242) do
     t.string "font"
     t.integer "method_id"
     t.integer "text_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gender_options", force: :cascade do |t|
+    t.integer "gender_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -178,11 +185,55 @@ ActiveRecord::Schema.define(version: 20171216092242) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "style_colors", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "style_decorations", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "decoration_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "style_methods", force: :cascade do |t|
     t.string "code"
     t.string "description"
     t.integer "graphic_id"
     t.integer "text_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "style_placements", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "placement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "style_sizes", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "style_code"
+    t.string "acs_style"
+    t.integer "sport_id"
+    t.integer "gender_id"
+    t.string "style_category"
+    t.text "color_description"
+    t.integer "category_id"
+    t.text "style_features"
+    t.string "front"
+    t.string "back"
+    t.string "thumbnail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

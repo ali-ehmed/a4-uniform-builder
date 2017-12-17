@@ -1,5 +1,5 @@
 ActiveAdmin.register Decoration do
-  permit_params :code, :description
+  permit_params :code, :description,:style_ids
   menu parent: "Others"
 
 
