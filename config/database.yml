@@ -1,9 +1,9 @@
 development: &default
-  adapter:  postgresql
-  host: localhost
-  database: a4_development
-  username: postgres
-  password: password
+  adapter: postgresql
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+  timeout: 5000
 
 test:
   <<: *default
@@ -14,6 +14,6 @@ staging:
 production: &default
   adapter:  postgresql
   host: localhost
-  database: a4_development
+  database: fss_development
   username: postgres
   password: password
