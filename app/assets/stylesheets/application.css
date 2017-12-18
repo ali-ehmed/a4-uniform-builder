@@ -15,6 +15,6 @@
  *= require 'bootstrap.min.css'
  *= require 'bootstrap-theme.css'
  *= require 'bootstrap-theme.min.css'
- *= require 'custom.css'
+ *= require 'custom.css.scss'
  *= require_self
  */
