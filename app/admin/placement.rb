@@ -13,5 +13,6 @@ ActiveAdmin.register Placement do
       f.input :standard_size
       f.input :measurement
     end
+    f.actions
   end
 end

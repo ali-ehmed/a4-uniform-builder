@@ -4,7 +4,9 @@ class Color < ApplicationRecord
 	belongs_to 					:sport
 	belongs_to					:text
 
-  	has_many    :style_colors
+	has_many  :style_colors
 	has_many 	:styles, :through => :style_colors
 
+	has_many  :text_colors
+	has_many  :texts, through: :text_colors
 end

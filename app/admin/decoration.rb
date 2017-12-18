@@ -8,5 +8,6 @@ ActiveAdmin.register Decoration do
       f.input :code
       f.input :description
     end
+    f.actions
   end
 end

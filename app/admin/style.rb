@@ -1,6 +1,6 @@
 ActiveAdmin.register Style do
   permit_params :style_code,:acs_style,:sport_id,:gender_id,:style_category,:color_description,:category_id,
-  :style_features,:front,:back, :thumbnail,color_ids: [], size_ids: [],placement_ids: [],decoration_ids:[]
+  :style_features,:front,:back, :thumbnail,colors: [], sizes: [],placements: [],decorations:[]
   menu parent: "Others"
 
 
@@ -23,9 +23,9 @@ ActiveAdmin.register Style do
       f.input :thumbnail
 
       
-      f.input :color_ids,as: :check_boxes, collection: Color.all.collect{|color| [color.color_type, color.id]}
+      f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.color_type, color.id]}
 
-      f.input :size_ids,as: :check_boxes, collection: Size.all.collect{|size| [size.size, size.id]}
+      f.input :sizes,as: :check_boxes, collection: Size.all.collect{|size| [size.size, size.id]}
 
       f.input :placements,as: :check_boxes, collection: Placement.all.collect{|placement| [placement.code, placement.id]}
 

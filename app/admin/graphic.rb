@@ -1,6 +1,7 @@
-ActiveAdmin.register Category do
-  permit_params :category, :group, :text_type, :sport_id,:gender_id,:size_id,:price_by_method,:factory_graphic_code,:decoration_id,:placement_id,:layout_factory_code,
-                :decsription, style_methods: [], fonts: [], colors: []
+ActiveAdmin.register Graphic do
+  permit_params :category, :group, :graphic_type, :sport_id,:gender_id,:size_id,:price_by_method, :price_to_factory, :factory_graphic_code,
+                :decoration_id,:placement_id,:layout_factory_code, :image, :description, style_methods: []
+
   menu parent: "Others"
 
 
@@ -12,14 +13,14 @@ ActiveAdmin.register Category do
       f.input :placement_id,as: :select, collection:  Placement.all.collect{|placement| [placement.code,placement.id]}
       f.input :category
       f.input :group
-      f.input :text_type
+      f.input :graphic_type
+      f.input :image
       f.input :price_by_method
+      f.input :price_to_factory
       f.input :factory_graphic_code
       f.input :layout_factory_code
-      f.input :decsription
+      f.input :description
       f.input :style_methods,as: :check_boxes, collection: StyleMethod.all.collect{|s_m| [s_m.code,s_m.id]}
-      f.input :fonts,as: :check_boxes, collection: Font.all.collect{|font| [font.font, font.id]}
-      f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.color_type, color.id]}
 
       # f.has_many :style_methods do |a|
       #   a.inputs "Method" do

@@ -10,5 +10,6 @@ ActiveAdmin.register StyleMethod do
       f.input :code
       f.input :description
     end
+    f.actions
   end
 end

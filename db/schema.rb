@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217183835) do
+ActiveRecord::Schema.define(version: 20171218085557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,10 +109,17 @@ ActiveRecord::Schema.define(version: 20171217183835) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "graphic_style_methods", force: :cascade do |t|
+    t.integer "graphic_id"
+    t.integer "style_method_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "graphics", force: :cascade do |t|
     t.string "category"
     t.string "group"
-    t.string "type"
+    t.string "graphic_type"
     t.integer "sport_id"
     t.integer "gender_id"
     t.string "size_id"
@@ -255,6 +262,27 @@ ActiveRecord::Schema.define(version: 20171217183835) do
     t.string "layouts"
     t.text "description"
     t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "text_colors", force: :cascade do |t|
+    t.integer "text_id"
+    t.integer "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "text_fonts", force: :cascade do |t|
+    t.integer "text_id"
+    t.integer "font_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "text_style_methods", force: :cascade do |t|
+    t.integer "text_id"
+    t.integer "style_method_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

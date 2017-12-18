@@ -1,8 +1,8 @@
 development: &default
   adapter:  postgresql
   host: localhost
-  database: a4_development
-  username: postgres
+  database: a4_dev
+  username: ssi
   password: password
 
 test:

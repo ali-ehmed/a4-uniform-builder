@@ -10,7 +10,7 @@ class Style < ApplicationRecord
 	has_many 	:colors, :through => :style_colors
 
 
-	has_many    :style_decorations
+	has_many   :style_decorations
 	has_many	:decorations, through: :style_decorations
 
 	has_many	:style_placements
