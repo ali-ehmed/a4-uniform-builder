@@ -87,5 +87,14 @@ form input[type=submit], form input[type=button], form button {
   background: #CC2639;
 }
 #header h1 {
-  background-image: url(image_path('A4-img.png'));
+  background-image: url(image_path('A4-img_w.png'));
+  width: 113px;
+  //background-color: #fff;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-position: 1px -7px;
+  float: left;
+  margin: 0px 122px 0px 8px;
+  height: 76px;
+  text-indent: -9999px;
 }
