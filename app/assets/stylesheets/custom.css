@@ -261,7 +261,7 @@ body.home-page{
     position: absolute;
     left: 0;
     top: 0;
-    background: url("A4-img.png") no-repeat;
+    background-image: url("A4-img.png") no-repeat;
     width: 165px;
     height: 85px;
 }

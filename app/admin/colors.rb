@@ -1,6 +1,6 @@
 ActiveAdmin.register Color do
   permit_params :color_code, :color_type, :color_description, :md_no, :pms_no, :image
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|

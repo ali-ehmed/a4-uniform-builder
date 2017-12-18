@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
   permit_params :garment_category, :acs_garment_category_description, :acs_garment_category_code, :gender_id
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|

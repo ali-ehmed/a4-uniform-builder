@@ -1,6 +1,6 @@
-ActiveAdmin.register StyleMethod do
+ActiveAdmin.register StyleMethod, as: "Method" do
   permit_params :code, :description, :graphic_id, :text_id
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|

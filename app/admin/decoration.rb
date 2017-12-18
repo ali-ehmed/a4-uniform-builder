@@ -1,6 +1,6 @@
 ActiveAdmin.register Decoration do
   permit_params :code, :description,:style_ids
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|

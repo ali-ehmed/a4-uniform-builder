@@ -1,7 +1,7 @@
 ActiveAdmin.register Category do
   permit_params :category, :group, :text_type, :sport_id,:gender_id,:size_id,:price_by_method,:factory_graphic_code,:decoration_id,:placement_id,:layout_factory_code,
                 :decsription, style_methods: [], fonts: [], colors: []
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|

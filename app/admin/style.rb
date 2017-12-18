@@ -1,7 +1,7 @@
 ActiveAdmin.register Style do
   permit_params :style_code,:acs_style,:sport_id,:gender_id,:style_category,:color_description,:category_id,
   :style_features,:front,:back, :thumbnail,colors: [], sizes: [],placements: [],decorations:[]
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|

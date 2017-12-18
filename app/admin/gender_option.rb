@@ -1,5 +1,5 @@
 ActiveAdmin.register GenderOption do
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
   permit_params :gender_id, :name
   form do |f|
     f.inputs "Details" do

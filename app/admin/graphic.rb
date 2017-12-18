@@ -2,7 +2,7 @@ ActiveAdmin.register Graphic do
   permit_params :category, :group, :graphic_type, :sport_id,:gender_id,:size_id,:price_by_method, :price_to_factory, :factory_graphic_code,
                 :decoration_id,:placement_id,:layout_factory_code, :image, :description, style_methods: []
 
-  menu parent: "Others"
+  menu parent: "Uniform Builder"
 
 
   form do |f|
