@@ -1,4 +1,4 @@
-<div id="signinModal" class="modal fade" role="dialog">
+<div id="signinModal" class="modal fade">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -18,8 +18,8 @@
               <%= f.submit "Login", class:"btn btn-primary" %>
               <!--<button type="button" class="btn btn-primary">Login</button>-->
               <div class="link-area">
-                <%=link_to "Create a New Account", new_user_registration_path, class: "style-link"%>"
-                <%=link_to "Forgot My Password", new_user_password_path, class: "style-link"%>"
+                <%=link_to "Create a New Account", new_user_registration_path, class: "style-link"%>
+                <%=link_to "Forgot My Password", new_user_password_path, class: "style-link"%>
               </div>
           <% end %>
         </div>

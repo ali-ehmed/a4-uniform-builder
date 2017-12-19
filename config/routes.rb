@@ -24,7 +24,11 @@ Rails.application.routes.draw do
   get 'pages/category'
 
   mount ActionCable.server => '/cable'
-  devise_for :users#, controllers: {registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks', sessions: "users/sessions", passwords: "users/passwords"}
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+  }
+
+  #, controllers: {registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks', sessions: "users/sessions", passwords: "users/passwords"}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
