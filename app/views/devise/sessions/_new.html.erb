@@ -12,7 +12,7 @@
 
         <div class="form-area">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <%= f.email_field :user_name, placeholder: "User Name", name: "username" %>
+              <%= f.text_field :user_name, placeholder: "User Name", name: "username" %>
               <%= f.password_field :password, placeholder: "Password", name: "password",type:"password" %>
 
               <%= f.submit "Login", class:"btn btn-primary" %>
