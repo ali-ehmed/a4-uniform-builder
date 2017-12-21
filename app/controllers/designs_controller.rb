@@ -1,4 +1,4 @@
-class DesignController < ApplicationController
+class DesignsController < ApplicationController
   def create
     @design = Design.create design_params
   end

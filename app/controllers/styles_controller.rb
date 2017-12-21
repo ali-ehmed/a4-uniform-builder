@@ -7,6 +7,6 @@ class StylesController < ApplicationController
   end
   private
   def style_options_params
-    params.require(:styles).permit(:description, :name, :category, :colour, :image, colors: [], sizes: [], placements: [], decorations:[])
+    params.require(:style).permit(:description, :name, :category, :colour, :image, colors: [], sizes: [], placements: [], decorations:[])
   end
 end
