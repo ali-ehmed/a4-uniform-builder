@@ -1,13 +1,7 @@
 <body class="home-page">
 <div id="wrapper" class="home-wrapper">
   <div id="header">
-    <ul class="login-area">
-      <li class="item1"><a href="#">Item1</a></li>
-      <li class="signin">
-        <%= link_to 'Sign In', :new_user_session, remote: true %>
-      </li>
-      <li class="signin"><%= link_to "Sign Out", :destroy_user_session%></li>
-    </ul>
+    <%=render partial: "layouts/login"%>
   </div>
   <main id="main">
     <div class="content">
