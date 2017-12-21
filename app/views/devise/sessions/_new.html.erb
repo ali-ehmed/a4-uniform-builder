@@ -14,6 +14,7 @@
 
         <div class="form-area">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= render 'layouts/error_messages', object: resource %>
               <%= f.text_field :user_name, placeholder: "User Name", name: "username" %>
               <%= f.password_field :password, placeholder: "Password", name: "password",type:"password" %>
 
