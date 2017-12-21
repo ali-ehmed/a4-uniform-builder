@@ -6,7 +6,7 @@ class SportsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get style" do
+  test "should get styles" do
     get sports_style_url
     assert_response :success
   end
