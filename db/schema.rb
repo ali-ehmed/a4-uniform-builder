@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20171219170239) do
   end
 
   create_table "genders", force: :cascade do |t|
-    t.string "gender"
+    t.string "genders"
     t.string "acs_gender_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -322,7 +322,7 @@ ActiveRecord::Schema.define(version: 20171219170239) do
     t.string "last_name"
     t.string "password"
     t.string "password_confirmation"
-    t.string "gender"
+    t.string "genders"
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

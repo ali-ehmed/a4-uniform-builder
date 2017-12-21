@@ -1,28 +1,4 @@
 Rails.application.routes.draw do
-
-  # devise_for :users
-  get 'pages/decoration'
-
-  get 'pages/design'
-
-  get 'pages/options'
-
-  get 'pages/style'
-
-  get 'pages/summary'
-
-  get 'pages/login'
-
-  get 'pages/register'
-
-  get 'pages/index'
-
-  get 'pages/sports'
-
-  get 'pages/gender'
-
-  get 'pages/category'
-
   mount ActionCable.server => '/cable'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -33,6 +9,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'home#index'
+
+  resources :designs
+  resources :sports
+  resources :genders
+  resources :styles
+  resources :summaries
+  resources :decorations
+  resources :options
+  resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

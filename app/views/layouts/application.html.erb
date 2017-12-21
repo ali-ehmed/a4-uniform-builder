@@ -13,6 +13,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%- unless params[:controller] == "home"%>
+      <div id="wrapper" class="gender">
+        <%=render partial: "layouts/header"%>
+      </div>
+  <%end%>
 
 <%= yield %>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
