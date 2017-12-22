@@ -13,8 +13,23 @@ ActiveAdmin.register UniformBuilder,as: "View Unifrom Builder" do
 			f.input :type
 			f.input :placement_id
 			f.input :photo
-		end	
+		end
 		f.actions
+	end
+
+	index do
+    render partial: "buttons", layout: "active_admin"
+
+    column :style_id
+		column :sport_id
+		column :color_id
+		column :gender_id
+		column :category
+		column :type
+		column :placement_id
+		column :photo
+
+		actions
 	end
 
 end
