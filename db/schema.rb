@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219170239) do
+ActiveRecord::Schema.define(version: 20171222172409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20171219170239) do
   end
 
   create_table "genders", force: :cascade do |t|
-    t.string "genders"
+    t.string "gender"
     t.string "acs_gender_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -190,6 +190,8 @@ ActiveRecord::Schema.define(version: 20171219170239) do
     t.string "marketing_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sport_image"
+    t.boolean "is_selected"
   end
 
   create_table "style_colors", force: :cascade do |t|
@@ -322,7 +324,7 @@ ActiveRecord::Schema.define(version: 20171219170239) do
     t.string "last_name"
     t.string "password"
     t.string "password_confirmation"
-    t.string "genders"
+    t.string "gender"
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

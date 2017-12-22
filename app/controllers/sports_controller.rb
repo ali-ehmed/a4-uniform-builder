@@ -7,6 +7,6 @@ class SportsController < ApplicationController
   end
   private
   def sports_params
-    params.require(:sport).permit(:category, :image,:available_till, :items_in_stock, :acs_code)
+    params.require(:sport).permit(:acs_sales_category_code, :acs_sales_category_description,:marketing_category, :image, :sport_image, :is_selected)
   end
 end
