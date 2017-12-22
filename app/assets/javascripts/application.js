@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require home
+//= require sports.js.coffee
 //= require_tree .
