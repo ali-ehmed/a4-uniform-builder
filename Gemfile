@@ -14,6 +14,8 @@ ruby '2.4.2'
 gem 'pg', '~> 0.20.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'therubyracer'
+gem 'execjs'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
