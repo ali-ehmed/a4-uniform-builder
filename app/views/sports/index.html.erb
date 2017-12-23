@@ -10,6 +10,7 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <%= form_for sport, url: genders_path(sport_id: sport.id),html: {class: "nice-form card-area", id: "redirect-request"}, method: :get do |f|%>
               <!-- <form action="#" class="nice-form card-area"> -->
+                <%= f.hidden_field :id, :value => sport.id %>
                 <label for="check-2">
                   <%=f.check_box :is_selected,type: "checkbox",id: "check-2",class: "selected-checbox",checked_value:(sport.is_selected ? "1" : "0")%>
                   <!-- <input id="check-2" checked="checked" type="checkbox"> -->

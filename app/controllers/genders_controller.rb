@@ -15,7 +15,7 @@ class GendersController < ApplicationController
     params.require(:genders).permit(:name)
   end
   def get_sport
-    @sport    = Sport.find_by_id(params[:sport_id])
+    @sport    = Sport.find_by_id(params[:sport][:id])
     @sport.update_attribute :is_selected, true
   end  
 end
