@@ -1,5 +1,7 @@
 class GendersController < ApplicationController
   before_action :get_sport, only: [:index, :update]
+  before_action :update_user, only: [:index, :update, :show]
+
   def create
     @gender = Gender.create gender_options_params
   end
@@ -20,4 +22,8 @@ class GendersController < ApplicationController
       @sport.update_attribute :is_selected, true
     end
   end  
+
+  def update_user
+    params[:sport] && (guest_user || current_user).update_attribute(:sport, params[:sport][:id])
+  end
 end

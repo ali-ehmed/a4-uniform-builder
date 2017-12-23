@@ -3,6 +3,6 @@
   <%- if user_signed_in?%>
     <li class="signin"><%=link_to "Sign Out", :destroy_user_session%></li>
   <%else%>  
-    <li class="signin"><%= link_to 'Sign In', :new_user_session, remote: true %></li>
+    <li class="signin"><%= link_to 'Sign In', :new_user_session, method: :delete, remote: true %></li>
   <%end%>
 </ul>
