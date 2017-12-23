@@ -4,24 +4,15 @@
       <div class="main-heading">
         <h1>Gender</h1>
       </div>
-      <ul class="list col-lg-4 col-md-4 col-sm-4">
-        <li class="heading">Mens</li>
-        <li class=""><a href="#">PANTS</a></li>
-        <li class=""><a href="#">JACKETS</a></li>
-        <li class=""><a href="#">JERSEY</a></li>
-      </ul>
-      <ul class="list col-lg-4 col-md-4 col-sm-4">
-        <li class="heading">Womens</li>
-        <li class=""><a href="#">PANTS</a></li>
-        <li class=""><a href="#">JACKETS</a></li>
-        <li class=""><a href="#">JERSEY</a></li>
-      </ul>
-      <ul class="list col-lg-4 col-md-4 col-sm-4">
-        <li class="heading">Youths</li>
-        <li class=""><a href="#">PANTS</a></li>
-        <li class=""><a href="#">JACKETS</a></li>
-        <li class=""><a href="#">JERSEY</a></li>
-      </ul>
+
+      <%- @genders.each do |gender|%>
+        <ul class="list col-lg-4 col-md-4 col-sm-4">
+          <li class="heading"><%=gender.gender%></li>
+          <%- gender.categories.each do |category|%>
+            <li class=""><%=link_to category.garment_category, categories_path(category_id: category.id)%></li>
+          <%end%>
+        </ul>
+      <%end%>
     </div>
   </div>
 </main>
