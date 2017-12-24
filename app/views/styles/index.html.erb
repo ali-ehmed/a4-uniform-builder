@@ -6,94 +6,19 @@
       </div>
       <div class="card">
         <div class="four-col">
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des1.png" alt="image description">
+          <%- @styles.each do |style|%>
+            <div class="col">
+              <div class="layout"></div>
+              <div class="image-holder">
+                <%=image_tag(style.try(:image).try(:url) || "img-des5.png",alt: "image description")%>
+              </div>
+              <div class="design-info">
+                <span class="design-code"><%=style.style_code%></span>
+                <span class="design-name"><%=style.acs_style%></span>
+                <a href="#" class="style-link">More Information</a>
+              </div>
             </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des2.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des3.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des4.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des5.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des6.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des2.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="layout"></div>
-            <div class="image-holder">
-              <img src="images/img-des3.png" alt="image description">
-            </div>
-            <div class="design-info">
-              <span class="design-code">605 piny</span>
-              <span class="design-name">Swarm</span>
-              <a href="#" class="style-link">More Information</a>
-            </div>
-          </div>
+          <%end%>  
         </div>
       </div>
     </div>
