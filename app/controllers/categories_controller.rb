@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :update_user
   def create
     Category.create category_params
   end
@@ -10,4 +11,7 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:garment_category, :acs_garment_category_description, :acs_garment_category_code, :gender_id)
   end
+  def update_user
+    current_user.update_attribute :category_id, params[:category_id]
+  end  
 end

@@ -9,7 +9,7 @@
         <ul class="list col-lg-4 col-md-4 col-sm-4">
           <li class="heading"><%=gender.gender%></li>
           <%- gender.categories.each do |category|%>
-            <li class=""><%=link_to category.garment_category, categories_path(category_id: category.id)%></li>
+            <li class="<%=current_user.category_id == category.id && "active"%>"><%=link_to category.garment_category, categories_path(category_id: category.id)%></li>
           <%end%>
         </ul>
       <%end%>
