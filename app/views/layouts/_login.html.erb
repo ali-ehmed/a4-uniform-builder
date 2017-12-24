@@ -1,5 +1,5 @@
 <ul class="login-area">
-  <li class="item1"><a href="#">Item1</a></li>
+  <li class="item1"><a href="#"><%=params[:controller].singularize%></a></li>
   <%- if current_user.try(:user_name) != "guest" && user_signed_in?%>
     <li class="signin"><%=link_to "Sign Out", :destroy_user_session, method: :delete%></li>
   <%else%>  
