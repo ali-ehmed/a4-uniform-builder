@@ -5,9 +5,10 @@ class OptionsController < ApplicationController
   end
   def index
     # @options = Option.all
-  end
+  end 
   private
   def update_user
-    current_user.update_attribute :style, params[:style]
+    params[:style]  && current_user.update_attribute(:style, params[:style])
+    params[:design] && current_user.update_attribute(:design, params[:design])
   end
 end
