@@ -5,8 +5,8 @@
         <h1>CATEGORY</h1>
       </div>
       <div class="category-btn">
-        <a href="#" class="btn btn-primary">Stock</a>
-        <a href="#" class="btn btn-default">Custom Sublimation</a>
+        <%=link_to "Stock", styles_path(category: "stock"), class: "btn btn-primary"%>
+        <%=link_to "Custom Sublimation", styles_path(category: "sublimation"), class: "btn btn-default"%>
       </div>
     </div>
   </div>

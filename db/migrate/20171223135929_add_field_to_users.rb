@@ -5,5 +5,6 @@ class AddFieldToUsers < ActiveRecord::Migration[5.1]
     add_column :users, :design, :integer
     add_column :users, :options, :integer
     add_column :users, :decoration, :integer
+    add_column :users, :category, :text
   end
 end
