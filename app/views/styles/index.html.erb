@@ -16,9 +16,9 @@
                 <span class="design-code"><%=style.style_code%></span>
                 <span class="design-name"><%=style.acs_style%></span>
                 <%-if @style_category == "stock"%>
-                  <%=link_to "More Information", options_path(style: style.id)%>
+                  <%=link_to "Select", options_path(style: style.id)%>
                 <%else%>
-                  <%=link_to "More Information", designs_path(style: style.id)%>
+                  <%=link_to "Select", designs_path(style: style.id)%>
                 <%end%>
               </div>
             </div>
