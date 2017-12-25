@@ -19,21 +19,13 @@
         </div>
         <div class="img-holder">
           <ul>
-            <li>
-              <div class="img-holder">
-                <%=link_to((image_tag "img-02.jpg", alt:"image description"),:genders)%>
-              </div>
-            </li>
-            <li>
-              <div class="img-holder">
-                <%=link_to((image_tag "img-03.jpg", alt:"image description"), :genders)%>
-              </div>
-            </li>
-            <li>
-              <div class="img-holder">
-                <%=link_to((image_tag "img-04.jpg", alt:"image description"), :genders)%>
-              </div>
-            </li>
+            <%-featured_image.each do |feature_image|%>
+              <li>
+                <div class="img-holder">
+                  <%=link_to(image_tag((feature_image.image || "img-02.jpg"), alt:"image description"),:genders(sport: feature_image.id))%>
+                </div>
+              </li>
+            <%end%>  
           </ul>
         </div>
       </div>
