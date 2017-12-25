@@ -22,7 +22,7 @@
             <%-@featured_image.each do |feature_image|%>
               <li>
                 <div class="img-holder">
-                  <%=link_to((image_tag feature_image.image||"img-02.jpg", alt:"image description"),:genders)%>
+                  <%=link_to(image_tag(feature_image.image||"img-02.jpg", alt:"image description"),genders_path(sport: feature_image.id))%>
                 </div>
               </li>
             <%end%>  
