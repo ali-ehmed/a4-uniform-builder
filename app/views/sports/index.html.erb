@@ -21,7 +21,7 @@
                   <span class="fake-input"></span>
                   <span class="fake-label">
                                 <span class="image-holder">
-                                  <%= image_tag(sport.sport_image.url) %>
+                                  <%= image_tag(sport.try(:sport_image).try(:url) || "img-02.png") %>
                                 </span>
                                 <span class="text"><%=sport.marketing_category%></span>
                               </span>
