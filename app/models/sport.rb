@@ -13,8 +13,8 @@ class Sport < ApplicationRecord
   def validate_minimum_sport_image_size
     if self.id.nil? && sport_image.try(:path).present?
       image = MiniMagick::Image.open(sport_image.path)
-      unless image[:width] > 160 && image[:height] > 160
-        errors.add :sport_image, error: "should be 160x160px minimum!"
+      unless image[:width] >= 110 && image[:height] >= 145
+        errors.add :sport_image, error: "should be 110x145px minimum!"
       end
     end
   end
