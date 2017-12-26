@@ -123,3 +123,31 @@ h1, h2, h3, h4, h5, h6 {
   height: 75px;
   margin-left: 15px;
 }
+.btn-area {
+  overflow: hidden;
+  text-align: center;
+  .btn-holder {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20.5%;
+    box-sizing: content-box;
+    margin: 0 1%;
+    height: 139px;
+    font-size: 15px;
+    text-align: center;
+    background: none;
+    border: 2px solid #868686;
+    BORDER-RADIUS: 5PX;
+    .count {
+      display: block;
+      padding: 23px 0 10px;
+      font-size: 34px;
+      line-height: 50px;
+    }
+    .text{
+      display: block;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+}
