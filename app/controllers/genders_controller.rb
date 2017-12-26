@@ -9,7 +9,7 @@ class GendersController < ApplicationController
     redirect_to :genders
   end  
   def index
-    @genders  = Gender.all
+    @gender_categories      = Sport.find_by(id: current_user.sport).categories.group_by(&:gender)
   end
   private
   def gender_params

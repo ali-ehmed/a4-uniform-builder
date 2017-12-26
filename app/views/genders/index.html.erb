@@ -5,10 +5,10 @@
         <h1>Gender</h1>
       </div>
 
-      <%- @genders.each do |gender|%>
+      <%-@gender_categories.each do |gender, categories|%>
         <ul class="list col-lg-4 col-md-4 col-sm-4">
           <li class="heading"><%=gender.gender%></li>
-          <%- gender.categories.each do |category|%>
+          <%- categories.each do |category|%>
             <li class="<%=current_user.category_id == category.id && "active"%>"><%=link_to category.garment_category, categories_path(category_id: category.id)%></li>
           <%end%>
         </ul>
