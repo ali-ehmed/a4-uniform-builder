@@ -1,20 +1,20 @@
 <div class="panel-footer row set-margin">
-  <div class="col-xs-6">
-    <div class="col-lg-3 col-md-3 btn-holder">
-      <span class="count"><%="#{Style.all.count} "%></span>
+  <div class="btn-area">
+    <div class=" btn-holder">
+      <span class="count"><%=Sport.all.count%></span>
       <span class="text">Sports</span>
     </div>
-    <div class="col-lg-3 col-md-3 btn-holder">
-      <span class="count"><%="#{Style.all.count} "%></span>
-      <span class="text">Sports</span>
+    <div class=" btn-holder">
+      <span class="count"><%=Style.where(style_category: "Stock").count%></span>
+      <span class="text">Stock Styles</span>
     </div>
-    <div class="col-lg-3 col-md-3 btn-holder">
-      <span class="count"><%="#{Style.all.count} "%></span>
-      <span class="text">Sports</span>
+    <div class="btn-holder">
+      <span class="count"><%=Style.where(style_category: "Sublimation").count%></span>
+      <span class="text">Sublimation Styles</span>
     </div>
-    <div class="col-lg-3 col-md-3 btn-holder">
-      <span class="count"><%="#{Style.all.count} "%></span>
-      <span class="text">Sports</span>
+    <div class="btn-holder">
+      <span class="count"><%=Decoration.all.count%></span>
+      <span class="text">Decorations</span>
     </div>
 
   </div>
