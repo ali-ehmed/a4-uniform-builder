@@ -242,10 +242,10 @@ body.home-page{
     overflow: hidden;
 }
 .custom-container {
-    padding-left: 9%;
-    margin-bottom: 50px;
-}
-.content h1 {
+  padding-left: 9%;
+  text-align: center;
+  margin-bottom: 50px;
+}.content h1 {
     font-size: 33px;
     line-height: 43px;
     position: relative;
@@ -413,13 +413,14 @@ body.home-page{
     margin: 0 0 60px;
 }
 .list {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: 'robotocondensed';
-}
-.list li {
+  text-align: center;
+  margin: 0;
+  width: 33%;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+  font-family: 'robotocondensed';
+}.list li {
     text-transform: uppercase;
     font-size: 23px;
     line-height: 26px;
@@ -457,7 +458,7 @@ body.home-page{
 }
 .nice-form .fake-input ,
 .nice-form label {
-    float: right;
+    //float: right;
 }
 .nice-form .fake-input{
     display: inline-block;
@@ -465,25 +466,26 @@ body.home-page{
     height:25px;
     vertical-align: middle;
     position: relative;
+    left: 95px;
     background: transparent;
 }
 .fake-label {
     text-align: center;
     display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -85px;
-    margin-left: -60px;
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+    //margin-top: -85px;
+    //margin-left: -60px;
 }
 .fake-label .image-holder {
-    height: 144px;
-    width: 110px;
+    //height: 144px;
+    width: 100%;
     display: block;
     margin: 0 auto 20px;
 }
 .fake-label .image-holder img {
-    width: auto;
+    width: 100%;
     height: auto;
     display: inline-block;
     vertical-align: middle;
@@ -547,7 +549,7 @@ body.home-page{
 .card-area {
     background: #e6e7e8;
     padding: 10px;
-    min-height: 245px;
+    min-height: 270px;
     margin-bottom: 20px;
 }
 /*category page styles*/
