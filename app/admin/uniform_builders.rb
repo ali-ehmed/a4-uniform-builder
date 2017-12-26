@@ -7,7 +7,7 @@ ActiveAdmin.register UniformBuilder,as: "View Unifrom Builder" do
 		f.inputs "Details" do
 			f.input :style_id, as: :select,  collection: Style.all.collect{|style| [style.name, style.id]}
 			f.input :sport_id, as: :select,  collection: Sport.all.collect{|sport| [sport.sport_name, sport.id]}
-			f.input :color_id, as: :select,  collection: Color.all.collect{|color| [color.color, color.id]}
+			f.input :color_id, as: :select,  collection: Color.all.collect{|color| [color.color_type, color.id]}
 			f.input :gender_id, as: :select, collection: Gender.all.collect{|gender| [gender.name, gender.id]}
 			f.input :category
 			f.input :type
