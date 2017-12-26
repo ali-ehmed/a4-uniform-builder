@@ -394,6 +394,9 @@ body.home-page{
     position: relative;
     z-index: 9;
 }
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+  border: 1px solid Transparent;
+}
 .main-heading{
     width: 100%;
     overflow: hidden;
