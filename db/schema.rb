@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226063615) do
+ActiveRecord::Schema.define(version: 20171226080106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -321,7 +321,7 @@ ActiveRecord::Schema.define(version: 20171226063615) do
     t.integer "sport_id"
     t.string "category"
     t.integer "gender_id"
-    t.string "type"
+    t.string "uniform_type"
     t.string "photo"
     t.string "color_id"
     t.integer "placement_id"

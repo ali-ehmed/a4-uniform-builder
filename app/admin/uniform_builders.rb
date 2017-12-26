@@ -1,5 +1,5 @@
 ActiveAdmin.register UniformBuilder,as: "View Unifrom Builder" do
-	permit_params :style_id, :sport_id, :category, :gender_id, :type, :photo, :color_id, :placement_id
+	permit_params :style_id, :sport_id, :category, :gender_id, :uniform_type, :photo, :color_id, :placement_id
 	menu parent: "Uniform Builder"
 
 
@@ -10,7 +10,7 @@ ActiveAdmin.register UniformBuilder,as: "View Unifrom Builder" do
 			f.input :color_id, as: :select,  collection: Color.all.collect{|color| [color.color_type, color.id]}
 			f.input :gender_id, as: :select, collection: Gender.all.collect{|gender| [gender.gender, gender.id]}
 			f.input :category
-			f.input :type
+			f.input :uniform_type
 			f.input :placement_id
 			f.input :photo
 		end
@@ -25,7 +25,7 @@ ActiveAdmin.register UniformBuilder,as: "View Unifrom Builder" do
 		column :color_id
 		column :gender_id
 		column :category
-		column :type
+		column :uniform_type
 		column :placement_id
 		column :photo
 
