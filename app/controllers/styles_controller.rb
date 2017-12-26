@@ -5,7 +5,7 @@ class StylesController < ApplicationController
   end
   def index
     @style_category = params[:category]  
-    @styles         = Style.all
+    @styles         = Style.where(style_category: @style_category)
   end
   private
   def style_options_params
