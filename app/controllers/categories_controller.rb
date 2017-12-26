@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
   end
   private
   def category_params
-    params.require(:category).permit(:garment_category, :acs_garment_category_description, :acs_garment_category_code, :gender_id)
+    params.require(:category).permit(:garment_category, :acs_garment_category_description, :acs_garment_category_code, :gender_id, sports: [])
   end
   def update_user
     current_user.update_attribute :category_id, params[:category_id]

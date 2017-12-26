@@ -13,7 +13,7 @@ ActiveAdmin.register Style do
       f.input :style_features
 
 
-      f.input :sport_id, as: :select, collection: Sport.all.collect{|sport| [sport.marketing_category , sport.id]}
+      f.input :sport_id, as: :select, collection: Sport.all.collect{|sport| [sport.sport_name , sport.id]}
       f.input :gender_id, as: :select, collection: Gender.all.collect{|gender| [gender.gender, gender.id]}
       f.input :category_id, as: :select, collection: Category.all.collect{|category| [category.garment_category, category.id]}
 

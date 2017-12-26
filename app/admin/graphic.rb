@@ -8,7 +8,7 @@ ActiveAdmin.register Graphic do
   form do |f|
     f.inputs "Details" do
       f.input :gender_id,as: :select,     collection:  Gender.all.collect{|gender| [gender.gender, gender.id]}
-      f.input :sport_id,as: :select,      collection:  Sport.all.collect{|sport| [sport.marketing_category, sport.id]}
+      f.input :sport_id,as: :select,      collection:  Sport.all.collect{|sport| [sport.sport_name, sport.id]}
       f.input :decoration_id,as: :select, collection:  Decoration.all.collect{|decoration| [decoration.code,decoration.id]}
       f.input :placement_id,as: :select, collection:  Placement.all.collect{|placement| [placement.code,placement.id]}
       f.input :category
