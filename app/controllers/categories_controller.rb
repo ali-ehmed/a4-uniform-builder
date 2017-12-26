@@ -12,6 +12,6 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:garment_category, :acs_garment_category_description, :acs_garment_category_code, :gender_id, sport_ids: [])
   end
   def update_user
-    current_user.update_attribute :category_id, params[:category_id]
+    params[:category_id] && current_user.update_attribute(:category_id, params[:category_id])
   end  
 end

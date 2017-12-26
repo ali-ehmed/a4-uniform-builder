@@ -14,6 +14,6 @@ class StylesController < ApplicationController
   end
 
   def update_user
-    current_user.update_attribute :category, params[:category]
+    params[:category] && current_user.update_attribute(:category, params[:category])
   end
 end
