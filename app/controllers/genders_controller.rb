@@ -21,8 +21,6 @@ class GendersController < ApplicationController
     @request && update_data(params[:sport]) || (params[:sport] && update_data(params[:sport][:id]))
   end
   def update_data sport_id
-    @sport    = Sport.find_by_id(sport_id)
-    @request ||  @sport.update_attribute(:is_selected, true)
-    current_user.update_attribute(:sport, sport_id)
+    current_user.update_attributes(sport: sport_id)
   end
 end
