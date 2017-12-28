@@ -7,9 +7,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12">
           <div class="options-btn">
-            <a href="#" class="btn btn-default">Save</a>
-            <a href="#" class="btn btn-primary">Place Order</a>
-            <a href="#" class="btn btn-default">Share</a>
+            <%=link_to "Save",  "", class: "btn btn-default"%>
+            <%=link_to "Place Order", "",class: "btn btn-primary"%>
+            <%=link_to "Share", "",class: "btn btn-default"%>
           </div>
           <div class="row">
             <div class="col-lg-6 col-md-6">
@@ -19,7 +19,7 @@
                 <span class="corner3"></span>
                 <span class="corner4"></span>
                 <div class="image-holder">
-                  <%=image_tag "img-13.png"%>
+                  <%=image_tag(@style.front.url || "img-13.png")%>
                 </div>
                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
@@ -37,7 +37,7 @@
                 <span class="corner3 active"></span>
                 <span class="corner4 active"></span>
                 <div class="image-holder">
-                  <%=image_tag "img-14.png"%>
+                  <%=image_tag(@style.back.url || "img-14.png")%>
                 </div>
                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
@@ -51,8 +51,8 @@
           </div>
           <div class="tile-view">
             <ul>
-              <li><a class="active" href="#"><%=image_tag "img-14samall.png"%></a><span class="tile-view-text">front</span></li>
-              <li><a href="#"><%=image_tag "img-13samall.png"%></a><span class="tile-view-text">Back</span></li>
+              <li><a class="active" href="#"><%=image_tag(@style.front.url || "img-14samall.png")%></a><span class="tile-view-text">front</span></li>
+              <li><a href="#"><%=image_tag(@style.back.url || "img-13samall.png")%></a><span class="tile-view-text">Back</span></li>
             </ul>
           </div>
           <div class="table-responsive table-area">
