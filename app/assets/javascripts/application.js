@@ -16,4 +16,6 @@
 //= require bootstrap
 //= require home
 //= require sports.js.coffee
+//= require jquery.elevatezoom
+//= require jquery.elevateZoom-3.0.8.min
 //= require_tree .

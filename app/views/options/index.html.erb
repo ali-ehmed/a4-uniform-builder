@@ -19,16 +19,16 @@
                 <span class="corner3"></span>
                 <span class="corner4"></span>
                 <div class="image-holder">
-                  <%=image_tag(@style.front.url || "img-13.png")%>
-                </div>
-                <div class="scale">
+                  <%=image_tag(@style.front.url || "img-13.png", id: "zoom_front", data:{ zoom_image: @style.front.url})%>
+                </div>  
+<!--                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
                   <span href="#" class="scalslide">
                                           <a href="#" class="slidebtn"></a>
                                       </span>
                   <a href="#" class="scaltext">-</a>
                 </div>
-              </div>
+ -->              </div>
             </div>
             <div class="col-lg-6 col-md-6">
               <div class="box">
@@ -37,16 +37,16 @@
                 <span class="corner3 active"></span>
                 <span class="corner4 active"></span>
                 <div class="image-holder">
-                  <%=image_tag(@style.back.url || "img-14.png")%>
+                  <%=image_tag(@style.back.url || "img-14.png", id: "zoom_back", data:{ zoom_image: @style.back.url})%>
                 </div>
-                <div class="scale">
+<!--                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
                   <span href="#" class="scalslide">
                                           <a href="#" class="slidebtn"></a>
                                       </span>
                   <a href="#" class="scaltext">-</a>
                 </div>
-              </div>
+ -->              </div>
             </div>
           </div>
           <div class="tile-view">
@@ -209,3 +209,8 @@
   </div>
 </main>
 </div>
+<script>
+    var $j = jQuery.noConflict();
+      $('#zoom_back').elevateZoom();
+      $('#zoom_front').elevateZoom();
+</script>
