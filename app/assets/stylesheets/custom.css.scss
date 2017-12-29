@@ -1160,6 +1160,54 @@ body.home-page{
     display: block;
     margin-bottom: 10px;
 }
+.color-pelat{
+  margin: 0;
+  padding:0;
+  list-style:none;
+  overflow: hidden;
+}
+.color-pelat li{
+  float: left;
+  width: 25px;
+  height: 20px;
+  border:1px solid #ccc;
+  margin: 0 2px 2px;
+}
+.color-pelat.two-tile li{
+  width: 50px;
+}
+.color-pelat.two-tile li .col{
+  float: left;
+  width: 24px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #fff;
+}
+.color-pelat.three-tile li{
+  width: 77px;
+}
+.color-pelat.three-tile li .col{
+  float: left;
+  width: 25px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #fff;
+}
+
+
+.bg-blue{
+  background: #2b669a;
+}
+.bg-red{
+  background: #761c19;
+}
+.bg-green{
+  background: green;
+}
 
 /*media query*/
 @media only screen and (max-width: 1200px) {
