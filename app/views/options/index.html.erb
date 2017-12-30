@@ -18,9 +18,9 @@
                 <span class="corner2"></span>
                 <span class="corner3"></span>
                 <span class="corner4"></span>
-                <div class="image-holder">
-                  <%=render partial: "svg_code"%>
-                  <%#=image_tag(@style.front.url || "img-13.png",class:"svg-convert")%>
+                <div class="image-holder" id="zoom_front" data-zoom-image="<%@style.try(:front).try(:url)%>">
+                  <%#=render partial: "svg_code"%>
+                  <%=show_svg(@style.try(:front).try(:url)) if @style.try(:front)%>
                 </div>  
 <!--                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
@@ -37,8 +37,9 @@
                 <span class="corner2 active"></span>
                 <span class="corner3 active"></span>
                 <span class="corner4 active"></span>
-                <div class="image-holder">
-                  <%=image_tag(@style.back.url || "img-14.png", id: "zoom_back", data:{ zoom_image: @style.back.url})%>
+                <div class="image-holder" id="zoom_back" data-zoom-image="<%@style.try(:front).try(:url)%>">
+                  <%=show_svg(@style.try(:back).try(:url)) if @style.try(:back)%>
+                  <%#=image_tag(@style.back.url || "img-14.png", id: "zoom_back", data:{ zoom_image: @style.back.url})%>
                 </div>
 <!--                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
@@ -52,8 +53,8 @@
           </div>
           <div class="tile-view">
             <ul>
-              <li><a class="active" href="#"><%=image_tag(@style.front.url || "img-14samall.png")%></a><span class="tile-view-text">front</span></li>
-              <li><a href="#"><%=image_tag(@style.back.url || "img-13samall.png")%></a><span class="tile-view-text">Back</span></li>
+              <li><a class="active" href="#"><%=image_tag(@style.try(:front).try(:url) || "img-14samall.png")%></a><span class="tile-view-text">front</span></li>
+              <li><a href="#"><%=image_tag(@style.try(:back).try(:url) || "img-13samall.png")%></a><span class="tile-view-text">Back</span></li>
             </ul>
           </div>
           <div class="table-responsive table-area">
@@ -129,35 +130,35 @@
 
                   <ul class="color-pelat">
 
-                    <li class="bg-blue"></li>
-                    <li class="bg-blue"></li>
-                    <li class="bg-blue"></li>
-                    <li class="bg-blue"></li>
-                    <li class="bg-blue"></li>
+                    <li data-color="blue" class="bg-blue" id="one_tile"></li>
+                    <li data-color="green" class="bg-green" id="one_tile"></li>
+                    <li data-color="red" class="bg-red" id="one_tile"></li>
+                    <li data-color="black" class="bg-black" id="one_tile"></li>
+                    <li data-color="white" class="bg-white" id="one_tile"></li>
                   </ul>
 
 
                   <ul class="color-pelat two-tile">
 
-                    <li class="">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
+                    <li class="" id="two_tiles">
+                      <div class="col bg-red" data-color-1="red">RE</div>
+                      <div class="col bg-blue" data-color-2="blue">BL </div>
                     </li>
-                    <li class="">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
+                    <li class="" id="two_tiles">
+                      <div class="col bg-blue" data-color-1="blue">BL</div>
+                      <div class="col bg-red" data-color-2="red">RE </div>
                     </li>
-                    <li class="">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
+                    <li class="" id="two_tiles">
+                      <div class="col bg-blue" data-color-1="blue">BL</div>
+                      <div class="col bg-green" data-color-2="green">GR </div>
                     </li>
-                    <li class="">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
+                    <li class="" id="two_tiles">
+                      <div class="col bg-blue" data-color-1="blue">BL</div>
+                      <div class="col bg-black" data-color-2="black">BK </div>
                     </li>
-                    <li class="">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
+                    <li class="" id="two_tiles">
+                      <div class="col bg-blue" data-color-1="blue">BL</div>
+                      <div class="col bg-white" data-color-1="white">WH </div>
                     </li>
                   </ul>
                   <ul class="color-pelat three-tile">
@@ -257,5 +258,4 @@
     var $j = jQuery.noConflict();
       $('#zoom_back').elevateZoom();
       $('#zoom_front').elevateZoom();
-    <src="javascript/svg-convert.js">
 </script>
