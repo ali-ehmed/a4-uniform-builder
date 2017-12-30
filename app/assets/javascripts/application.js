@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//=	require svg-convert.js
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
@@ -20,4 +19,5 @@
 //=	require options.js.coffee
 //= require jquery.elevatezoom
 //= require jquery.elevateZoom-3.0.8.min
+//=	require svg-convert.js
 //= require_tree .

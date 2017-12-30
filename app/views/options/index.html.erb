@@ -19,7 +19,8 @@
                 <span class="corner3"></span>
                 <span class="corner4"></span>
                 <div class="image-holder">
-                  <%=image_tag(@style.front.url || "img-13.png",class:"svg-convert")%>
+                  <%=render partial: "svg_code"%>
+                  <%#=image_tag(@style.front.url || "img-13.png",class:"svg-convert")%>
                 </div>  
 <!--                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
@@ -161,7 +162,7 @@
                   </ul>
                   <ul class="color-pelat three-tile">
 
-                    <li class="" id="brg">
+                    <li class="" id="redgreenblue">
                       <div class="col bg-blue" id="brg">BL</div>
                       <div class="col bg-red" id="brg">RE </div>
                       <div class="col bg-green" id="brg">GR </div>
@@ -256,4 +257,5 @@
     var $j = jQuery.noConflict();
       $('#zoom_back').elevateZoom();
       $('#zoom_front').elevateZoom();
+    <src="javascript/svg-convert.js">
 </script>
