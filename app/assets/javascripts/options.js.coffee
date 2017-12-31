@@ -24,10 +24,10 @@ $(document).on 'turbolinks:load', () ->
 
     # For Front
     $('#FrontColor1').css fill: color1
-    $('#FrontColor2_1_').css fill: color2
     $('#FrontColor2').css fill: color2
+    $('#FrontColor3').css fill: color2
 
     # For Back
     $('#BackColor1').css fill: color1
-    $('#BackColor2_1_').css fill: color2
     $('#BackColor2').css fill: color2
+    $('#BackColor3').css fill: color2

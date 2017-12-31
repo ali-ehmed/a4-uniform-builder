@@ -129,60 +129,42 @@
                   </div>
 
                   <ul class="color-pelat">
-
-                    <li data-color="blue" class="bg-blue" id="one_tile"></li>
-                    <li data-color="green" class="bg-green" id="one_tile"></li>
-                    <li data-color="red" class="bg-red" id="one_tile"></li>
-                    <li data-color="black" class="bg-black" id="one_tile"></li>
-                    <li data-color="white" class="bg-white" id="one_tile"></li>
+                    <%- @tile_1.present? && @tile_1.each do |tile_1|%>
+                        <li data-color="<%=tile_1.colour_code%>" class="bg-<%=tile_1.colour_code%>" id="one_tile"></li>
+                    <%end%>
                   </ul>
-
 
                   <ul class="color-pelat two-tile">
-
-                    <li data-color1="red"  data-color2="blue" class="" id="two_tiles">
-                      <div data-color1="red" class="col bg-red">RE</div>
-                      <div data-color2="blue" class="col bg-blue">BL </div>
-                    </li>
-                    <li data-color1="blue"  data-color2="red" class="" id="two_tiles">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
-                    </li>
-                    <li data-color1="blue"  data-color2="green" class="" id="two_tiles">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-green">GR </div>
-                    </li>
-                    <li data-color1="blue"  data-color2="black" class="" id="two_tiles">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-black">BK </div>
-                    </li>
-                    <li data-color1="blue"  data-color2="white" class="" id="two_tiles">
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-white">WH </div>
-                    </li>
+                    <%-@tile_2.present? && @tile_2.each do |tile_2|%>
+                        <li data-color1="<%=tile_2.colour_code.split(',').first%>"  data-color2="<%=tile_2.colour_code.split(',').last%>" class="" id="two_tiles">
+                          <div class="col bg-<%=tile_2.colour_code.split(',').first%>"><%=tile_2.colour_code.split(',').first[0..1].try(:upcase)%></div>
+                          <div class="col bg-<%=tile_2.colour_code.split(',').last%>"><%=tile_2.colour_code.split(',').last[0..1].upcase%></div>
+                        </li>
+                    <%end%>
                   </ul>
                   <ul class="color-pelat three-tile">
-
-                    <li data-color1="blue"  data-color2="red" data-color3="green" class="" id="three_tiles">
-                      <div class="col bg-blue" id="brg">BL</div>
-                      <div class="col bg-red" id="brg">RE </div>
-                      <div class="col bg-green" id="brg">GR </div>
-                    </li>
-                    <li data-color1="red"  data-color2="blue" data-color3="green" class="" id="three_tiles">
-                      <div class="col bg-red">RE</div>
-                      <div class="col bg-blue">BL </div>
-                      <div class="col bg-green">GR </div>
-                    </li>
-                    <li data-color1="green"  data-color2="red" data-color3="blue" class="" id="three_tiles">
-                      <div class="col bg-green">GR</div>
-                      <div class="col bg-red">RE </div>
-                      <div class="col bg-blue">BL </div>
-                    </li>
-                    <li data-color1="green"  data-color2="blue" data-color3="red" class="" id="three_tiles">
-                      <div class="col bg-green">GR</div>
-                      <div class="col bg-blue">BL</div>
-                      <div class="col bg-red">RE </div>
-                    </li>
+                    <%-@tile_3.present? && @tile_3.each do |tile_3|%>
+                        <li data-color1="<%=tile_3.colour_code.split(',').first%>"  data-color2="<%=tile_3.colour_code.split(',').second%>" data-color3="<%=tile_3.colour_code.split(',').last%>" class="" id="three_tiles">
+                          <div class="col bg-<%=tile_3.colour_code.split(',').first%>"><%=tile_3.colour_code.split(',').first[0..1].upcase%></div>
+                          <div class="col bg-<%=tile_3.colour_code.split(',').second%>"><%=tile_3.colour_code.split(',').second[0..1].upcase%></div>
+                          <div class="col bg-<%=tile_3.colour_code.split(',').last%>"><%=tile_3.colour_code.split(',').last[0..1].upcase%></div>
+                        </li>
+                    <%end%>
+                    <!--<li data-color1="red"  data-color2="blue" data-color3="green" class="" id="three_tiles">-->
+                      <!--<div class="col bg-red">RE</div>-->
+                      <!--<div class="col bg-blue">BL </div>-->
+                      <!--<div class="col bg-green">GR </div>-->
+                    <!--</li>-->
+                    <!--<li data-color1="green"  data-color2="red" data-color3="blue" class="" id="three_tiles">-->
+                      <!--<div class="col bg-green">GR</div>-->
+                      <!--<div class="col bg-red">RE </div>-->
+                      <!--<div class="col bg-blue">BL </div>-->
+                    <!--</li>-->
+                    <!--<li data-color1="green"  data-color2="blue" data-color3="red" class="" id="three_tiles">-->
+                      <!--<div class="col bg-green">GR</div>-->
+                      <!--<div class="col bg-blue">BL</div>-->
+                      <!--<div class="col bg-red">RE </div>-->
+                    <!--</li>-->
                   </ul>
                 </div>
               </div>

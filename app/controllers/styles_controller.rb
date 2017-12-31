@@ -10,7 +10,7 @@ class StylesController < ApplicationController
   private
   def style_options_params
     params.require(:style).permit(:style_code,:acs_style,:sport_id,:gender_id,:style_category,:color_description,:category_id,
-                                  :style_features,:front,:back, :thumbnail,colors: [], sizes: [],placements: [],decorations:[])
+                                  :style_features,:front,:back, :thumbnail,color_ids: [], sizes: [],placements: [],decorations:[])
   end
 
   def update_user

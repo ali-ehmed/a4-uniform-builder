@@ -1,17 +1,23 @@
 ActiveAdmin.register Color do
-  permit_params :color_code, :color_type, :color_description, :md_no, :pms_no, :image
+  permit_params :colour_code, :color_type, :colour_descriptions, :md_no, :pms_no, :is_tile_one, :is_tile_two,
+                :is_tile_three, :heat_transfer, :screen_print, :tackle_twill, :hex_code
   menu parent: "Uniform Builder"
 
 
   form do |f|
     f.inputs "Details" do
-      f.input :text_id, as: :select, collection: Text.all.collect{|text| [text.text_type, text.id]}
-      f.input :color_code
-      f.input :color_type
+      f.input :is_tile_one
+      f.input :is_tile_two
+      f.input :is_tile_three
+      f.input :heat_transfer
+      f.input :screen_print
+      f.input :tackle_twill
+      f.input :colour_code
+      f.input :hex_code
       f.input :md_no
       f.input :pms_no
-      f.input :image
-      f.input :color_description
+      f.input :colour_descriptions
+      f.input :text_id, as: :select, collection: Text.all.collect{|text| [text.text_type, text.id]}
     end
     f.actions
   end

@@ -56,8 +56,6 @@ ActiveRecord::Schema.define(version: 20171231090027) do
   end
 
   create_table "colors", force: :cascade do |t|
-    t.string "color_code"
-    t.string "color_description"
     t.string "md_no"
     t.string "pms_no"
     t.integer "text_id"
@@ -67,6 +65,8 @@ ActiveRecord::Schema.define(version: 20171231090027) do
     t.boolean "is_tile_two"
     t.boolean "is_tile_three"
     t.string "hex_code"
+    t.text "colour_descriptions"
+    t.string "colour_code"
     t.boolean "heat_transfer"
     t.boolean "screen_print"
     t.boolean "tackle_twill"

@@ -1,6 +1,6 @@
 ActiveAdmin.register Style do
   permit_params :style_code,:acs_style,:sport_id,:gender_id,:style_category,:color_description,:category_id,
-  :style_features,:front,:back, :thumbnail,colors: [], sizes: [],placements: [],decorations:[]
+  :style_features,:front,:back, :thumbnail,color_ids: [], sizes: [],placements: [],decorations:[]
   menu parent: "Uniform Builder"
 
 
@@ -21,31 +21,49 @@ ActiveAdmin.register Style do
       f.input :front
       f.input :back
       f.input :thumbnail
-
-      
-      f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.color_type, color.id]}
-
-      f.input :sizes,as: :check_boxes, collection: Size.all.collect{|size| [size.size, size.id]}
-
-      f.input :placements,as: :check_boxes, collection: Placement.all.collect{|placement| [placement.code, placement.id]}
-
-      f.input :decorations,as: :check_boxes, collection: Decoration.all.collect{|decoration| [decoration.code, decoration.id]}
-      # f.input :color_id, as: :select, collection:  Color.all.collect{|color| [color.color_type, color.id]}, multiple:true
-      # f.input :placement_id, as: :select, collection:  Placement.all.collect{|placement| [placement.code, placement.id]}, multiple:true
-      # f.input :decoration_id, as: :select, collection:  Decoration.all.collect{|decoration| [decoration.code, decoration.id]}, multiple:true
-
-      # f.has_many :colors do |a|
-      #   a.inputs "Method" do
-      #     a.input :size_id, as: :select, collection:      Size.all.collect{|size| [size.size, size.id]}, multiple:true
-      #   end
-      # end
-
-      # f.has_many :sizes do |a|
-      #   a.inputs "Method" do
-      #     a.input :code
-      # end
-
     end
+    panel "Sizes" do
+      f.input :sizes,as: :check_boxes, collection: Size.all.collect{|size| [size.size, size.id]}
+    end
+    panel "Placements" do
+      f.input :placements,as: :check_boxes, collection: Placement.all.collect{|placement| [placement.code, placement.id]}
+    end
+    panel "Decorations" do
+      f.input :decorations,as: :check_boxes, collection: Decoration.all.collect{|decoration| [decoration.code, decoration.id]}
+    end
+    panel "Tiles" do
+      div class: 'panel' do
+        div class: 'colors_table' do
+          table do
+            tr do
+              th 'Tile 1'
+              th 'Tile 2'
+              th 'Tile 3'
+            end
+
+            td do
+              f.input :color_ids, as: :select,label: false, collection: Color.where(is_tile_one: true).collect{|color| [color.colour_code, color.id]}, multiple: true
+            end
+            td do
+              f.input :color_ids, as: :select, label: false, collection: Color.where(is_tile_two: true).collect{|color| [color.colour_code, color.id]}, multiple: true
+            end
+            td do
+              f.input :color_ids, as: :select, label: false, collection: Color.where(is_tile_three: true).collect{|color| [color.colour_code, color.id]}, multiple: true
+            end
+          end
+        end
+      end
+    end
+    # column :color_ids, label: "Select Tile 1",as: :check_boxes, collection: Color.where(is_tile_one: true).collect{|color| [color.colour_code, color.id]}
+    # column :color_ids, label: "Select Tile 2",as: :check_boxes, collection: Color.where(is_tile_two: true).collect{|color| [color.colour_code, color.id]}
+    # column :color_ids, label: "Select Tile 3",as: :check_boxes, collection: Color.where(is_tile_three:true).collect{|color| [color.colour_code, color.id]}
+    # panel "Tiles" do
+    #   attributes_table_for partner do
+    #     row :partner_terms_of_use_url
+    #     row :partner_privacy_policy_url
+    #   end
+    # end
+
     f.actions
   end
 end
