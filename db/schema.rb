@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226080106) do
+ActiveRecord::Schema.define(version: 20171231090027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,14 +57,19 @@ ActiveRecord::Schema.define(version: 20171226080106) do
 
   create_table "colors", force: :cascade do |t|
     t.string "color_code"
-    t.string "color_type"
     t.string "color_description"
     t.string "md_no"
     t.string "pms_no"
-    t.string "image"
     t.integer "text_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_tile_one"
+    t.boolean "is_tile_two"
+    t.boolean "is_tile_three"
+    t.string "hex_code"
+    t.boolean "heat_transfer"
+    t.boolean "screen_print"
+    t.boolean "tackle_twill"
   end
 
   create_table "decorations", force: :cascade do |t|
