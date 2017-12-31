@@ -32,23 +32,24 @@ ActiveAdmin.register Style do
       f.input :decorations,as: :check_boxes, collection: Decoration.all.collect{|decoration| [decoration.code, decoration.id]}
     end
     panel "Tiles" do
+      f.input :color_tiles, as: :select,id: "tiles_show_hide", collection: ["1 Tile", "2 Tiles", "3 Tiles"], :selected => '3 Tiles'
       div class: 'panel' do
         div class: 'colors_table' do
           table do
             tr do
-              th 'Tile 1'
-              th 'Tile 2'
-              th 'Tile 3'
+              th 'Tile 1', id: "one_tile_th"
+              th 'Tile 2', id: "two_tile_th"
+              th 'Tile 3', id: "three_tile_th"
             end
 
-            td do
-              f.input :color_ids, as: :select,label: false, collection: Color.where(is_tile_one: true).collect{|color| [color.colour_code, color.id]}, multiple: true
+            td id: "one_tile" do
+              f.input :color_ids, as: :check_boxes,label: false,collection: Color.where(is_tile_one: true).collect{|color| [color.colour_code, color.id]}
             end
-            td do
-              f.input :color_ids, as: :select, label: false, collection: Color.where(is_tile_two: true).collect{|color| [color.colour_code, color.id]}, multiple: true
+            td id: "two_tile" do
+              f.input :color_ids, as: :check_boxes, label: false, collection: Color.where(is_tile_two: true).collect{|color| [color.colour_code, color.id]}
             end
-            td do
-              f.input :color_ids, as: :select, label: false, collection: Color.where(is_tile_three: true).collect{|color| [color.colour_code, color.id]}, multiple: true
+            td id: "three_tile" do
+              f.input :color_ids, as: :check_boxes, label: false, collection: Color.where(is_tile_three: true).collect{|color| [color.colour_code, color.id]}
             end
           end
         end
