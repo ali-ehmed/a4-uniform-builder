@@ -5,7 +5,7 @@ class StylesController < ApplicationController
   end
   def index
     @style_category = params[:category]  
-    @styles         = Style.where(style_category: @style_category)
+    @styles         = style.where(style_category: @style_category)
   end
   private
   def style_options_params
@@ -15,5 +15,9 @@ class StylesController < ApplicationController
 
   def update_user
     params[:category] && current_user.update_attribute(:category, params[:category])
+  end
+
+  def style
+    Sport.find_by_id(current_user.sport).styles
   end
 end
