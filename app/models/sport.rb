@@ -4,9 +4,11 @@ class Sport < ApplicationRecord
 
   has_many 	  :uniform_builders
   has_many 	  :colors
-  has_many	  :styles
   has_many    :sport_categories
   has_many    :categories, through: :sport_categories
+
+  has_many    :style_sports
+  has_many    :styles, through: :style_sports
 
   validate    :validate_minimum_sport_image_size
 

@@ -151,6 +151,21 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+.stylecheckBox{
+  overflow: hidden;
+  li{
+    float: left;
+    overflow: hidden;
+    label{
+      float: left;
+      width: auto;
+      input[type="checkbox"]{
+        float: left;
+        margin: 1px 4px 0 0;
+      }
+    }
+  }
+}
 //label {
 //  display: inline-block;
 //  width: auto;

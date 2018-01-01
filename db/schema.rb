@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171231162126) do
+ActiveRecord::Schema.define(version: 20180101082111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -245,10 +245,16 @@ ActiveRecord::Schema.define(version: 20171231162126) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "style_sports", force: :cascade do |t|
+    t.integer "sport_id"
+    t.integer "style_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "styles", force: :cascade do |t|
     t.string "style_code"
     t.string "acs_style"
-    t.integer "sport_id"
     t.integer "gender_id"
     t.string "style_category"
     t.text "color_description"

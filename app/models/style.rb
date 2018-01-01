@@ -15,4 +15,9 @@ class Style < ApplicationRecord
 
 	has_many	:style_placements
 	has_many	:placements, through: :style_placements
+
+
+	has_many    :style_sports
+	has_many    :sports, through: :style_sports
+
 end

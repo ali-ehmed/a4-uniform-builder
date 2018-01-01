@@ -1,6 +1,6 @@
 ActiveAdmin.register Style do
-  permit_params :style_code,:acs_style,:sport_id,:gender_id,:style_category,:color_description,:category_id,
-  :style_features,:front,:back, :thumbnail,color_ids: [], sizes: [],placements: [],decorations:[]
+  permit_params :style_code,:acs_style,:gender_id,:style_category,:color_description,:category_id,
+  :style_features,:front,:back, :thumbnail,color_ids: [], sizes: [],placements: [],decorations:[], sport_ids: []
   menu parent: "Uniform Builder"
 
 
@@ -13,7 +13,7 @@ ActiveAdmin.register Style do
       f.input :style_features
 
 
-      f.input :sport_id, as: :select, collection: Sport.all.collect{|sport| [sport.sport_name , sport.id]}
+      #f.input :sport_id, as: :select, collection: Sport.all.collect{|sport| [sport.sport_name , sport.id]}
       f.input :gender_id, as: :select, collection: Gender.all.collect{|gender| [gender.gender, gender.id]}
       f.input :category_id, as: :select, collection: Category.all.collect{|category| [category.garment_category, category.id]}
 
@@ -50,6 +50,18 @@ ActiveAdmin.register Style do
             end
             td id: "three_tile" do
               f.input :color_ids, as: :check_boxes, label: false, collection: Color.where(is_tile_three: true).collect{|color| [color.colour_code, color.id]}
+            end
+          end
+        end
+      end
+    end
+
+    panel "Sports" do
+      div class: 'panel' do
+        div class: 'sports_table' do
+          ul class: "stylecheckBox" do
+            li class: "" do
+              f.input :sport_ids, as: :check_boxes,label: false,collection: Sport.all.collect{|sport| [sport.sport_name, sport.id]}
             end
           end
         end
