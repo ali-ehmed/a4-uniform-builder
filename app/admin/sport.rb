@@ -4,5 +4,13 @@ ActiveAdmin.register Sport do
   action_item :add, only: :show do
     link_to "New Sport", :new_admin_sport
   end
-
+  form do |f|
+    f.inputs "Details" do
+      f.input :is_featured
+      f.input :sport_name
+      f.input :image
+      f.input :sport_image
+    end
+    f.actions
+  end
 end
