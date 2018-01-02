@@ -2,6 +2,10 @@ ActiveAdmin.register Category do
   permit_params :garment_category, :acs_garment_category_description, :acs_garment_category_code, :gender_id, sports: [], sport_ids: []
   menu parent: "Uniform Builder"
 
+  action_item :add, only: :show do
+    link_to "New Category", :new_admin_category
+  end
+
 
   form do |f|
     f.inputs "Details" do

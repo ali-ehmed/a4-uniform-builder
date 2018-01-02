@@ -3,6 +3,10 @@ ActiveAdmin.register Text do
                 :decsription, style_methods: [], fonts: [], colors: []
   menu parent: "Uniform Builder"
 
+  action_item :add, only: :show do
+    link_to "New Text", :new_admin_text
+  end
+
 
   form do |f|
     f.inputs "Details" do
@@ -19,7 +23,7 @@ ActiveAdmin.register Text do
       f.input :decsription
       f.input :style_methods,as: :check_boxes, collection: StyleMethod.all.collect{|s_m| [s_m.code,s_m.id]}
       f.input :fonts,as: :check_boxes, collection: Font.all.collect{|font| [font.font, font.id]}
-      f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.color_type, color.id]}
+      f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.colour_code, color.id]}
 
       # f.has_many :style_methods do |a|
       #   a.inputs "Method" do

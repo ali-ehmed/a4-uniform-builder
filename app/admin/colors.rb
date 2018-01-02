@@ -3,6 +3,9 @@ ActiveAdmin.register Color do
                 :is_tile_three, :heat_transfer, :screen_print, :tackle_twill, :hex_code, :tile_text_color
   menu parent: "Uniform Builder"
 
+  action_item :add, only: :show do
+    link_to "New Color", :new_admin_color
+  end
 
   form do |f|
     f.inputs "Details" do

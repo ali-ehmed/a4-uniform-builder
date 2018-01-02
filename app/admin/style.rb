@@ -3,6 +3,9 @@ ActiveAdmin.register Style do
   :style_features,:front,:back, :thumbnail,color_ids: [], sizes: [],placements: [],decorations:[], sport_ids: []
   menu parent: "Uniform Builder"
 
+  action_item :add, only: :show do
+    link_to "New Style", :new_admin_style
+  end
 
   form do |f|
     f.inputs "Details" do
