@@ -10,7 +10,7 @@
             <div class="col">
               <div class="layout"></div>
               <div class="image-holder">
-                <%=image_tag(style.try(:image).try(:thumbnail) || "img-des5.png",alt: "image description")%>
+                <%=image_tag(style.try(:thumbnail).try(:url) || "img-des5.png",alt: "image description")%>
               </div>
               <div class="design-info">
                 <span class="design-code"><%=style.style_code%></span>
