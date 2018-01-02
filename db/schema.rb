@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102080538) do
+ActiveRecord::Schema.define(version: 20180102121000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20180102080538) do
     t.boolean "is_tile_two"
     t.boolean "is_tile_three"
     t.string "hex_code"
-    t.text "colour_descriptions"
+    t.string "colour_descriptions"
     t.string "colour_code"
     t.boolean "heat_transfer"
     t.boolean "screen_print"
@@ -258,7 +258,7 @@ ActiveRecord::Schema.define(version: 20180102080538) do
     t.string "acs_style"
     t.integer "gender_id"
     t.string "style_category"
-    t.text "color_description"
+    t.string "colour_description"
     t.integer "category_id"
     t.text "style_features"
     t.string "front"

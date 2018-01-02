@@ -1,5 +1,5 @@
 ActiveAdmin.register Style do
-  permit_params :style_code,:acs_style,:gender_id,:style_category,:color_description,:category_id,
+  permit_params :style_code,:acs_style,:gender_id,:style_category,:colour_description,:category_id,
   :style_features,:front,:back, :thumbnail,color_ids: [], sizes: [],placements: [],decorations:[], sport_ids: []
   menu parent: "Uniform Builder"
 
@@ -9,7 +9,7 @@ ActiveAdmin.register Style do
       f.input :style_code
       f.input :acs_style
       f.input :style_category, as: :select, collection: ["Stock", "Sublimation"]
-      f.input :color_description
+      f.input :colour_description
       f.input :style_features
 
 
