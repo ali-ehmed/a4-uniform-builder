@@ -4,7 +4,7 @@ class StylesController < ApplicationController
     @style = Style.create style_options_params
   end
   def index
-    @style_category = params[:category]  
+    @style_category = params[:category] || current_user.try(:category)
     @styles         = style.where(style_category: @style_category)
   end
   private
@@ -18,6 +18,6 @@ class StylesController < ApplicationController
   end
 
   def style
-    Sport.find_by_id(current_user.sport).styles
+    Sport.find_by_id(current_user.sport).try(:styles)
   end
 end

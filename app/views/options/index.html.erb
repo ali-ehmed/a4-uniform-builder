@@ -129,13 +129,13 @@
                   </div>
 
                   <ul class="color-pelat">
-                    <%- !@tile_1.empty? && @tile_1.each do |tile_1|%>
+                    <%- @tile_1.present? && @tile_1.each do |tile_1|%>
                         <li data-color="<%=tile_1.hex_code%>" class="text-color" style="background-color:<%=tile_1.hex_code%> !important;color: <%=tile_1.tile_text_color%> !important;" id="one_tile"><%=tile_1.colour_code[0..2].try(:upcase)%></li>
                     <%end%>
                   </ul>
 
                   <ul class="color-pelat two-tile">
-                    <%-!@tile_2.empty? && @tile_2.each do |tile_2|%>
+                    <%-@tile_2.present? && @tile_2.each do |tile_2|%>
                         <li data-color1="<%=tile_2.hex_code.split(',').first%>"  data-color2="<%=tile_2.hex_code.split(',').last%>" class="" id="two_tiles">
                           <div class="col text-color" style="background-color:<%=tile_2.hex_code.split(',').try(:first)%> !important;color: <%=tile_2.tile_text_color%> !important;"><%=tile_2.colour_code.split(',').first[0..2].try(:upcase)%></div>
                           <div class="col text-color" style="background-color:<%=tile_2.hex_code.split(',').try(:last)%> !important;color: <%=tile_2.tile_text_color%> !important;"><%=tile_2.colour_code.split(',').last[0..2].upcase%></div>
@@ -143,7 +143,7 @@
                     <%end%>
                   </ul>
                   <ul class="color-pelat three-tile">
-                    <%-!@tile_3.empty? && @tile_3.each do |tile_3|%>
+                    <%-@tile_3.present? && @tile_3.each do |tile_3|%>
                         <li data-color1="<%=tile_3.colour_code.split(',').first%>"  data-color2="<%=tile_3.colour_code.split(',').second%>" data-color3="<%=tile_3.colour_code.split(',').last%>" class="" id="three_tiles">
                           <div class="col text-color" style="background-color:<%=tile_3.hex_code.split(',').try(:first)%> !important;color: <%=tile_3.tile_text_color%> !important;"><%=tile_3.colour_code.split(',').first[0..2].upcase%></div>
                           <div class="col text-color" style="background-color:<%=tile_3.hex_code.split(',').try(:second)%> !important;color: <%=tile_3.tile_text_color%> !important;"><%=tile_3.colour_code.split(',').second[0..2].upcase%></div>
