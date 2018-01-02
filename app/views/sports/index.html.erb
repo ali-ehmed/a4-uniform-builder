@@ -12,7 +12,7 @@
               <!-- <form action="#" class="nice-form card-area"> -->
                 <%= f.hidden_field :id, value: sport.id %>
                 <label for="check-<%=sport.id%>">
-                  <%=f.check_box :is_selected,type: "checkbox",id: "check-#{sport.id}",class: (current_user.sport == sport.id ? " " : "selected-checbox"),checked: (current_user.sport == sport.id ? true : false), data: {sport: sport.id} %>
+                  <%=f.check_box :is_selected,type: "checkbox",id: "check-#{sport.id}",class: "selected-checbox",checked: (current_user.sport == sport.id ? true : false), data: {sport: sport.id} %>
                   <!-- <input id="check-2" checked="checked" type="checkbox"> -->
                   <span class="fake-input"></span>
                   <span class="fake-label">

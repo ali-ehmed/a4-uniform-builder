@@ -5,7 +5,7 @@ class StylesController < ApplicationController
   end
   def index
     @style_category = params[:category] || current_user.try(:category)
-    @styles         = style.where(style_category: @style_category)
+    @styles         = style.where(style_category: @style_category, category_id: current_user.category_id)
   end
   private
   def style_options_params
