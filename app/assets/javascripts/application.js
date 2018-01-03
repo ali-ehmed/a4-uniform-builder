@@ -19,5 +19,5 @@
 //=	require options.js.coffee
 //= require jquery.elevatezoom
 //= require jquery.elevateZoom-3.0.8.min
-//=	require svg-convert.js
+//=	require decorations
 //= require_tree .
