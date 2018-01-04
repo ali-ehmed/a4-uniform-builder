@@ -19,7 +19,7 @@
                 <span class="corner3"></span>
                 <span class="corner4"></span>
                 <div class="image-holder">
-                  <%=image_tag "img-13.png"%>
+                  <%=show_svg(@style.try(:front).try(:url)) if @style.try(:front)%>
                 </div>
                 <div class="scale">
                   <a href="#" class="scaltext">+</a>
@@ -37,7 +37,7 @@
                 <span class="corner3 active"></span>
                 <span class="corner4 active"></span>
                 <div class="image-holder">
-                  <%=image_tag "img-14.png"%>
+                  <%=show_svg(@style.try(:back).try(:url)) if @style.try(:back)%>
                 </div>
                 <div class="scale">
                   <a href="#" class="scaltext">+</a>

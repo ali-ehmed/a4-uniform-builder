@@ -3,7 +3,9 @@ class UpdateColorToUser
   @change: (elm) ->
     @$tile 	    = elm.data('tile')
     next = document.getElementById('next_btn')
+    next_header = document.getElementById('next_btn_header')
     next.classList.remove("hide-next")
+    next_header.classList.remove("hide-next")
 
     $.ajax
       type: 'PATCH'

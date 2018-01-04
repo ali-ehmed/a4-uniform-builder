@@ -39,7 +39,7 @@
             <%=link_to "Options",     :options%>
           </li>
           <li class="<%=params[:controller] == "decorations" && "active"%>">
-            <%=link_to "Decoration",  :decorations%>
+            <%=link_to "Decoration",  :decorations,class: params[:controller] == "options" && "hide-next", id: "next_btn_header"%>
           </li>
           <li class="<%=params[:controller] == "summaries" && "active"%>">
             <%=link_to "Summary",     :summaries  %>
