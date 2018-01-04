@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resources :styles
   resources :summaries
   resources :decorations
-  resources :options
+  resources :options do
+  end
+  resources :colors
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
