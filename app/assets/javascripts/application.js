@@ -15,9 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require home
+//=	require decorations.js.coffee
 //= require sports.js.coffee
 //=	require options.js.coffee
 //= require jquery.elevatezoom
 //= require jquery.elevateZoom-3.0.8.min
-//=	require decorations
 //= require_tree .
