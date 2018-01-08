@@ -5,6 +5,11 @@ $ ->
   $('.panel-collapse').on 'hide.bs.collapse', ->
     $(this).siblings('.panel-heading').removeClass 'active'
     return
+  $('#select-decoration').on 'click', ->
+    debugger
+    text = document.getElementById($(this)).textContent;
+    document.getElementById('PL1_Text_Front').textContent = "new text";
+    document.getElementById('PL10_Text_Back').textContent = "new text";
 
 #  color_1         = $('#color_1')
 #  color_2         = $('#color_2')

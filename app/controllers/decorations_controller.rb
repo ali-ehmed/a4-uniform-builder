@@ -3,6 +3,7 @@ class DecorationsController < ApplicationController
   def index
     @color = current_user.try(:colors).try(:last).try(:hex_code).split(',') if current_user.try(:colors).try(:last).present?
     @decorations = Decoration.all
+    @placements = Placement.all
   end
   private
   def style
