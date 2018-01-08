@@ -6,10 +6,12 @@ $ ->
     $(this).siblings('.panel-heading').removeClass 'active'
     return
   $('#select-decoration').on 'click', ->
-    debugger
-    text = document.getElementById($(this)).textContent;
-    document.getElementById('PL1_Text_Front').textContent = "new text";
-    document.getElementById('PL10_Text_Back').textContent = "new text";
+    text = document.getElementById('PL110_Text_Back').textContent;
+    text1 = document.getElementById('PL12_Text_Back').textContent;
+    document.getElementById('PL1_Text_Front').textContent = text;
+    document.getElementById('PL10_Text_Back').textContent = text;
+    document.getElementById('PL16_Text_Back').textContent = text1;
+    document.getElementById('PL6_Text_Front').textContent = text1;
 
 #  color_1         = $('#color_1')
 #  color_2         = $('#color_2')

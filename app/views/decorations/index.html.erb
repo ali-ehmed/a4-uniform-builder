@@ -123,7 +123,7 @@
                       <a href="#" class="btn btn-primary btn-block">Skip Decorations</a>
                     </div>
                     <%-@placements.each do |placement|%>
-                        <div class="package-holder">
+                        <div class="package-holder">`
                           <div class="image-holder" id="select-decoration">
                             <%=show_svg(placement.try(:decoration_available_image).try(:url) || "img-17.png")%>
                           </div>
