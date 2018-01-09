@@ -13,6 +13,17 @@ $ ->
     document.getElementById('PL16_Text_Back').textContent = text1;
     document.getElementById('PL6_Text_Front').textContent = text1;
 
+  $('.decoration-package').on 'click', ->
+    document.getElementById('sidebar-2').classList.remove("hide-sidebar")
+    document.getElementById('sidebar-2').classList.add("display-sidebar")
+    document.getElementById('sidebar-1').classList.remove("display-sidebar")
+    document.getElementById('sidebar-1').classList.add("hide-sidebar")
+    return false
+
+  $('.select-placement').on 'click', ->
+    placement_code = $(this).data('placement')
+    $(placement_code).css fill: "#282828"
+    return
 #  color_1         = $('#color_1')
 #  color_2         = $('#color_2')
 #  color_3         = $('#color_3')
