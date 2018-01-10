@@ -5,6 +5,8 @@ class DecorationsController < ApplicationController
     @decorations        = Decoration.all
     @placements         = Placement.all
     @decoration_packges = Decoration.all
+    @texts              = Text.all
+    @graphics           = Graphic.all
   end
   private
   def style
