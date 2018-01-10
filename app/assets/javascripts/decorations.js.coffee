@@ -14,10 +14,18 @@ $ ->
     document.getElementById('PL6_Text_Front').textContent = text1;
 
   $('.decoration-package').on 'click', ->
-    document.getElementById('sidebar-2').classList.remove("hide-sidebar")
-    document.getElementById('sidebar-2').classList.add("display-sidebar")
-    document.getElementById('sidebar-1').classList.remove("display-sidebar")
-    document.getElementById('sidebar-1').classList.add("hide-sidebar")
+
+    decoration = $(this).data("show")
+    if decoration == 2
+      document.getElementById('sidebar-1').classList.remove("display-sidebar")
+      document.getElementById('sidebar-1').classList.add("hide-sidebar")
+      document.getElementById("sidebar-2").classList.remove("hide-sidebar")
+      document.getElementById("sidebar-2").classList.add("display-sidebar")
+    if decoration == 3
+      document.getElementById("sidebar-2").classList.add("hide-sidebar")
+      document.getElementById("sidebar-2").classList.remove("display-sidebar")
+      document.getElementById("sidebar-3").classList.remove("hide-sidebar")
+      document.getElementById("sidebar-3").classList.add("display-sidebar")
     return false
 
   $('.select-placement').on 'click', ->
