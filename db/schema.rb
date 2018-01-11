@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104185247) do
+ActiveRecord::Schema.define(version: 20180111190059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,17 +129,17 @@ ActiveRecord::Schema.define(version: 20180104185247) do
     t.string "graphic_type"
     t.integer "sport_id"
     t.integer "gender_id"
-    t.string "size_id"
-    t.string "price_by_method"
-    t.string "price_to_factory"
     t.string "factory_graphic_code"
     t.string "image"
     t.integer "decoration_id"
     t.integer "placement_id"
     t.string "layout_factory_code"
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "method_id"
+    t.string "custom_graphic"
+    t.string "custom_fee"
+    t.integer "price_id"
   end
 
   create_table "notifications", force: :cascade do |t|
