@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111190059) do
+ActiveRecord::Schema.define(version: 20180111193251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,15 @@ ActiveRecord::Schema.define(version: 20180111190059) do
     t.string "custom_graphic"
     t.string "custom_fee"
     t.integer "price_id"
+  end
+
+  create_table "layouts", force: :cascade do |t|
+    t.integer "graphic_id"
+    t.string "layout1"
+    t.string "layout2"
+    t.string "layout3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notifications", force: :cascade do |t|
