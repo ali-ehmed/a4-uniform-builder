@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112101341) do
+ActiveRecord::Schema.define(version: 20180112105614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,10 +75,19 @@ ActiveRecord::Schema.define(version: 20180112101341) do
   end
 
   create_table "decorations", force: :cascade do |t|
-    t.string "code"
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "decoration_type"
+    t.string "thumbnail"
+    t.string "factory_graphic_code"
+    t.string "factory_layout_code"
+    t.string "custom_graphic"
+    t.string "custom_font_size"
+    t.string "custom_font"
+    t.string "custom_style"
+    t.integer "style_method_id"
+    t.integer "color_id"
+    t.integer "price_id"
   end
 
   create_table "designs", force: :cascade do |t|
