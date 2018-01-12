@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111193251) do
+ActiveRecord::Schema.define(version: 20180112101341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -323,20 +323,14 @@ ActiveRecord::Schema.define(version: 20180111193251) do
   end
 
   create_table "texts", force: :cascade do |t|
-    t.string "category"
-    t.string "group"
-    t.string "text_type"
-    t.integer "sport_id"
-    t.integer "gender_id"
-    t.string "size_id"
-    t.string "price_by_method"
     t.string "factory_graphic_code"
     t.integer "decoration_id"
     t.integer "placement_id"
     t.string "layout_factory_code"
-    t.text "decsription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "style_method_id"
+    t.integer "price_id"
   end
 
   create_table "uniform_builders", force: :cascade do |t|
