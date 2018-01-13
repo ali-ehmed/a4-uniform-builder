@@ -5,6 +5,36 @@ $ ->
   $('.panel-collapse').on 'hide.bs.collapse', ->
     $(this).siblings('.panel-heading').removeClass 'active'
     return
+
+  $('body').on 'change', '#style_method_code', (e) ->
+    $.getScript("/decorations/#{$(this).val()}/form")
+
+
+  $('body').on 'input', '#text_team_name', ->
+    text_value  = $('#text_team_name').val()
+
+    document.getElementById('PL10_Text_Back').textContent = text_value;
+    document.getElementById('PL1_Text_Front').textContent = text_value;
+
+  $('body').on 'change', '#text_size_id',->
+    font_size   = $('select#text_size_id option:selected').text();
+    $('#PL1_Text_Front').css({'fontSize': font_size+"pt"});
+    $('#PL10_Text_Back').css({'fontSize': font_size+"pt"});
+
+  $('body').on 'change', '#text_font_style', ->
+    font_style   = $('select#text_font_style option:selected').text();
+    $('#PL1_Text_Front').css({'font-style': font_style});
+    $('#PL10_Text_Back').css({'font-style': font_style});
+
+  $('body').on 'click', "#text_is_stroke", ->
+    if $('#text_is_stroke').is(":checked") == true
+      $('.form-group').removeClass('hide-font')
+  $('body').on 'change', '#text_outilne_colour', ->
+    font_stroke   = $('select#text_outilne_colour option:selected').text();
+    $('#PL1_Text_Front').css({'stroke': font_stroke});
+    $('#PL10_Text_Back').css({'stroke': font_stroke});
+
+
   $('#select-decoration').on 'click', ->
     text = document.getElementById('PL110_Text_Back').textContent;
     text1 = document.getElementById('PL12_Text_Back').textContent;

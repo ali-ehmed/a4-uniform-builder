@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112105614) do
+ActiveRecord::Schema.define(version: 20180113150308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180112105614) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "decoration_type"
+    t.string "decoration_method"
     t.string "thumbnail"
     t.string "factory_graphic_code"
     t.string "factory_layout_code"
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 20180112105614) do
     t.integer "text_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "style_method_id"
   end
 
   create_table "gender_options", force: :cascade do |t|
@@ -290,13 +292,6 @@ ActiveRecord::Schema.define(version: 20180112105614) do
   end
 
   create_table "templates", force: :cascade do |t|
-    t.string "product_code"
-    t.string "stellar_code"
-    t.string "sport_code"
-    t.integer "method_id"
-    t.integer "gender_id"
-    t.string "price_by_method"
-    t.string "price_to_factory"
     t.string "factory_graphic_code"
     t.string "image"
     t.integer "decoration_id"
@@ -304,10 +299,11 @@ ActiveRecord::Schema.define(version: 20180112105614) do
     t.string "layout_factory_code"
     t.string "svg"
     t.string "layouts"
-    t.text "description"
-    t.integer "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "style_method_id"
+    t.integer "price_id"
+    t.integer "sport_id"
   end
 
   create_table "text_colors", force: :cascade do |t|
@@ -340,6 +336,14 @@ ActiveRecord::Schema.define(version: 20180112105614) do
     t.datetime "updated_at", null: false
     t.integer "style_method_id"
     t.integer "price_id"
+    t.integer "size_id"
+    t.integer "font_id"
+    t.integer "style_id"
+    t.string "team_name"
+    t.boolean "is_stroke"
+    t.string "stroke_width"
+    t.string "outilne_colour"
+    t.string "font_style"
   end
 
   create_table "uniform_builders", force: :cascade do |t|

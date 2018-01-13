@@ -15,60 +15,21 @@
             <img src="images/img-16.png" alt="image description">
           </div>
           <div class="btn-holder text-center">
-            <%=link_to "Graphic", "#", class: "btn btn-primary", remote: true%>
+            <%=link_to "Graphic", "#", class: "btn btn-default", remote: true%>
             <%=link_to "Logo", "#", class: "btn btn-default", remote:true%>
-            <%=link_to "Numbring", "#", class: "btn btn-default",remote:true%>
+            <%=link_to "Numbring", apply_model_decorations_path(model_name: "text"), class: "btn btn-primary",remote:true%>
             <%=link_to "Team Name", "#", class: "btn btn-default",remote:true%>
+            <div data-render></div>
           </div>
-          <ul class="method">
-            <li class="form-group">
-              <label class="title" >Type</label>
-              <div class="form-holder">
-                <select  class="form-control">
-                  <option>knights</option>
-                  <option>Pittsord</option>
-                  <option>knights</option>
-                </select>
-              </div>
-            </li>
-            <li class="form-group">
-              <label class="title" >Type</label>
-              <div class="form-holder">
-                <select class="form-control">
-                  <option>Pittsord</option>
-                  <option>knights</option>
-                  <option>knights</option>
-                </select>
-              </div>
-            </li>
-            <li class="form-group">
-              <label class="title" >Type</label>
-              <div class="form-holder">
-                <select  class="form-control">
-                  <option>Baseball</option>
-                  <option>knights</option>
-                  <option>knights</option>
-                </select>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-inline text-left">
-                <label>
-                  <input type="checkbox" class="checkbox">
-                  None Selected
-                </label>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="options-btn option-btn-side">
-  <a href="#" class="btn btn-default">Close</a>
-  <a href="#" class="btn btn-primary" data-show="4">Complete</a>
-</div>
+<!--<div class="options-btn option-btn-side">-->
+  <!--<a href="#" class="btn btn-default">Close</a>-->
+  <!--<a href="#" class="btn btn-primary" data-show="4">Complete</a>-->
+<!--</div>-->
 <!--<div class="options-btn sidebar-btn">
     <a href="#" class="btn btn-default location">Add a Location</a>
 </div>-->

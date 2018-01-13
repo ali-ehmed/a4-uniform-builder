@@ -3,10 +3,12 @@ class TextsController < ApplicationController
     @text   = Text.create text_params
   end
 
+  def index
+  end
+
 
   private
   def text_params
-    params.require(:text).permit(:factory_graphic_code, :decoration_id, :placement_id, :factory_graphic_code, :layout_factory_code,
-                                 :price_id, :style_method_id, colors: [], layout_ids: [])
+    params.require(:text).permit(:team_name, :size_id, :font_id, :is_stroke, :font_style, :outilne_colour).merge!({style_id: current_user.try(:style)})
   end
 end

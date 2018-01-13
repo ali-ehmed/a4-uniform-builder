@@ -9,10 +9,11 @@ class Text < ApplicationRecord
   has_many  :text_colors
   has_many  :colors, through: :text_colors
 
-  has_many  :text_fonts
-  has_many  :fonts, through: :text_fonts
-
-
+  # has_many    :text_fonts
+  # has_many    :fonts, through: :text_fonts
+  belongs_to  :font
+  belongs_to  :sizes
+  belongs_to  :style
   # accepts_nested_attributes_for :style_methods
   # accepts_nested_attributes_for :fonts
   # accepts_nested_attributes_for :colors

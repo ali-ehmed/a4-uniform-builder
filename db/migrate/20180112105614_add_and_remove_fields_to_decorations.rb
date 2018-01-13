@@ -1,6 +1,7 @@
 class AddAndRemoveFieldsToDecorations < ActiveRecord::Migration[5.1]
   def change
     add_column    :decorations,     :decoration_type,       :string
+    add_column    :decorations,     :decoration_method,       :string
     add_column    :decorations,     :thumbnail,             :string
     add_column    :decorations,     :factory_graphic_code,  :string
     add_column    :decorations,     :factory_layout_code,   :string

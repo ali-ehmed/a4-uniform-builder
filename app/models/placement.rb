@@ -4,4 +4,5 @@ class Placement < ApplicationRecord
   	has_many  				:graphics
 		has_many					:style_placements
 		has_many					:styles, through: :style_placements
+		has_many					:decorations
 end

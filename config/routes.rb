@@ -15,9 +15,18 @@ Rails.application.routes.draw do
   resources :genders
   resources :styles
   resources :summaries
-  resources :decorations
+  resources :texts
+  resources :decorations do
+    collection do
+      put :apply_model
+    end
+    member do
+      get :form
+    end
+  end
   resources :options do
   end
+
   resources :colors
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
