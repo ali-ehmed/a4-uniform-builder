@@ -1,4 +1,24 @@
 $ ->
+  $('body').on 'click', '#numbering',->
+    $(this).removeClass('btn-default');
+    $(this).addClass('btn-primary');
+    $('#graphics').removeClass('btn-primary');
+    $('#team_name').removeClass('btn-primary');
+    $('#logo').removeClass('btn-primary');
+    $('#graphics').addClass('btn-default');
+    $('#team_name').addClass('btn-default');
+    $('#logo').addClass('btn-default');
+
+  $('body').on 'click', '#team_name',->
+    $(this).removeClass('btn-default');
+    $('#graphics').removeClass('btn-primary');
+    $('#numbering').removeClass('btn-primary');
+    $('#logo').removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $('#graphics').addClass('btn-default');
+    $('#numbering').addClass('btn-default');
+    $('#logo').addClass('btn-default');
+
   $('.panel-collapse').on 'show.bs.collapse', ->
     $(this).siblings('.panel-heading').addClass 'active'
     return

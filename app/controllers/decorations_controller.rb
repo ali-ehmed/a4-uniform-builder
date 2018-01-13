@@ -22,6 +22,7 @@ class DecorationsController < ApplicationController
     @style_methods  = StyleMethod.all.collect{|s_m| [s_m.code,s_m.id]}
     @model          = params[:model_name]
     @team_name      = params[:team_name]
+    @team_name.nil? && current_user.update_attribute(:decoration_type, params[:model_name]) || current_user.update_attribute(:decoration_type, "team_name")
   end
 
   def form
