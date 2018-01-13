@@ -21,12 +21,14 @@ class DecorationsController < ApplicationController
     @object         = params[:model_name].capitalize.constantize.order(id: :desc)
     @style_methods  = StyleMethod.all.collect{|s_m| [s_m.code,s_m.id]}
     @model          = params[:model_name]
+    @team_name      = params[:team_name]
   end
 
   def form
+    @team_name      = params[:team_name]
     @style_methods  = StyleMethod.where(code: params[:id])
     @texts          = Text.all
-    render "form.js.erb"
+    @team_name.nil? && render("form.js.erb" )|| render(partial: "team_name.js.erb")
   end
   private
   def style

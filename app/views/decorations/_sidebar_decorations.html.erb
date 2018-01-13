@@ -18,7 +18,7 @@
             <%=link_to "Graphic", "#", class: "btn btn-default", remote: true%>
             <%=link_to "Logo", "#", class: "btn btn-default", remote:true%>
             <%=link_to "Numbring", apply_model_decorations_path(model_name: "text"), class: "btn btn-primary",remote:true%>
-            <%=link_to "Team Name", "#", class: "btn btn-default",remote:true%>
+            <%=link_to "Team Name", apply_model_decorations_path(model_name: "text",team_name:true), class: "btn btn-default",remote:true%>
             <div data-render></div>
           </div>
         </div>
