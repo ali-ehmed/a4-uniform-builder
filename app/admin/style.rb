@@ -31,9 +31,9 @@ ActiveAdmin.register Style do
     panel "Placements" do
       f.input :placements,as: :check_boxes, collection: Placement.all.collect{|placement| [placement.code, placement.id]}
     end
-    panel "Decorations" do
-      f.input :decorations,as: :check_boxes, collection: Decoration.all.collect{|decoration| [decoration.code, decoration.id]}
-    end
+    # panel "Decorations" do
+    #   f.input :decorations,as: :check_boxes, collection: Decoration.all.collect{|decoration| [decoration.code, decoration.id]}
+    # end
     panel "Tiles" do
       f.input :color_tiles, as: :select,id: "tiles_show_hide", collection: ["1 Tile", "2 Tiles", "3 Tiles"], :selected => '3 Tiles'
       div class: 'panel' do

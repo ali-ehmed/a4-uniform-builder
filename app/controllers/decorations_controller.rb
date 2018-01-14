@@ -6,7 +6,8 @@ class DecorationsController < ApplicationController
     head :ok
   end
   def index
-    @color = current_user.try(:colors).try(:last).try(:hex_code).split(',') if current_user.try(:colors).try(:last).present?
+    @colors    = current_user.try(:colors)
+    @color = (@colors.try(:last) || @user_color).try(:hex_code).split(',')
     @decorations        = Decoration.all
     @placements         = Placement.all
     @decoration_packges = Decoration.all
@@ -34,5 +35,6 @@ class DecorationsController < ApplicationController
   private
   def style
     @style = Style.find_by_id(params[:style_id])
+    @user_color = Color.find_by_id(current_user.color)
   end
 end

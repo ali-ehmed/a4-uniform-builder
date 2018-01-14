@@ -20,7 +20,7 @@
           <%-placements.each do |placement|%>
               <div class="package-holder">`
                 <div class="image-holder" id="select-decoration">
-                  <%=show_svg(placement.try(:decoration_available_image).try(:url) || "img-17.png")%>
+                  <%=image_tag(placement.try(:decoration_available_image).try(:url) || "img-17.png")%>
                 </div>
                 <div class="options-btn ">
                   <a href="#" class="btn btn-default btn-block">Tema Name & Number (LL) : 1 Color (BB) (184)</a>

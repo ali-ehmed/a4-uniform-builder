@@ -2,8 +2,9 @@ class ColorsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :color, only: [:update, :show]
   def update
-    # current_user.colors.delete_all
+    current_user.colors.delete_all
     @color.update_attribute :user_id, current_user.id
+    current_user.update_attribute :color, @color.try(:id)
   end
 
   private

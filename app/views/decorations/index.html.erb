@@ -31,7 +31,7 @@
               </div>
             </div>
             <div class="col-lg-6 col-md-6" id="color_1" data-color1="<%= @color.try(:first)%>">
-              <div class="box" id="color_3" data-color3="<%= @color.count > 1 && @color[2]%>">
+              <div class="box" id="color_3" data-color3="<%= @color.try(:count) > 1 && @color[2]%>">
                 <span class="corner1 active"></span>
                 <span class="corner2 active"></span>
                 <span class="corner3 active"></span>
