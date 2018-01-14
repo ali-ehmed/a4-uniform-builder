@@ -3,7 +3,7 @@
       <li class="form-group">
         <label class="title" >Method</label>
         <div class="form-holder">
-          <%=f.input_field :code, as: :select, collection: style_methods,  class:"form-control"%>
+          <%=f.input_field :code, as: :select, collection: style_methods,  class:"form-control", data: {team: team_name}%>
         </div>
       </li>
     <%end%>

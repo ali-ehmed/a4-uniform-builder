@@ -29,7 +29,7 @@ class DecorationsController < ApplicationController
     @team_name      = params[:team_name]
     @style_methods  = StyleMethod.where(code: params[:id])
     @texts          = Text.all
-    @team_name.nil? && render("form.js.erb" )|| render(partial: "team_name.js.erb")
+    @team_name != "true" && render("form.js.erb" )|| render(partial: "team_name.js.erb")
   end
   private
   def style

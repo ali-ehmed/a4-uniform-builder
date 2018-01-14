@@ -27,7 +27,8 @@ $ ->
     return
 
   $('body').on 'change', '#style_method_code', (e) ->
-    $.getScript("/decorations/#{$(this).val()}/form")
+    team=$(this).data('team')
+    $.getScript("/decorations/#{$(this).val()}/form?team_name=#{team}")
 
 
   $('body').on 'input', '#text_team_name', ->
