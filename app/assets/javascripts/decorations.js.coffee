@@ -60,6 +60,8 @@ $ ->
     font_stroke   = $('select#text_outilne_colour option:selected').text();
     $('#PL1_Text_Front').css({'stroke': font_stroke});
     $('#PL10_Text_Back').css({'stroke': font_stroke});
+    $('#PL1_Text_Front').css({'stroke-width': "1"});
+    $('#PL10_Text_Back').css({'stroke-width': "1"});
 
 
   $('#select-decoration').on 'click', ->

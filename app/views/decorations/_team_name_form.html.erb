@@ -11,12 +11,12 @@
       <%=f.input_field :size_id, as: :select, collection: Size.all.collect{|size| [size.size,size.id]}, class: "form-control"%>
     </div>
   </li>
-  <li class="form-group">
-    <label class="title" >Select a Font</label>
-    <div class="form-holder">
-      <%=f.input_field :font_id, as: :select, collection: Font.all.collect{|font| [font.code, font.id]}, class: "form-control"%>
-    </div>
-  </li>
+  <!--<li class="form-group">-->
+    <!--<label class="title" >Select a Font</label>-->
+    <!--<div class="form-holder">-->
+      <!--<%#=f.input_field :font_id, as: :select, collection: Font.all.collect{|font| [font.code, font.id]}, class: "form-control"%>-->
+    <!--</div>-->
+  <!--</li>-->
 
   <li class="form-group">
     <label class="title" >Select a FontStyle</label>
