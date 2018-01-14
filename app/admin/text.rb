@@ -1,6 +1,6 @@
 ActiveAdmin.register Text do
   permit_params :factory_graphic_code, :decoration_id, :placement_id, :factory_graphic_code, :layout_factory_code,
-  :price_id, :style_method_id, colors: [], layout_ids: []
+  :price_id, :style_method_id#, colors: [], layout_ids: []
   menu parent: "Uniform Builder"
 
   action_item :add, only: :show do
@@ -16,9 +16,9 @@ ActiveAdmin.register Text do
       f.input :factory_graphic_code
       f.input :layout_factory_code
 
-      f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.colour_code, color.id]}
-
-      f.input :layout_ids,      as: :check_boxes, collection: Layout.all.collect{|layout| [layout.layout1,layout.id]}
+      # f.input :colors,as: :check_boxes, collection: Color.all.collect{|color| [color.colour_code, color.id]}
+      #
+      # f.input :layout_ids,      as: :check_boxes, collection: Layout.all.collect{|layout| [layout.layout1,layout.id]}
 
       # f.has_many :style_methods do |a|
       #   a.inputs "Method" do
