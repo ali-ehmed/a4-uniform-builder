@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114175550) do
+ActiveRecord::Schema.define(version: 20180114183752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -345,6 +345,7 @@ ActiveRecord::Schema.define(version: 20180114175550) do
     t.string "stroke_width"
     t.string "outilne_colour"
     t.string "font_style"
+    t.string "decoration_color"
   end
 
   create_table "uniform_builders", force: :cascade do |t|

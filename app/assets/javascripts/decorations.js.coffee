@@ -56,12 +56,18 @@ $ ->
   $('body').on 'click', "#text_is_stroke", ->
     if $('#text_is_stroke').is(":checked") == true
       $('.form-group').removeClass('hide-font')
+
   $('body').on 'change', '#text_outilne_colour', ->
     font_stroke   = $('select#text_outilne_colour option:selected').text();
     $('#PL1_Text_Front').css({'stroke': font_stroke});
     $('#PL10_Text_Back').css({'stroke': font_stroke});
     $('#PL1_Text_Front').css({'stroke-width': "1"});
     $('#PL10_Text_Back').css({'stroke-width': "1"});
+
+  $('body').on 'change', '#text_decoration_color', ->
+    color   = $('select#text_decoration_color option:selected').text();
+    $('#PL1_Text_Front').css({'fill': color});
+    $('#PL10_Text_Back').css({'fill': color});
 
 
   $('#select-decoration').on 'click', ->
