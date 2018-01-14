@@ -1,8 +1,8 @@
 <%=simple_form_for :text, url: texts_path, method: :post do |f|%>
   <li class="form-group">
-    <label class="title" >Team Name</label>
+    <label class="title" >Number</label>
     <div class="form-holder">
-      <%=f.input_field :team_name,  value: "Team 1", class: "form-control"%>
+      <%=f.input_field :team_number,  value: "26", class: "form-control"%>
     </div>
   </li>
   <li class="form-group">
@@ -46,7 +46,7 @@
   </div>
 <%end%>
 <script>
-    var text_value = $('#text_team_name').val();
+    var text_value = $('#text_team_number').val();
     document.getElementById('PL10_Text_Back').textContent = text_value;
     document.getElementById('PL1_Text_Front').textContent = text_value;
 

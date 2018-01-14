@@ -340,6 +340,7 @@ ActiveRecord::Schema.define(version: 20180113204749) do
     t.integer "font_id"
     t.integer "style_id"
     t.string "team_name"
+    t.integer "team_number"
     t.boolean "is_stroke"
     t.string "stroke_width"
     t.string "outilne_colour"

@@ -36,6 +36,12 @@ $ ->
     document.getElementById('PL10_Text_Back').textContent = text_value;
     document.getElementById('PL1_Text_Front').textContent = text_value;
 
+  $('body').on 'input', '#text_team_number', ->
+    text_value  = $('#text_team_number').val()
+
+    document.getElementById('PL10_Text_Back').textContent = text_value;
+    document.getElementById('PL1_Text_Front').textContent = text_value;
+
   $('body').on 'change', '#text_size_id',->
     font_size   = $('select#text_size_id option:selected').text();
     $('#PL1_Text_Front').css({'fontSize': font_size+"pt"});
