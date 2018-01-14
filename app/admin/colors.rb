@@ -21,7 +21,7 @@ ActiveAdmin.register Color do
       f.input :md_no
       f.input :pms_no
       f.input :colour_descriptions
-      f.input :text_id, as: :select, collection: Text.all.collect{|text| [text.text_type, text.id]}
+      # f.input :text_id, as: :select, collection: Text.all.collect{|text| [text.text_type, text.id]}
     end
     f.actions
   end
