@@ -44,38 +44,56 @@ $ ->
 #    document.getElementById('PL1_Text_Front').textContent = text_value;
 
   $('body').on 'change', '#text_size_id',->
+    size = $(this).data('size');
     font_size   = $('select#text_size_id option:selected').text();
-    $('#PL1_Text_Front').css({'fontSize': font_size+"pt"});
-    $('#PL10_Text_Back').css({'fontSize': font_size+"pt"});
+    if size == "front"
+      $('#PL1_Text_Front').css({'fontSize': font_size+"pt"});
+    if size == "back"
+      $('#PL10_Text_Back').css({'fontSize': font_size+"pt"});
 
   $('body').on 'change', '#text_font_style', ->
+    font = $(this).data('font');
     font_style   = $('select#text_font_style option:selected').text();
-    $('#PL1_Text_Front').css({'font-style': font_style});
-    $('#PL10_Text_Back').css({'font-style': font_style});
+    if font == "front"
+      $('#PL1_Text_Front').css({'font-style': font_style});
+    if font == "back"
+      $('#PL10_Text_Back').css({'font-style': font_style});
 
   $('body').on 'click', "#text_is_stroke", ->
     if $('#text_is_stroke').is(":checked") == true
       $('.form-group').removeClass('hide-font')
 
   $('body').on 'change', '#text_outilne_colour', ->
+    outline = $(this).data("outline")
     font_stroke   = $('select#text_outilne_colour option:selected').text();
-    $('#PL1_Text_Front').css({'stroke': font_stroke});
-    $('#PL10_Text_Back').css({'stroke': font_stroke});
+    if outline == "front"
+      $('#PL1_Text_Front').css({'stroke': font_stroke});
+    if outline == "back"
+      $('#PL10_Text_Back').css({'stroke': font_stroke});
 
   $('body').on 'change', '#text_stroke_text_width', ->
     stroke_width   = $('select#text_stroke_text_width option:selected').text();
-    $('#PL1_Text_Front').css({'stroke-width': stroke_width});
-    $('#PL10_Text_Back').css({'stroke-width': stroke_width});
+    stroke = $(this).data('stroke')
+    if stroke == "front"
+      $('#PL1_Text_Front').css({'stroke-width': stroke_width});
+    if stroke == "back"
+      $('#PL10_Text_Back').css({'stroke-width': stroke_width});
 
   $('body').on 'change', '#text_decoration_color', ->
+    d_color = $(this).data('color')
     color   = $('select#text_decoration_color option:selected').text();
-    $('#PL1_Text_Front').css({'fill': color});
-    $('#PL10_Text_Back').css({'fill': color});
+    if d_color == "front"
+     $('#PL1_Text_Front').css({'fill': color});
+    if d_color == "back"
+      $('#PL10_Text_Back').css({'fill': color});
 
   $('body').on 'change', '#text_font_family', ->
+    t_family = $(this).data('family')
     family   = $('select#text_font_family option:selected').text();
-    $('#PL1_Text_Front').css({'font-family': family});
-    $('#PL10_Text_Back').css({'font-family': family});
+    if t_family == 'front'
+      $('#PL1_Text_Front').css({'font-family': family});
+    if t_family == "back"
+     $('#PL10_Text_Back').css({'font-family': family});
 
 
   $('#select-decoration').on 'click', ->
