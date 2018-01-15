@@ -39,6 +39,13 @@
     </div>
   </li>
 
+  <li class="form-group hide-font">
+    <label class="title" >Stroke Width</label>
+    <div class="form-holder">
+      <%=f.input_field :stroke_text_width, as: :select, collection: ["1", "2","3","4", "5", "6", "7", "8"], class: "form-control"%>
+    </div>
+  </li>
+
   <div class="options-btn option-btn-side">
     <%=link_to :back, "Close", class: "btn btn-default"%>
     <%=f.button :submit, "Complete", class: "btn btn-primary", remote: :true%>

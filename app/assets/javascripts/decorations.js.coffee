@@ -61,8 +61,11 @@ $ ->
     font_stroke   = $('select#text_outilne_colour option:selected').text();
     $('#PL1_Text_Front').css({'stroke': font_stroke});
     $('#PL10_Text_Back').css({'stroke': font_stroke});
-    $('#PL1_Text_Front').css({'stroke-width': "1"});
-    $('#PL10_Text_Back').css({'stroke-width': "1"});
+
+  $('body').on 'change', '#text_stroke_text_width', ->
+    stroke_width   = $('select#text_stroke_text_width option:selected').text();
+    $('#PL1_Text_Front').css({'stroke-width': stroke_width});
+    $('#PL10_Text_Back').css({'stroke-width': stroke_width});
 
   $('body').on 'change', '#text_decoration_color', ->
     color   = $('select#text_decoration_color option:selected').text();
