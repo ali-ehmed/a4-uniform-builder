@@ -27,6 +27,13 @@
   </li>
 
   <li class="form-group">
+    <label class="title" >Select a Font Family</label>
+    <div class="form-holder">
+      <%=f.input_field :font_family, as: :select, collection: ["Helvetica-Bold", "Helvetica", "robotobold", "robotobold_condensed", "robotobold_italic", "robotocondensed", "roboto_condensedbold_italic"], class: "form-control"%>
+    </div>
+  </li>
+
+  <li class="form-group">
     <label class="title" >Do you want outline?</label>
     <div class="form-holder">
       <%=f.check_box :is_stroke, class: "form-control"%>

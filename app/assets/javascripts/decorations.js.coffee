@@ -72,6 +72,11 @@ $ ->
     $('#PL1_Text_Front').css({'fill': color});
     $('#PL10_Text_Back').css({'fill': color});
 
+  $('body').on 'change', '#text_font_family', ->
+    family   = $('select#text_font_family option:selected').text();
+    $('#PL1_Text_Front').css({'font-family': family});
+    $('#PL10_Text_Back').css({'font-family': family});
+
 
   $('#select-decoration').on 'click', ->
     text = document.getElementById('PL110_Text_Back').textContent;
