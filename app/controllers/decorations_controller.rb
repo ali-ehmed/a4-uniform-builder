@@ -32,7 +32,7 @@ class DecorationsController < ApplicationController
     @style_methods  = StyleMethod.where(code: params[:id])
     @texts          = Text.all
     @partial        = params[:partial]
-    @partial == "graphic" && render(partial: "graphic.js.erb" )
+    @partial == "graphic" && render(partial: "graphic.js.erb" ) && (@object=Graphic.all)
     @partial == "numbering"  &&  render("form.js.erb" )
     @partial == "team_name" && render(partial: "team_name.js.erb")
     @partial == "logo" && render(partial: "logo.js.erb")

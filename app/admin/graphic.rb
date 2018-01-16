@@ -1,15 +1,15 @@
 ActiveAdmin.register Graphic do
   permit_params :category, :price_id, :custom_fee, :custom_graphic, :method_id, :group, :graphic_type, :sport_id,:gender_id, :factory_graphic_code,:decoration_id,:placement_id,:layout_factory_code,
-                :image, style_methods: [], colors: [], layout_ids: []
+                :image, style_methods: [], layout_ids: []#, colors: []
 
   menu parent: "Uniform Builder"
 
 
   form do |f|
     f.inputs "Details" do
-      f.input :decoration_id,as: :select, collection:  Decoration.all.collect{|decoration| [decoration.code,decoration.id]}
+      # f.input :decoration_id,as: :select, collection:  Decoration.all.collect{|decoration| [decoration.code,decoration.id]}
       f.input :sport_id,as: :select,      collection:  Sport.all.collect{|sport| [sport.sport_name, sport.id]}
-      f.input :colors,as: :check_boxes, collection: Color.all.collect{|c| [c.colour_code,c.id]}
+      # f.input :colors,as: :check_boxes, collection: Color.all.collect{|c| [c.colour_code,c.id]}
       f.input :factory_graphic_code
       f.input :placement_id,as: :select, collection:  Placement.all.collect{|placement| [placement.code,placement.id]}
       f.input :layout_factory_code
