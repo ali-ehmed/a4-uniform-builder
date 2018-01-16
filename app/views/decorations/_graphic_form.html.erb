@@ -1,0 +1,72 @@
+<%=simple_form_for :text, url: texts_path, method: :post do |f|%>
+    <li class="form-group">
+      <label class="title" >Number</label>
+      <div class="form-holder">
+        <%=f.input_field :team_number,  value: "26", class: "form-control"%>
+      </div>
+    </li>
+    <li class="form-group">
+      <label class="title" >Select a Size</label>
+      <div class="form-holder">
+        <%=f.input_field :size_id, as: :select, collection: Size.all.collect{|size| [size.size,size.id]}, class: "form-control", data: {size: "back"}%>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <label class="title" >Fill Color</label>
+      <div class="form-holder">
+        <%=f.input_field :decoration_color, as: :select, collection: ["red", "black", "pink", "white", "blue", "green", "yellow"], class: "form-control", data: {color: "back"}%>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <label class="title" >Select a FontStyle</label>
+      <div class="form-holder">
+        <%=f.input_field :font_style, as: :select, collection: ["normal", "italic", "oblique"], class: "form-control", data: {style: "back"}%>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <label class="title" >Select a Font Family</label>
+      <div class="form-holder">
+        <%=f.input_field :font_family, as: :select, collection: ["Helvetica-Bold", "Helvetica", "robotobold", "robotobold_condensed", "robotobold_italic", "robotocondensed", "roboto_condensedbold_italic"], class: "form-control", data: {family: "back"}%>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <label class="title" >Do you want outline?</label>
+      <div class="form-holder">
+        <%=f.check_box :is_stroke, class: "form-control"%>
+      </div>
+    </li>
+
+    <li class="form-group hide-font">
+      <label class="title" >Outline Colour</label>
+      <div class="form-holder">
+        <%=f.input_field :outilne_colour, as: :select, collection: ["#000000", "#ff000ff","#FF00","#00FF"], class: "form-control", data: {outline: "back"}%>
+      </div>
+    </li>
+
+    <li class="form-group hide-font">
+      <label class="title" >Stroke Width</label>
+      <div class="form-holder">
+        <%=f.input_field :stroke_text_width, as: :select, collection: ["1", "2","3","4", "5", "6", "7", "8"], class: "form-control", data: {stroke: "back"}%>
+      </div>
+    </li>
+
+    <div class="options-btn option-btn-side">
+      <%=link_to :back, "Close", class: "btn btn-default"%>
+      <%=f.button :submit, "Complete", class: "btn btn-primary", remote: :true%>
+      <!--<a href="#" class="btn btn-primary" data-show="4">Complete</a>-->
+    </div>
+<%end%>
+<script>
+    var text_value = $('#text_team_number').val();
+    document.getElementById('PL10_Text_Back').textContent = text_value;
+    //    document.getElementById('PL1_Text_Front').textContent = text_value;
+
+</script>
+<!--<div class="options-btn option-btn-side">-->
+<%#=link_to :back, "Close", class: "btn btn-default"%>
+<%#=link_to summaries_path(), "Complete", class: "btn btn-primary", remote: true%>
+<!--</div>-->

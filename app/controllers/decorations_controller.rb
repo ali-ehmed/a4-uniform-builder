@@ -24,13 +24,18 @@ class DecorationsController < ApplicationController
     @model          = params[:model_name]
     @team_name      = params[:team_name]
     @team_name.nil? && current_user.update_attribute(:decoration_type, params[:model_name]) || current_user.update_attribute(:decoration_type, "team_name")
+    @partial        = params[:partial]
   end
 
   def form
     @team_name      = params[:team_name]
     @style_methods  = StyleMethod.where(code: params[:id])
     @texts          = Text.all
-    @team_name != "true" && render("form.js.erb" )|| render(partial: "team_name.js.erb")
+    @partial        = params[:partial]
+    @partial == "graphic" && render(partial: "graphic.js.erb" )
+    @partial == "numbering"  &&  render("form.js.erb" )
+    @partial == "team_name" && render(partial: "team_name.js.erb")
+    @partial == "logo" && render(partial: "logo.js.erb")
   end
   private
   def style

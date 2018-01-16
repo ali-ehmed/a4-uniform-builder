@@ -19,6 +19,26 @@ $ ->
     $('#numbering').addClass('btn-default');
     $('#logo').addClass('btn-default');
 
+  $('body').on 'click', '#graphics',->
+    $(this).removeClass('btn-default');
+    $('#team_name').removeClass('btn-primary');
+    $('#numbering').removeClass('btn-primary');
+    $('#logo').removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $('#team_name').addClass('btn-default');
+    $('#numbering').addClass('btn-default');
+    $('#logo').addClass('btn-default');
+
+  $('body').on 'click', '#logo',->
+    $(this).removeClass('btn-default');
+    $('#team_name').removeClass('btn-primary');
+    $('#numbering').removeClass('btn-primary');
+    $('#graphics').removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $('#team_name').addClass('btn-default');
+    $('#numbering').addClass('btn-default');
+    $('#graphics').addClass('btn-default');
+
   $('.panel-collapse').on 'show.bs.collapse', ->
     $(this).siblings('.panel-heading').addClass 'active'
     return
@@ -28,7 +48,8 @@ $ ->
 
   $('body').on 'change', '#style_method_code', (e) ->
     team=$(this).data('team')
-    $.getScript("/decorations/#{$(this).val()}/form?team_name=#{team}")
+    partial=$(this).data('partial')
+    $.getScript("/decorations/#{$(this).val()}/form?team_name=#{team}&&partial=#{partial}")
 
 
   $('body').on 'input', '#text_team_name', ->
