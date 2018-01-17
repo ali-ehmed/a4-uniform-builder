@@ -740,6 +740,8 @@ body.home-page{
 .sidebar .panel-body {
     background: #fff;
     box-shadow: 0 0 5px #ccc;
+    max-height: 600px;
+    overflow: auto;
 }
 .collapsed .glyphicon-plus {
     display: inline-block;
@@ -1850,3 +1852,132 @@ body.home-page{
 .hide-font{
   display: none !important;
 }
+
+
+/*graphics start*/
+.selected-decoration .graphic-area{
+    overflow:hidden;
+}
+.selected-decoration .graphic-area .select-design{
+    overflow:hidden;
+    padding:10px 0;
+}
+.selected-decoration .graphic-area .image-holder{
+    float:left;
+    width:30%;
+    border:1px solid #777;
+    padding:5px;
+}
+.selected-decoration .graphic-area .image-holder img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+.selected-decoration .graphic-area .description{
+    float:left;
+    font-size: 15px;
+    padding: 32px 10px;
+}
+.selected-decoration .graphic-area .color-selection{
+    overflow:hidden;
+    padding:0 0 5px;
+        padding: 5px;
+}
+.selected-decoration .graphic-area .color-selection .color-box{
+    float:left;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    box-shadow:2px 3px 6px rgba(0,0,0,.3);
+    margin:2px;
+    text-align:center;
+}
+.selected-decoration .graphic-area .color-selection .color-box.active{
+    height: 30px;
+    box-shadow: 2px 3px 6px rgba(232, 72, 93, 0.75);
+    width: 30px;
+    BORDER: 1PX SOLID #ad0000;
+}
+.selected-decoration .graphic-area .color-number{
+    float:left;
+    
+    margin:1px 10px;
+    color:#666;
+    line-height:30px;
+    border-right:1px solid #777;
+    padding-right:10px;
+}
+.selected-decoration .graphic-area .color-name{
+    float:left;
+    width:60%;
+    color:#000;
+    font-size:15px;
+    text-transform:uppercase;
+    line-height:30px;
+    
+}
+.selected-decoration .graphic-area .selection-area{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+    position: absolute;
+    top: 57px;
+    left: -4px;
+    z-index: 99;
+    background: #fff;
+    overflow-y: auto;
+    margin: 0 14px;
+    width: 94%;
+}
+.selected-decoration .selection-area .header{
+    overflow:hidden;
+    padding:5px;
+    background:#D02030;
+}
+.selected-decoration .selection-area .header strong{
+    font-size:16px;
+    color:#fff;
+}
+.selected-decoration .selection-area .footer{
+    padding:5px;
+    text-align:right;
+}
+.selected-decoration .selection-area  .sub-section{
+    overflow:hidden;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+}
+.selected-decoration .selection-area .header .close-btn{
+    float:right;
+    height:20px;
+    width:20px;
+    text-align:center;
+    color:#fff;
+}
+.selected-decoration .selection-area .content-holder{
+    overflow:auto;
+    max-height:500px;
+}
+
+.selected-decoration .graphic-area .selection-area .heading{
+    display:block;
+    padding:0 0 5px;
+    font-size:16px;
+}
+.selected-decoration .graphic-area .selection-area .logo-list li{
+    float:left;
+    margin:0 3px;
+    text-align:center;
+}
+.selected-decoration .graphic-area .selection-area .color-selection{
+    overflow:hidden;
+    margin-bottom:10px;
+    
+}
+
+.selected-decoration .method li .title{
+    float:left;
+    width:90px;
+    margin:10px 0 0;
+}
+/*end*/
