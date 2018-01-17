@@ -1,0 +1,7 @@
+var modalName = "#graphicSelection";
+$(modalName).remove();
+$("body").append("<%= j render partial: "graphic_selection", locals: { graphics: @graphics } %>");
+$(modalName).modal("show");
+$(modalName).on('hidden.bs.modal', function (e) {
+    $(modalName).remove();
+});

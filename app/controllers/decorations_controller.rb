@@ -37,6 +37,10 @@ class DecorationsController < ApplicationController
     @partial == "team_name" && render(partial: "team_name.js.erb")
     @partial == "logo" && render(partial: "logo.js.erb")
   end
+
+  def graphic_selection
+    @graphics = Graphic.all
+  end
   private
   def style
     @style = Style.find_by_id(params[:style_id])

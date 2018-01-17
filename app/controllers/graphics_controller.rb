@@ -3,6 +3,9 @@ class GraphicsController < ApplicationController
     @graphich = Graphic.create graphic_params
   end
 
+  def update
+
+  end
 
   private
   def graphic_params

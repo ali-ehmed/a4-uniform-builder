@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
     member do
       get :form
+      get :graphic_selection
     end
   end
   resources :options do

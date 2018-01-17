@@ -2,9 +2,11 @@
     <li class="form-group">
       <label class="title" >Select Graphic</label>
       <div class="form-holder">
-        <%=f.input_field :image, as: :select, collection: Graphic.all.collect{|g| [link_to(g.image.url), g.id]}, class: "form-control"%>
+        <%= link_to((image_tag ""), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id]}, remote: true)%>
+       <%#=f.input_field :image, as: :select, collection: Graphic.all.collect{|g| [link_to(g.image.url), g.id]}, class: "form-control"%>
       </div>
     </li>
+
 <%end%>
 <script>
     var text_value = $('#text_team_number').val();

@@ -151,8 +151,12 @@ $ ->
     document.getElementById('PL2_Front_Logo').href.baseVal = selected_graphic;
 
 
-  $('body').on  'change',  '#text_image', ->
-    selected_graphic = $('select#text_image option:selected').text();
-#    document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;
-    document.getElementById('PL2_Front_Logo').href.baseVal = selected_graphic;
+  $('body').on  'click',  '#graphic_selection', ->
+    style_id = $(this).data('style');
+    $.getScript("/decorations/#{style_id}/graphic_selection");
+
+
+#    selected_graphic = $('select#text_image option:selected').text();
+##    document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;
+#    document.getElementById('PL2_Front_Logo').href.baseVal = selected_graphic;
 
