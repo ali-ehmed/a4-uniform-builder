@@ -32,6 +32,8 @@ class DecorationsController < ApplicationController
     @style_methods  = StyleMethod.where(code: params[:id])
     @texts          = Text.all
     @partial        = params[:partial]
+    @graphics       = Graphic.all
+    @colors         = Color.where(is_tile_one: true)
     @partial == "graphic" && render(partial: "graphic.js.erb" ) && (@object=Graphic.all)
     @partial == "numbering"  &&  render("form.js.erb" )
     @partial == "team_name" && render(partial: "team_name.js.erb")
@@ -39,7 +41,6 @@ class DecorationsController < ApplicationController
   end
 
   def graphic_selection
-    @graphics = Graphic.all
   end
   private
   def style

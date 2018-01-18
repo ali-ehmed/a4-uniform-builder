@@ -2,11 +2,31 @@
     <li class="form-group">
       <label class="title" >Select Graphic</label>
       <div class="form-holder">
-        <%= link_to((image_tag ""), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id]}, remote: true)%>
-       <%#=f.input_field :image, as: :select, collection: Graphic.all.collect{|g| [link_to(g.image.url), g.id]}, class: "form-control"%>
+        <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id]}, remote: true)%>
+        <%= f.input_field :image, class: "form-control hide-sidebar" %>
       </div>
     </li>
 
+    <li class="form-group">
+      <label class="title" >Select Color</label>
+      <div class="form-holder">
+        <div class="color-selection">
+          <div class="color-box" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <div class="graphic-area hide-sidebar" id="sidebar-4">
+        <%=render partial: "graphic_selection", locals: {graphics: graphics}%>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <div class="graphic-area hide-sidebar" id="sidebar-5">
+        <%=render partial: "color_selection", locals: {colors: colors}%>
+      </div>
+    </li>
 <%end%>
 <script>
     var text_value = $('#text_team_number').val();

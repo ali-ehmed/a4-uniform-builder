@@ -153,8 +153,23 @@ $ ->
 
   $('body').on  'click',  '#graphic_selection', ->
     style_id = $(this).data('style');
-    $.getScript("/decorations/#{style_id}/graphic_selection");
+    document.getElementById('sidebar-4').classList.remove("hide-sidebar")
 
+  $('body').on  'click',  '#color_selection', ->
+    document.getElementById('sidebar-5').classList.remove("hide-sidebar")
+
+  $('body').on  'click',  '.graphic-image', ->
+    graphic = $(this).data('image');
+    document.getElementById('PL2_Front_Logo').href.animVal    = graphic;
+    document.getElementById('PL2_Front_Logo').href.baseVal    = graphic;
+    document.getElementById('set_image').src         = graphic;
+    document.getElementById('sidebar-4').classList.add("hide-sidebar")
+
+  $('body').on  'click',  '#select_color', ->
+    color = $(this).data('color');
+    document.getElementById('color_selection').style.backgroundColor    = color;
+    document.getElementById('PL2_Front_Logo').style.fill                = color;
+    document.getElementById('sidebar-5').classList.add("hide-sidebar")
 
 #    selected_graphic = $('select#text_image option:selected').text();
 ##    document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;

@@ -1,0 +1,27 @@
+<div class="selection-area">
+  <div class="header">
+    <strong class="">
+      Color Selection
+    </strong>
+    <a href="#" class="close-btn">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+  </div>
+  <div class="content-holder">
+    <div class="color-selection">
+      <strong class="heading">Selected color </strong>
+      <div class="color-box" style="background:#000; color:#fff;">BK</div>
+      <div class="color-box" style="background:#000; color:#fff;">BK</div>
+      <div class="color-box" style="background:#000; color:#fff;">BK</div>
+
+
+
+    </div>
+    <div class="color-selection">
+      <strong class="heading">Select color </strong>
+      <%-colors.each do |color|%>
+          <div class="color-box" id="select_color" data-color="<%=color.hex_code%>" style="background:<%=color.try(:hex_code)%>; color:#fff;"><%=color.try(:colour_code)%></div>
+      <%end%>
+    </div>
+  </div>
+</div>
