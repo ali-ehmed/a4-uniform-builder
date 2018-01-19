@@ -1,4 +1,12 @@
 <%=simple_form_for :graphic, url: texts_path, method: :post do |f|%>
+
+    <li class="form-group">
+      <label class="title" >Upload Graphic</label>
+      <div class="form-holder">
+        <%=f.input_field :image, type: :file, multiple: true, class: "form-control"%>
+      </div>
+    </li>
+
     <li class="form-group">
       <label class="title" >Select Graphic</label>
       <div class="form-holder">
@@ -16,6 +24,7 @@
       </div>
     </li>
 
+
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
         <%=render partial: "graphic_selection", locals: {graphics: graphics}%>
@@ -27,6 +36,11 @@
         <%=render partial: "color_selection", locals: {colors: colors}%>
       </div>
     </li>
+
+    <div class="footer">
+      <%=f.button :submit,  "Accept", class: "btn btn-danger highlight graphics", data: {graphics: "true"}%>
+      <%= f.button :button, "Cancel", type: :reset, class: "btn highlight graphics", data: {graphics: "false"} %>
+    </div>
 <%end%>
 <script>
     var text_value = $('#text_team_number').val();

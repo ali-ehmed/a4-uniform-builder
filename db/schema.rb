@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 20180115081552) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "decoration_type"
-    t.string "decoration_method"
     t.string "thumbnail"
     t.string "factory_graphic_code"
     t.string "factory_layout_code"
