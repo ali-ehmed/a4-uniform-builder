@@ -196,21 +196,24 @@ $ ->
 
   searchImage = ->
     category = $('#search_image').val()
-    $.getScript("/logos?category=#{category}")
+    if $('#search_image').data('graphic') == true
+      $.getScript("/graphics?category=#{category}")
+    else
+      $.getScript("/logos?category=#{category}")
     document.getElementById('sidebar-4').classList.remove("hide-sidebar")
     return
 
-  searchGraphic = ->
-    category = $('#search_graphic').val()
-    $.getScript("/graphics?category=#{category}")
+  searchCategory = ->
+    category   = $('select#serach_category option:selected').text();
+    $.getScript("/logos?category=#{category}")
     document.getElementById('sidebar-4').classList.remove("hide-sidebar")
     return
 
   $('body').on 'keydown', '#search_image', ->
     clearTimeout timer
-    timer = setTimeout(searchImage, 2000)
+    timer = setTimeout(searchImage, 1100)
 
-  $('body').on 'keydown', '#search_graphic', ->
+  $('body').on 'change', '#serach_category', ->
     clearTimeout timer
-    timer = setTimeout(searchGraphic, 2000)
+    timer = setTimeout(searchCategory, 1100)
 

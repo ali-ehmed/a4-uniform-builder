@@ -18,7 +18,7 @@
     <div class="clearfix sub-section">
       <label class="title" >Select Category</label>
       <%=simple_form_for :logo, url: logos_path, html: {class: "form-holder"} do |f|%>
-        <%f.input_field :category, as: :select, collection: Category.all.collect(&:garment_category),class:"form-control", id: "serach_category"%>
+        <%f.input_field :category, as: :select, collection: Logo.all.collect{|c| [c.category, c.id]},class:"form-control", id: "serach_category"%>
       <%end%>
     </div>
     <%=render partial: "populate_images", locals:{images: logos}%>
