@@ -6,7 +6,7 @@ class DecorationsController < ApplicationController
     head :ok
   end
   def index
-    @colors    = current_user.try(:colors)
+    @colors             = current_user.try(:colors)
     @color = (@colors.try(:last) || @user_color).try(:hex_code).split(',')
     @decorations        = Decoration.all
     @placements         = Placement.all
@@ -46,5 +46,7 @@ class DecorationsController < ApplicationController
   def style
     @style = Style.find_by_id(params[:style_id])
     @user_color = Color.find_by_id(current_user.color)
+    params[:placement_id].present? &&
+        current_user.update_attribute(:placement_pos, Placement.find_by_id(params[:placement_id]).try(:code))
   end
 end

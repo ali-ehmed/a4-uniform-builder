@@ -217,3 +217,6 @@ $ ->
     clearTimeout timer
     timer = setTimeout(searchCategory, 1100)
 
+
+#  $('body').on 'click', '#logo_form', ->
+#    document.getElementById("logo-form").submit();
