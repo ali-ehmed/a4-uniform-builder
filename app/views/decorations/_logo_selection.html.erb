@@ -1,0 +1,29 @@
+<div class="selection-area">
+  <div class="header">
+    <strong class="">
+      Logo Selection
+    </strong>
+    <a href="#" class="close-btn">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+  </div>
+  <div class="content-holder">
+    <div class="clearfix sub-section">
+      <label class="title" >Search</label>
+      <div class="form-holder">
+        <input type="text" placeholder="Enter your Search..." class="form-control", id="search_image">
+      </div>
+
+    </div>
+    <div class="clearfix sub-section">
+      <label class="title" >Select Category</label>
+      <%=simple_form_for :logo, url: logos_path, html: {class: "form-holder"} do |f|%>
+        <%f.input_field :category, as: :select, collection: Category.all.collect(&:garment_category),class:"form-control", id: "serach_category"%>
+      <%end%>
+    </div>
+    <%=render partial: "populate_images", locals:{images: logos}%>
+    <div class="footer">
+      <input type="button" value="Cancel" class="btn btn-danger" id="cancel_btn">
+    </div>
+  </div>
+</div>

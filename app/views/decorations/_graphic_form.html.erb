@@ -1,9 +1,9 @@
-<%=simple_form_for :graphic, url: texts_path, method: :post do |f|%>
+<%=simple_form_for :graphic, url: decorations_path, method: :post do |f|%>
 
     <li class="form-group">
       <label class="title" >Upload Graphic</label>
       <div class="form-holder">
-        <%=f.input_field :image, type: :file, multiple: true, class: "form-control"%>
+        <%=f.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput"%>
       </div>
     </li>
 
@@ -45,10 +45,5 @@
 <script>
     var text_value = $('#text_team_number').val();
     document.getElementById('PL10_Text_Back').textContent = text_value;
-    //    document.getElementById('PL1_Text_Front').textContent = text_value;
 
 </script>
-<!--<div class="options-btn option-btn-side">-->
-<%#=link_to :back, "Close", class: "btn btn-default"%>
-<%#=link_to summaries_path(), "Complete", class: "btn btn-primary", remote: true%>
-<!--</div>-->

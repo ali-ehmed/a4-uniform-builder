@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115081552) do
+ActiveRecord::Schema.define(version: 20180120071209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180115081552) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "decoration_type"
+    t.string "decoration_method"
     t.string "thumbnail"
     t.string "factory_graphic_code"
     t.string "factory_layout_code"
@@ -157,6 +158,19 @@ ActiveRecord::Schema.define(version: 20180115081552) do
     t.string "layout1"
     t.string "layout2"
     t.string "layout3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logos", force: :cascade do |t|
+    t.string "image"
+    t.string "category"
+    t.integer "style_id"
+    t.integer "placement_id"
+    t.string "selected_colour"
+    t.integer "gender_id"
+    t.string "factory_graphic_code"
+    t.string "layout_factory_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -391,6 +405,7 @@ ActiveRecord::Schema.define(version: 20180115081552) do
     t.integer "category_id"
     t.string "decoration_type"
     t.integer "color"
+    t.integer "placement"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

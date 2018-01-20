@@ -12,29 +12,14 @@
       <label class="title" >Search</label>
 
       <div class="form-holder">
-        <input type="text" placeholder="Enter your Search..." class="form-control">
+        <input type="text" placeholder="Enter your Search..." class="form-control", id="search_graphic">
       </div>
 
     </div>
-    <div class="clearfix sub-section">
-      <label class="title" >Select</label>
 
-      <div class="form-holder">
-        <select  class="form-control">
-          <option>Baseball</option>
-          <option>knights</option>
-          <option>knights</option>
-        </select>
-      </div>
-
-    </div>
-    <div class="color-selection">
-      <strong class="heading">Select logo </strong>
-      <ul class="logo-list">
-        <%-graphics.each do |graphic|%>
-          <li><a class="active" href="#" data-remote="true"><img src="<%=graphic.image.url%>" class="graphic-image" data-image="<%=graphic.image%>"></a><span class="tile-view-text">front</span></li>
-        <%end%>
-      </ul>
+    <%=render partial: "populate_images", locals: {images: graphics}%>
+    <div class="footer">
+      <input type="button" value="Cancel" class="btn btn-danger" id="cancel_btn">
     </div>
   </div>
 </div>

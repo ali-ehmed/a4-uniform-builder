@@ -34,10 +34,10 @@ class DecorationsController < ApplicationController
     @partial        = params[:partial]
     @graphics       = Graphic.all
     @colors         = Color.where(is_tile_one: true)
-    @partial == "graphic" && render(partial: "graphic.js.erb" ) && (@object=Graphic.all)
-    @partial == "numbering"  &&  render("form.js.erb" )
+    @partial == "graphic" && (@object=Graphic.all) && render(partial: "graphic.js.erb" )
+    @partial == "numbering" && render("form.js.erb" )
     @partial == "team_name" && render(partial: "team_name.js.erb")
-    @partial == "logo" && render(partial: "logo.js.erb")
+    @partial == "logo" && (@object=Logo.all) && render(partial: "logo.js.erb")
   end
 
   def graphic_selection

@@ -6,6 +6,9 @@ class GraphicsController < ApplicationController
   def update
 
   end
+  def index
+    @graphics = Graphic.where(category: params[:category])
+  end
 
   private
   def graphic_params

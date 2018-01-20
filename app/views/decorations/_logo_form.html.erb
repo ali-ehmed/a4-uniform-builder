@@ -1,14 +1,49 @@
-<%=simple_form_for :text, url: texts_path, method: :post do |f|%>
+<%=simple_form_for :graphic, url: logos_path, method: :post do |f|%>
+
     <li class="form-group">
-      <label class="title" >Select Logo</label>
+      <label class="title" >Upload Graphic</label>
       <div class="form-holder">
-        <%=f.input_field :image, as: :select, collection: Graphic.all.collect{|g| [link_to(g.image.url), g.id]}, class: "form-control"%>
+        <%=f.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput"%>
       </div>
     </li>
 
-    <div class="options-btn option-btn-side">
-      <%=link_to :back, "Close", class: "btn btn-default"%>
-      <%=f.button :submit, "Complete", class: "btn btn-primary", remote: :true%>
-      <!--<a href="#" class="btn btn-primary" data-show="4">Complete</a>-->
+    <li class="form-group">
+      <label class="title" >Select Logo</label>
+      <div class="form-holder">
+        <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id]}, remote: true)%>
+        <%= f.input_field :image, class: "form-control hide-sidebar" %>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <label class="title" >Select Color</label>
+      <div class="form-holder">
+        <div class="color-selection">
+          <div class="color-box" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>
+        </div>
+      </div>
+    </li>
+
+
+    <li class="form-group">
+      <div class="graphic-area hide-sidebar" id="sidebar-4">
+        <%=render partial: "logo_selection", locals: {logos: logos}%>
+      </div>
+    </li>
+
+    <li class="form-group">
+      <div class="graphic-area hide-sidebar" id="sidebar-5">
+        <%=render partial: "color_selection", locals: {colors: colors}%>
+      </div>
+    </li>
+
+    <div class="footer">
+      <%=f.button :submit,  "Accept", class: "btn btn-danger highlight graphics", data: {graphics: "true"}%>
+      <%= f.button :button, "Cancel", type: :reset, class: "btn highlight graphics", data: {graphics: "false"} %>
     </div>
 <%end%>
+<script>
+    var text_value = $('#text_team_number').val();
+    document.getElementById('PL10_Text_Back').textContent = text_value;
+
+</script>

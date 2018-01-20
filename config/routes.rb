@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :summaries
   resources :texts
   resources :graphics
+  resources :logos
   resources :decorations do
     collection do
       put :apply_model

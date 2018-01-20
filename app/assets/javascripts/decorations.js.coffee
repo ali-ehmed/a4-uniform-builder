@@ -149,6 +149,7 @@ $ ->
     selected_graphic = $('select#graphic_image option:selected').text();
     document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;
     document.getElementById('PL2_Front_Logo').href.baseVal = selected_graphic;
+    document.getElementById('header_img').scr = selected_graphic;
 
 
   $('body').on  'click',  '#graphic_selection', ->
@@ -163,6 +164,7 @@ $ ->
     document.getElementById('PL2_Front_Logo').href.animVal    = graphic;
     document.getElementById('PL2_Front_Logo').href.baseVal    = graphic;
     document.getElementById('set_image').src         = graphic;
+    document.getElementById('header_img').src         = graphic;
     document.getElementById('sidebar-4').classList.add("hide-sidebar")
 
   $('body').on  'click',  '#select_color', ->
@@ -172,6 +174,43 @@ $ ->
     document.getElementById('sidebar-5').classList.add("hide-sidebar")
 
 #    selected_graphic = $('select#text_image option:selected').text();
-##    document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;
+#    document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;
 #    document.getElementById('PL2_Front_Logo').href.baseVal = selected_graphic;
+
+  $('body').on 'change', '#img_inpput', ->
+    input = this
+    if input.files and input.files[0]
+      reader = new FileReader
+
+      reader.onload = (e) ->
+        $('#set_image').attr 'src', e.target.result
+        return
+
+      reader.readAsDataURL input.files[0]
+
+
+  $('body').on 'click', '#cancel_btn', ->
+    document.getElementById('sidebar-4').classList.add("hide-sidebar")
+
+  timer = null
+
+  searchImage = ->
+    category = $('#search_image').val()
+    $.getScript("/logos?category=#{category}")
+    document.getElementById('sidebar-4').classList.remove("hide-sidebar")
+    return
+
+  searchGraphic = ->
+    category = $('#search_graphic').val()
+    $.getScript("/graphics?category=#{category}")
+    document.getElementById('sidebar-4').classList.remove("hide-sidebar")
+    return
+
+  $('body').on 'keydown', '#search_image', ->
+    clearTimeout timer
+    timer = setTimeout(searchImage, 2000)
+
+  $('body').on 'keydown', '#search_graphic', ->
+    clearTimeout timer
+    timer = setTimeout(searchGraphic, 2000)
 
