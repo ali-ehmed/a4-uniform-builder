@@ -1,4 +1,4 @@
-<%=simple_form_for :graphic, url: decorations_path, method: :post do |f|%>
+<%=simple_form_for :graphic, url: graphics_path, method: :post do |f|%>
 
     <li class="form-group">
       <label class="title" >Upload Graphic</label>
@@ -45,5 +45,4 @@
 <script>
     var text_value = $('#text_team_number').val();
     document.getElementById('PL10_Text_Back').textContent = text_value;
-
 </script>

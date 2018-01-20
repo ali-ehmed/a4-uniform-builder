@@ -44,9 +44,12 @@ class DecorationsController < ApplicationController
   end
   private
   def style
-    @style = Style.find_by_id(params[:style_id])
+    @style = Style.find_by_id(params[:style_id] || current_user.style)
     @user_color = Color.find_by_id(current_user.color)
-    params[:placement_id].present? &&
-        current_user.update_attribute(:placement_pos, Placement.find_by_id(params[:placement_id]).try(:code))
+    @placement  = Placement.find_by_id(params[:placement_id])
+    if params[:placement_id].present?
+      current_user.update_attribute(:placement_pos, @placement.try(:code))
+      @style.placements += [@placement]
+    end
   end
 end
