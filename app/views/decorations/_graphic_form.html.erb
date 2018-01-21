@@ -31,8 +31,8 @@
     </li>
     <div data-render-color></div>
     <div class="footer">
-      <%=f.button :submit,  "Accept", class: "btn btn-danger highlight graphics", data: {graphics: "true"}%>
       <%= f.button :button, "Cancel", type: :reset, class: "btn highlight graphics", data: {graphics: "false"} %>
+      <%=f.button :submit,  "Complete", class: "btn btn-danger highlight graphics", data: {graphics: "true"}%>
     </div>
 <%end%>
 <script>

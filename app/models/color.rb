@@ -13,4 +13,7 @@ class Color < ApplicationRecord
 
 	has_many    :graphic_colors
 	has_many    :graphics, through: :graphic_colors
+
+	has_many		:logo_colors
+	has_many		:logos, through: :logo_colors
 end

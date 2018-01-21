@@ -13,9 +13,6 @@
       <%-selected_colors.each do |color|%>
         <div class="color-box" style="background:<%=color.try(:hex_code)%>; color:<%=color.try(:tile_text_color)%>;"><%=color.try(:colour_code)%></div>
       <%end%>
-
-
-
     </div>
     <div class="color-selection">
       <strong class="heading">Select color </strong>

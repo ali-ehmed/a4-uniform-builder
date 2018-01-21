@@ -22,8 +22,8 @@
       </div>
     </li>
     <div class="footer">
-      <%=f.button :submit, "Accept", class: "btn btn-danger highlight graphics", data: {graphics: "true"}, id: "logo_form", remote: true%>
       <%= f.button :button, "Cancel", type: :reset, class: "btn highlight graphics", data: {graphics: "false"} %>
+      <%=f.button :submit,  "Complete", class: "btn btn-danger highlight graphics", data: {graphics: "true"}, id: "logo_form", remote: true%>
     </div>
 <%end%>
 <script>

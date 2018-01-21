@@ -1,8 +1,8 @@
 <li class="form-group">
   <div class="graphic-area">
     <div class="color-selection">
-      <div class="color-box" style="background:<%=color.try(:hex_code)%>; color:<%=color.try(:tile_text_color)%>;" id="color_selection" data-model="<%=color.try(:class).try(:name)%>"><%=color.try(:colour_code)%></div>
-      <div class="color-number">Color <%=number%></div>
+      <div class="color-box" style="background:<%=color.try(:hex_code)%>; color:<%=color.try(:tile_text_color)%>;" id="color_selection" data-model="<%=color.try(:class).try(:name)%>"></div><%#=color.try(:colour_code)%>
+      <div class="color-number">Color <%=number+1%></div>
       <div class="color-name">
         <%=color.try(:colour_name)%>
       </div>

@@ -16,6 +16,9 @@ class GraphicsController < ApplicationController
     @graphic_colors = Color.where(is_tile_one: true)
     render "graphic_colors.js.erb"
   end
+  def update
+
+  end
 
   private
   def graphic_params
@@ -25,7 +28,7 @@ class GraphicsController < ApplicationController
     @graphic        = Graphic.find_by_id(params[:id])
     @colors         = Color.where(is_tile_one: true)
     @style          = Style.find_by_id(params[:style_id] || current_user.try(:style))
-    @selected_colors= @style.colors
+    @selected_colors= @graphic.colors.where(is_tile_one:true)
     @placement      = Placement.find_by_id(params[:placement_id] || current_user.try(:placement))
   end
 end
