@@ -6,4 +6,6 @@ class Graphic < ApplicationRecord
   has_many	  :graphic_style_methods
   has_many 	  :style_methods, :through => :graphic_style_methods
   has_many    :layouts
+  has_many    :graphic_colors
+  has_many    :colors, through: :graphic_colors
 end

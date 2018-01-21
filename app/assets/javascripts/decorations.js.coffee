@@ -161,6 +161,7 @@ $ ->
 
   $('body').on  'click',  '#color_selection', ->
     document.getElementById('sidebar-5').classList.remove("hide-sidebar")
+#    color = $('#color_selection').val();
 
   $('body').on  'click',  '.graphic-image', ->
     graphic = $(this).data('image');

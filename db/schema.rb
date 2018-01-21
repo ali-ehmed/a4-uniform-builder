@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180120135929) do
+ActiveRecord::Schema.define(version: 20180121124704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,13 @@ ActiveRecord::Schema.define(version: 20180120135929) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "graphic_colors", force: :cascade do |t|
+    t.integer "graphic_id"
+    t.integer "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "graphic_style_methods", force: :cascade do |t|
     t.integer "graphic_id"
     t.integer "style_method_id"
@@ -151,6 +158,10 @@ ActiveRecord::Schema.define(version: 20180120135929) do
     t.string "custom_graphic"
     t.string "custom_fee"
     t.integer "price_id"
+    t.string "colour_codes"
+    t.string "colour_1"
+    t.string "colour_2"
+    t.string "colour_3"
   end
 
   create_table "layouts", force: :cascade do |t|
@@ -173,6 +184,9 @@ ActiveRecord::Schema.define(version: 20180120135929) do
     t.string "layout_factory_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "colour_1"
+    t.string "colour_2"
+    t.string "colour_3"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -407,6 +421,7 @@ ActiveRecord::Schema.define(version: 20180120135929) do
     t.integer "color"
     t.integer "placement"
     t.string "placement_pos"
+    t.string "graphic_color"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

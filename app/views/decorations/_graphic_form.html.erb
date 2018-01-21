@@ -1,9 +1,9 @@
-<%=simple_form_for :graphic, url: graphics_path, method: :post do |f|%>
+<%=simple_form_for Graphic.new, url: graphics_path, method: :post do |f|%>
 
     <li class="form-group">
       <label class="title" >Upload Graphic</label>
       <div class="form-holder">
-        <%=f.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput", data:{placement: current_user.try(:placement_pos)}%>
+        <%=f.input_field :image, class: "form-control", id:"img_inpput", data:{placement: current_user.try(:placement_pos)}%>
       </div>
     </li>
 
@@ -11,7 +11,7 @@
       <label class="title" >Select Graphic</label>
       <div class="form-holder">
         <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id], placement: current_user.try(:placement_pos)}, remote: true)%>
-        <%= f.input_field :image, class: "form-control hide-sidebar" %>
+        <%= f.input :image, class: "form-control hide-sidebar" %>
       </div>
     </li>
 
@@ -19,10 +19,39 @@
       <label class="title" >Select Color</label>
       <div class="form-holder">
         <div class="color-selection">
-          <div class="color-box" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>
+          <div class="color-box" type="text" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>
         </div>
       </div>
     </li>
+
+
+    <li class="form-group">
+      <div class="graphic-area">
+
+        <div class="color-selection">
+          <div class="color-box color-selection" style="background:#000; color:#fff;" id="">BK</div>
+          <div class="color-number">Color 1</div>
+          <div class="color-name">
+            Black
+          </div>
+        </div>
+        <div class="color-selection">
+          <div class="color-box color-selection" style="background:#000; color:#fff;" id="">BK</div>
+          <div class="color-number">Color 2</div>
+          <div class="color-name">
+            white
+          </div>
+        </div>
+        <div class="color-selection">
+          <div class="color-box color-selection" style="background:#000; color:#fff;">BK</div>
+          <div class="color-number">Color 3</div>
+          <div class="color-name">
+            blue
+          </div>
+        </div>
+      </div>
+    </li>
+
 
 
     <li class="form-group">
