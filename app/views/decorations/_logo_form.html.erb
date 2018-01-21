@@ -3,14 +3,14 @@
     <li class="form-group">
       <label class="title" >Upload Graphic</label>
       <div class="form-holder">
-        <%=f.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput"%>
+        <%=f.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput", data: {placement: current_user.try(:placement_pos)}%>
       </div>
     </li>
 
     <li class="form-group">
       <label class="title" >Select Logo</label>
       <div class="form-holder">
-        <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id]}, remote: true)%>
+        <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id],placement: current_user.try(:placement_pos)}, remote: true)%>
         <%= f.input_field :image, class: "form-control hide-sidebar" %>
       </div>
     </li>
@@ -28,13 +28,13 @@
 
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
-        <%=render partial: "logo_selection", locals: {logos: logos}%>
+        <%=render partial: "logo_selection", locals: {logos: logos, placement: placement}%>
       </div>
     </li>
 
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-5">
-        <%=render partial: "color_selection", locals: {colors: colors}%>
+        <%=render partial: "color_selection", locals: {colors: colors, selected_colors: selected_colors, placement: placement}%>
       </div>
     </li>
 

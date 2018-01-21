@@ -153,7 +153,10 @@ $ ->
 
 
   $('body').on  'click',  '#graphic_selection', ->
-    style_id = $(this).data('style');
+    style_id  = $(this).data('style');
+    placement = $(this).data('placement')
+    #document.getElementById(placement).href.animVal    = graphic;
+    #document.getElementById(placement).href.baseVal    = graphic;
     document.getElementById('sidebar-4').classList.remove("hide-sidebar")
 
   $('body').on  'click',  '#color_selection', ->
@@ -179,15 +182,15 @@ $ ->
 
   $('body').on 'change', '#img_inpput', ->
     input = this
-    if input.files and input.files[0]
-      reader = new FileReader
-
-      reader.onload = (e) ->
-        $('#set_image').attr 'src', e.target.result
-        return
-
-      reader.readAsDataURL input.files[0]
-
+    placemnet = $('#img_inpput').data('placement')
+    output  = document.getElementById('set_image')
+    output1 = document.getElementById('header_img')
+    output2 = document.getElementById(placemnet)
+    output.src = URL.createObjectURL(event.target.files[0])
+    output1.src = URL.createObjectURL(event.target.files[0])
+    output2.href.baseVal = URL.createObjectURL(event.target.files[0])
+    output2.src = URL.createObjectURL(event.target.files[0])
+    return
 
   $('body').on 'click', '#cancel_btn', ->
     document.getElementById('sidebar-4').classList.add("hide-sidebar")

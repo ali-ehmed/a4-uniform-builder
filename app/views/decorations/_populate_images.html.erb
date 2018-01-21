@@ -2,7 +2,7 @@
   <strong class="heading">Select <%=images.first.try(:class).try(:name)%></strong>
   <ul class="logo-list">
     <%-images.each do |obj|%>
-        <li><a class="active" href="#" data-remote="true"><img src="<%=obj.image.url%>" class="graphic-image" data-image="<%=obj.image%>"></a><span class="tile-view-text"><%=obj.try(:category)%></span></li>
+        <li><a class="active" href="#" data-remote="true" data-placement="<%=current_user.try(:placement_pos)%>"><img src="<%=obj.image.url%>" class="graphic-image" data-image="<%=obj.image%>"></a><span class="tile-view-text"><%=obj.try(:category)%></span></li>
     <%end%>
   </ul>
 </div>

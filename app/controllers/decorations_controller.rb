@@ -34,6 +34,9 @@ class DecorationsController < ApplicationController
     @partial        = params[:partial]
     @graphics       = Graphic.all
     @colors         = Color.where(is_tile_one: true)
+    @style          = Style.find_by_id(params[:style_id] || current_user.try(:style))
+    @selected_colors= @style.colors
+    @placement      = Placement.find_by_id(params[:placement_id] || current_user.try(:placement))
     @partial == "graphic" && (@object=Graphic.all) && render(partial: "graphic.js.erb" )
     @partial == "numbering" && render("form.js.erb" )
     @partial == "team_name" && render(partial: "team_name.js.erb")
@@ -46,9 +49,9 @@ class DecorationsController < ApplicationController
   def style
     @style = Style.find_by_id(params[:style_id] || current_user.style)
     @user_color = Color.find_by_id(current_user.color)
-    @placement  = Placement.find_by_id(params[:placement_id])
-    if params[:placement_id].present?
-      current_user.update_attribute(:placement_pos, @placement.try(:code))
+    @placement  = Placement.find_by_id(params[:placement_id] || current_user.try(:placement))
+    if (params[:placement_id] || current_user.placement_pos).present?
+      current_user.update_attributes(placement_pos: @placement.try(:code), placement: @placement.id)
       @style.placements += [@placement]
     end
   end
