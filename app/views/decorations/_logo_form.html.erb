@@ -16,15 +16,10 @@
     </li>
 
     <li class="form-group">
-      <label class="title" >Select Color</label>
-      <div class="form-holder">
-        <div class="color-selection">
-          <%=f.input_field :selected_colour, class: "form-control color-box", id: "color_selection", valud: "Fill", style: "background:#000; color:#fff;"%>
-          <!--<div class="color-box" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>-->
-        </div>
+      <div class="graphic-area hide-colors" id="sidebar-color">
+        <%=render partial: "colors", locals: {}%>
       </div>
-    </li>
-
+    </li>>
 
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
