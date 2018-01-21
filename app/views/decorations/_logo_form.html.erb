@@ -1,4 +1,4 @@
-<%=simple_form_for :logo, url: logos_path, method: :post do |f|%>
+<%=simple_form_for Logo.new, url: logos_path, method: :post do |f|%>
 
     <li class="form-group">
       <label class="title" >Upload Graphic</label>
@@ -15,32 +15,15 @@
       </div>
     </li>
 
-    <li class="form-group">
-      <label class="title" >Select Color</label>
-      <div class="form-holder">
-        <div class="color-selection">
-          <%=f.input_field :selected_colour, class: "form-control color-box", id: "color_selection", valud: "Fill", style: "background:#000; color:#fff;"%>
-          <!--<div class="color-box" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>-->
-        </div>
-      </div>
-    </li>
-
-
+    <div data-logo-colors></div>
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
         <%=render partial: "logo_selection", locals: {logos: logos, placement: placement}%>
       </div>
     </li>
-
-    <li class="form-group">
-      <div class="graphic-area hide-sidebar" id="sidebar-5">
-        <%=render partial: "color_selection", locals: {colors: colors, selected_colors: selected_colors, placement: placement}%>
-      </div>
-    </li>
-
     <div class="footer">
-      <%=f.button :submit, "Accept", class: "btn btn-danger highlight graphics", data: {graphics: "true"}, id: "logo_form", remote: true%>
       <%= f.button :button, "Cancel", type: :reset, class: "btn highlight graphics", data: {graphics: "false"} %>
+      <%=f.button :submit,  "Complete", class: "btn btn-danger highlight graphics", data: {graphics: "true"}, id: "logo_form", remote: true%>
     </div>
 <%end%>
 <script>

@@ -13,9 +13,6 @@
       <%-selected_colors.each do |color|%>
         <div class="color-box" style="background:<%=color.try(:hex_code)%>; color:<%=color.try(:tile_text_color)%>;"><%=color.try(:colour_code)%></div>
       <%end%>
-
-
-
     </div>
     <div class="color-selection">
       <strong class="heading">Select color </strong>
@@ -23,5 +20,8 @@
           <div class="color-box" id="select_color" data-placement="<%=current_user.try(:placement_pos)%>" data-color="<%=color.hex_code%>" style="background:<%=color.try(:hex_code)%>; color:#fff;"><%=color.try(:colour_code)%></div>
       <%end%>
     </div>
+  </div>
+  <div class="footer">
+    <input type="button" value="Cancel" class="btn btn-danger" id="cancel_btn">
   </div>
 </div>
