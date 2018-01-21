@@ -19,9 +19,14 @@ Rails.application.routes.draw do
   resources :graphics do
     collection do
       put :assign_color
+      get :graphic_colors
     end
   end
-  resources :logos
+  resources :logos do
+    collection do
+      get :logo_colors
+    end
+  end
   resources :decorations do
     collection do
       put :apply_model

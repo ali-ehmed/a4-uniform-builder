@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180121124704) do
+ActiveRecord::Schema.define(version: 20180121132223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20180121124704) do
     t.boolean "tackle_twill"
     t.string "tile_text_color", default: "#000000"
     t.integer "user_id"
+    t.string "colour_name"
   end
 
   create_table "decorations", force: :cascade do |t|

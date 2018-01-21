@@ -164,12 +164,21 @@ $ ->
 #    color = $('#color_selection').val();
 
   $('body').on  'click',  '.graphic-image', ->
-    graphic = $(this).data('image');
+    graphic         = $(this).data('image');
+    placement       = $(this).data('placement');
+    placement_pos   = $(this).data('placement-pos');
+    object_id       = $(this).data('object');
+    model           = $(this).data('model');
     document.getElementById('PL2_Front_Logo').href.animVal    = graphic;
     document.getElementById('PL2_Front_Logo').href.baseVal    = graphic;
-    document.getElementById('set_image').src         = graphic;
-    document.getElementById('header_img').src         = graphic;
+    document.getElementById('set_image').src                  = graphic;
+    document.getElementById('header_img').src                 = graphic;
     document.getElementById('sidebar-4').classList.add("hide-sidebar")
+    if model == "logo"
+      $.getScript("/logos/logo_colors?id=#{object_id}")
+    else
+      $.getScript("/graphics/graphic_colors?id=#{object_id}")
+    return
 
   $('body').on  'click',  '#select_color', ->
     color = $(this).data('color');
@@ -195,6 +204,7 @@ $ ->
 
   $('body').on 'click', '#cancel_btn', ->
     document.getElementById('sidebar-4').classList.add("hide-sidebar")
+    document.getElementById('sidebar-5').classList.add("hide-sidebar")
 
   timer = null
 

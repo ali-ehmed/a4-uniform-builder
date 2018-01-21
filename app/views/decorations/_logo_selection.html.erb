@@ -21,7 +21,7 @@
         <%f.input_field :category, as: :select, collection: Logo.all.collect{|c| [c.category, c.id]},class:"form-control", id: "serach_category"%>
       <%end%>
     </div>
-    <%=render partial: "populate_images", locals:{images: logos, placement: placement}%>
+    <%=render partial: "populate_images", locals:{images: logos, placement: placement, model: "logo"}%>
     <div class="footer">
       <input type="button" value="Cancel" class="btn btn-danger" id="cancel_btn">
     </div>

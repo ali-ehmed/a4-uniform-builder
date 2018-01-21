@@ -5,6 +5,7 @@ class DecorationsController < ApplicationController
   def create
     head :ok
   end
+
   def index
     @colors             = current_user.try(:colors)
     @color = (@colors.try(:last) || @user_color).try(:hex_code).split(',')
@@ -33,6 +34,7 @@ class DecorationsController < ApplicationController
     @texts          = Text.all
     @partial        = params[:partial]
     @graphics       = Graphic.all
+    @logos          = Logo.all
     @colors         = Color.where(is_tile_one: true)
     @style          = Style.find_by_id(params[:style_id] || current_user.try(:style))
     @selected_colors= @style.colors
@@ -45,6 +47,7 @@ class DecorationsController < ApplicationController
 
   def graphic_selection
   end
+
   private
   def style
     @style = Style.find_by_id(params[:style_id] || current_user.style)
@@ -54,5 +57,9 @@ class DecorationsController < ApplicationController
       current_user.update_attributes(placement_pos: @placement.try(:code), placement: @placement.id)
       @style.placements += [@placement]
     end
+  end
+
+  def decoration_params
+
   end
 end
