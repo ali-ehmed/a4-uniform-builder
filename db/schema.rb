@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180121161059) do
+ActiveRecord::Schema.define(version: 20180127084529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,6 +195,7 @@ ActiveRecord::Schema.define(version: 20180121161059) do
     t.string "colour_1"
     t.string "colour_2"
     t.string "colour_3"
+    t.string "default_colors"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -371,6 +372,9 @@ ActiveRecord::Schema.define(version: 20180121161059) do
     t.datetime "updated_at", null: false
     t.integer "style_method_id"
     t.integer "price_id"
+    t.string "text_one"
+    t.string "text_two"
+    t.string "player_name"
     t.integer "size_id"
     t.integer "font_id"
     t.integer "style_id"
@@ -427,7 +431,6 @@ ActiveRecord::Schema.define(version: 20180121161059) do
     t.integer "category_id"
     t.string "decoration_type"
     t.integer "color"
-    t.integer "placement"
     t.string "placement_pos"
     t.string "graphic_color"
     t.index ["email"], name: "index_users_on_email", unique: true
