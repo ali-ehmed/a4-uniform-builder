@@ -1,13 +1,6 @@
 <%=simple_form_for Logo.new, url: logos_path, method: :post do |f|%>
 
     <li class="form-group">
-      <label class="title" >Upload Graphic</label>
-      <div class="form-holder">
-        <%=f.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput", data: {placement: current_user.try(:placement_pos)}%>
-      </div>
-    </li>
-
-    <li class="form-group">
       <label class="title" >Select Logo</label>
       <div class="form-holder">
         <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id],placement: current_user.try(:placement_pos)}, remote: true)%>
@@ -15,10 +8,25 @@
       </div>
     </li>
 
+    <li id="logo-desc-content" class="form-group" style="display: none;">
+      <label class="title" >Logo Description</label>
+      <p></p>
+    </li>
+
+    <!-- Logo Default Colors -->
+    <div data-logo-layers></div>
+    <!-- Logo Default Colors -->
     <div data-logo-colors></div>
+
+    <!-- Uploaded Logo Description -->
+    <div data-uploaded-logo></div>
+
+    <!-- Placement Attr Elem -->
+    <div data-placement-attribute></div>
+
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
-        <%=render partial: "logo_selection", locals: {logos: logos, placement: placement}%>
+        <%=render partial: "logo_selection", locals: {logos: logos, placement: placement, form: f}%>
       </div>
     </li>
     <div class="footer">

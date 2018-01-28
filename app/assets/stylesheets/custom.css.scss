@@ -886,10 +886,10 @@ body.home-page{
 .font-setting ul li a span {
     display: block;
 }
-.tile-view {
-    overflow: hidden;
-    margin: 20px;
-}
+//.tile-view {
+//    overflow: hidden;
+//    margin: 20px;
+//}
 .tile-view ul {
     margin: 0;
     padding: 0;
@@ -1441,9 +1441,9 @@ body.home-page{
   width: 100px;
 }
 /* Decoration 2 */
-.selected-decoration .tile-view {
-  margin:0;
-}
+//.selected-decoration .tile-view {
+//  margin:0;
+//}
 .selected-decoration .tile-view .number{
   float:left;
   width:35%;
@@ -1904,7 +1904,7 @@ body.home-page{
     margin:1px 10px;
     color:#666;
     line-height:30px;
-    border-right:1px solid #777;
+    //border-right:1px solid #777;
     padding-right:10px;
 }
 .selected-decoration .graphic-area .color-name{
