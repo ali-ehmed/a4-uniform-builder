@@ -184,8 +184,9 @@ $(document).on "turbolinks:load", ->
     timer = setTimeout(searchCategory, 1100)
 
     # Todo: Hide existing placement if decoration method is switched
-#  $('body').on 'click', '#decoration-buttons .decoration-buttons-wrapper a', ->
-#    $('#PL2').find('svg').hide()
+  $('body').on 'click', '#decoration-buttons .decoration-buttons-wrapper a', ->
+    $("#placed-graphic-svg-on-style").html('')
+    $("#placed-logo-svg-on-style").html('')
 
   $('body').on 'click', '#numbering',->
     $(this).removeClass('btn-default');

@@ -16,9 +16,6 @@ updateSelectedGraphicOnPlacement = ->
       updateFromElem = $('#PL1_Front_Graphic')
       if updateFromElem.length
         window.setExistingPlacementAttrs(updateFromElem, $('[data-graphic-placement-attribute]'))
-      else
-
-
 
       svgPlacementOnStyle = $('#PL1')
       svgPlacementOnHeader = $('#header_img')
