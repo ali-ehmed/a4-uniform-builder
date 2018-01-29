@@ -38,11 +38,12 @@
           </div>
           <div class="clearfix sub-section">
             <label class="title" >Select Category</label>
-            <%=simple_form_for :logo, url: logos_path, html: {class: "form-holder"} do |f|%>
-                <%f.input_field :category, as: :select, collection: logos.map(&:category).uniq.collect{|c| [c, c]},class:"form-control", id: "serach_category"%>
+            <%= simple_form_for :logo, url: logos_path, html: { class: 'form-holder' } do |f|%>
+                <%f.input_field :category, as: :select, collection: logos.map(&:category).uniq.collect{|c| [c, c]}, class: 'form-control', prompt: '--Select Logo Category--', id: 'serach_category' %>
             <%end%>
           </div>
-          <%=render partial: "populate_images", locals:{images: logos, placement: placement, model: "logo"}%>
+
+          <%= render partial: 'populate_images', locals:{ images: logos, placement: placement, model: 'logo' } %>
         </div>
       </div>
     </div>

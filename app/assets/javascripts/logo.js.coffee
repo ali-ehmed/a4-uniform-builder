@@ -115,10 +115,9 @@ uploadLogo = ->
 
 # aahmed: ** Place Logo SVG on Style (On Shirt), Header (Sidebar Header) and Preview Box (From where logo selection popup opens) **
 updateSelectedLogoOnPlacement = ->
-  $('body').on  'click',  'a.select-populated-logo', (e) ->
-    e.preventDefault()
+  $('body').on  'click',  '.select-populated-logo', (e) ->
     $(this).closest('ul.logo-list').find('a.active').removeClass("active")
-    $(this).addClass("active")
+    $(this).parent().addClass("active")
     svgPath         = $(this).data('image-path');
     placement       = $(this).data('placement');
     placement_pos   = $(this).data('placement-pos');
@@ -195,7 +194,7 @@ truncateSelectedValues = (transforProperyValues, resetElem) ->
   resetElem.attr('transform', values.join(', ')) if values != undefined && values.length
 
 # ***** Private Methods *****
-$ ->
+$(document).on "turbolinks:load", ->
   mirrorView()
   logoSizes()
   uploadLogo()

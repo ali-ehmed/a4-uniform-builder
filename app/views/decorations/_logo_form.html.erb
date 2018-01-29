@@ -23,17 +23,17 @@
     <!-- Uploaded Logo Description -->
     <div data-uploaded-logo></div>
 
-    <!-- Placement Attr Elem for Logo to get the placement specfic size (width, height, x, y) -->
+    <!-- Placement Attr Elem for Logo to get the placement specific size (width, height, x, y) -->
     <div data-logo-placement-attribute></div>
 
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
-        <%=render partial: "logo_selection", locals: { logos: logos, placement: placement, form: f }%>
+        <%=render partial: 'logo_selection', locals: { logos: logos, placement: placement, form: f } %>
       </div>
     </li>
     <div class="footer">
-      <%= f.button :button, "Cancel", type: :reset, class: "btn btn-default highlight graphics", data: {graphics: "false"} %>
-      <%=f.button :submit,  "Complete", class: "btn btn-danger highlight graphics", data: {graphics: "true"}, id: "logo_form", remote: true%>
+      <%= f.button :button, 'Cancel', type: :reset, class: 'btn btn-default highlight graphics', data: {graphics: "false"} %>
+      <%=f.button :submit,  'Complete', class: 'btn btn-danger highlight graphics', data: {graphics: "true"}, id: "logo_form", remote: true%>
     </div>
 <%end%>
 <script>

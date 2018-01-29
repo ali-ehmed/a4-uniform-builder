@@ -11,14 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
-//= require home
-//=	require decorations.js.coffee
-//= require sports.js.coffee
-//=	require options.js.coffee
+//= require bootstrap-sprockets
 //= require jquery.elevatezoom
+//= require jquery_ujs
 //= require jquery.elevateZoom-3.0.8.min
 //= require nouislider
 //= require wNumb

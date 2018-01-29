@@ -14,11 +14,13 @@
           <div class="img-holder" id="header_img">
             <!--<img src="images/img-16.png" style="width: 30px; height: 25px">-->
           </div>
-          <div class="btn-holder text-center">
-            <%=link_to "Graphic", apply_model_decorations_path(model_name: "text", partial:"graphic"), class: "btn btn-default", remote: true, id:"graphics"%>
-            <%=link_to "Logo", apply_model_decorations_path(model_name: "text", partial: "logo"), class: "btn btn-default", remote:true, id:"logo"%>
-            <%=link_to "Numbring", apply_model_decorations_path(model_name: "text", partial:"numbering"), class: "btn btn-default",remote:true, id:"numbering"%>
-            <%=link_to "Team Name", apply_model_decorations_path(model_name: "text",team_name:true, partial:"team_name"), class: "btn btn-default",remote:true, id:"team_name"%>
+          <div id="decoration-buttons" class="btn-holder text-center">
+            <div class="decoration-buttons-wrapper">
+              <%=link_to 'Graphic', apply_model_decorations_path(model_name: 'text', partial: 'graphic'), class: 'btn btn-default', remote: true, id: 'graphics' %>
+              <%=link_to 'Logo', apply_model_decorations_path(model_name: 'text', partial: 'logo'), class: 'btn btn-default', remote:true, id: 'logo' %>
+              <%=link_to 'Numbering', apply_model_decorations_path(model_name: 'text', partial: 'numbering'), class: 'btn btn-default',remote:true, id: 'numbering'%>
+              <%=link_to 'Team Name', apply_model_decorations_path(model_name: 'text', team_name: true, partial: 'team_name'), class: 'btn btn-default',remote: true, id: 'team_name'%>
+            </div>
             <div data-render></div>
           </div>
         </div>

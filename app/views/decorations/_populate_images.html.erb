@@ -1,15 +1,22 @@
-<div class="color-selection search-box">
-  <strong class="heading">Select <%=images.first.try(:class).try(:name)%></strong>
-  <ul class="logo-list list-inline">
-    <% placement = current_user.try(:placement) %>
-    <% placement_pos = current_user.try(:placement_pos) %>
-    <%-images.each do |obj|%>
-        <li class="col-md-3">
-          <a href="#" data-remote="true" class="select-populated-<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-model="<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-placement="<%= placement %>" data-object="<%= obj.try(:id) %>" data-placement-pos="<%= placement_pos %>" data-image-path="<%= obj.image %>">
-            <img src="<%=obj.image.url%>" class="img-responsive">
-          </a>
-          <span class="tile-view-text"><%=obj.try(:category)%></span>
-        </li>
-    <%end%>
-  </ul>
-</div>
+<% if images.present? %>
+    <div class="color-selection search-box">
+      <strong class="heading">Select <%= images.first.try(:class).try(:name) %></strong>
+
+      <ul class="logo-list list-inline">
+        <% placement = current_user.try(:placement) %>
+        <% placement_pos = current_user.try(:placement_pos) %>
+        <%- images.each do |obj| %>
+            <li class="col-md-3">
+              <a href="#">
+                <img src="<%=obj.image.url%>" class="img-responsive select-populated-<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-model="<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-placement="<%= placement %>" data-object="<%= obj.try(:id) %>" data-placement-pos="<%= placement_pos %>" data-image-path="<%= obj.image %>">
+              </a>
+              <span class="tile-view-text"><%=obj.try(:category)%></span>
+            </li>
+        <%end%>
+      </ul>
+    </div>
+<% else %>
+  <div class="alert alert-info text-center">
+    No Images Present
+  </div>
+<% end %>

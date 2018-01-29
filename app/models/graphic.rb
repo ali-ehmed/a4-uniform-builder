@@ -11,4 +11,7 @@ class Graphic < ApplicationRecord
   has_many    :layouts
   has_many    :graphic_colors
   has_many    :colors, through: :graphic_colors
+
+  scope :multiline, -> { where(category: 'Multiline') }
+  scope :single_line, -> { where(category: 'Single Line') }
 end

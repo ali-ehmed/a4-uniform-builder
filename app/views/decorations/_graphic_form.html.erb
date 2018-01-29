@@ -1,38 +1,41 @@
 <%=simple_form_for Graphic.new, url: graphics_path, method: :post do |f|%>
 
-    <li class="form-group">
-      <label class="title" >Upload Graphic</label>
-      <div class="form-holder">
-        <%=f.input_field :image, class: "form-control", id:"img_inpput", data:{placement: current_user.try(:placement_pos)}%>
-      </div>
-    </li>
-
-    <li class="form-group">
-      <label class="title" >Select Graphic</label>
-      <div class="form-holder">
-        <%= link_to((image_tag "", id: "set_preview_graphic"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id], placement: current_user.try(:placement_pos)}, remote: true)%>
-        <%#= f.input :image, class: "form-control hide-sidebar" %>
-      </div>
-    </li>
-
     <!--<li class="form-group">-->
-      <!--<label class="title" >Select Color</label>-->
+      <!--<label class="title" >Upload Graphic</label>-->
       <!--<div class="form-holder">-->
-        <!--<div class="color-selection">-->
-          <!--<div class="color-box" type="text" style="background:#000; color:#fff;" id="color_selection" class="form-control">Fill</div>-->
-        <!--</div>-->
+        <!--<%#=f.input_field :image, class: 'form-control', id: 'img_inpput', data:{placement: current_user.try(:placement_pos) } %>-->
       <!--</div>-->
     <!--</li>-->
 
     <li class="form-group">
+      <label class="title" >Select Graphic</label>
+      <div class="form-holder">
+        <%= link_to('#', id: 'graphic_selection', data:{ style: params[:style_id], placement: current_user.try(:placement_pos) }, remote: true) do %>
+          <%= image_tag 'default-image.jpg', id: 'set_preview_graphic', class: 'img-responsive' %>
+        <% end %>
+      </div>
+    </li>
+
+    <!-- Logo Default Colors -->
+    <div data-graphic-layers></div>
+    <!-- Logo Default Colors -->
+    <div data-graphic-colors></div>
+
+    <!-- Uploaded Logo Description -->
+    <div data-uploaded-graphic></div>
+
+    <!-- Placement Attr Elem for Logo to get the placement specific size (width, height, x, y) -->
+    <div data-graphic-placement-attribute></div>
+
+    <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
-        <%=render partial: "graphic_selection", locals: {graphics: graphics, placement: placement, model: "graphic"}%>
+        <%=render partial: 'graphic_selection', locals: { multiline_graphics: @multiline_graphics, single_line_graphics: @single_line_graphics, placement: placement, model: 'graphic' } %>
       </div>
     </li>
     <div data-render-color></div>
     <div class="footer">
-      <%= f.button :button, "Cancel", type: :reset, class: "btn highlight graphics", data: {graphics: "false"} %>
-      <%=f.button :submit,  "Complete", class: "btn btn-danger highlight graphics", data: {graphics: "true"}%>
+      <%= f.button :button, 'Cancel', type: :reset, class: 'btn btn-default highlight graphics', data: { graphics: 'false' } %>
+      <%=f.button :submit,  'Complete', class: 'btn btn-danger highlight graphics', data: { graphics: 'true' }%>
     </div>
 <%end%>
 <script>

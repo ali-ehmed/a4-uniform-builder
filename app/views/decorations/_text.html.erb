@@ -3,11 +3,20 @@
       <li class="form-group">
         <label class="title" >Method</label>
         <div class="form-holder">
-          <%=f.input_field :code, as: :select, collection: style_methods,  class:"form-control", data: {team: team_name, partial: @partial}%>
+          <%= f.input_field :code, as: :select, collection: style_methods, prompt: '--Select Method--',  class: 'form-control', data: {team: team_name, partial: @partial } %>
         </div>
       </li>
     <%end%>
+
+
   <div data-render-form></div>
+
+
+  <!-- ***** Logo Persisting Elements ****** -->
+  <!-- Placement Attr Element for Logo/Graphic to get the placement specific size (width, height, x, y) -->
+  <!--<div data-logo-placement-attribute></div>-->
+  <!-- ***** Logo Persisting Elements ****** -->
+
   <!--<div class="options-btn option-btn-side">-->
     <!--<a href="#" class="btn btn-default">Close</a>-->
     <!--<a href="#" class="btn btn-primary" data-show="4">Complete</a>-->

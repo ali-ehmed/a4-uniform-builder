@@ -12,10 +12,12 @@ class GraphicsController < ApplicationController
   def index
     @graphics = Graphic.where(category: params[:category])
   end
+
   def graphic_colors
     @graphic_colors = Color.where(is_tile_one: true)
     render "graphic_colors.js.erb"
   end
+
   def update
 
   end

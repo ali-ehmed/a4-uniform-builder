@@ -43,47 +43,7 @@ window.setExistingPlacementAttrs = (updateFromElem) ->
   logoPlacementAttrKeeperElem.attr('x', updateFromElem.attr('x'))
   logoPlacementAttrKeeperElem.attr('y', updateFromElem.attr('y'))
 
-$ ->
-  $('body').on 'click', '#numbering',->
-    $(this).removeClass('btn-default');
-    $(this).addClass('btn-primary');
-    $('#graphics').removeClass('btn-primary');
-    $('#team_name').removeClass('btn-primary');
-    $('#logo').removeClass('btn-primary');
-    $('#graphics').addClass('btn-default');
-    $('#team_name').addClass('btn-default');
-    $('#logo').addClass('btn-default');
-
-  $('body').on 'click', '#team_name',->
-    $(this).removeClass('btn-default');
-    $('#graphics').removeClass('btn-primary');
-    $('#numbering').removeClass('btn-primary');
-    $('#logo').removeClass('btn-primary');
-    $(this).addClass('btn-primary');
-    $('#graphics').addClass('btn-default');
-    $('#numbering').addClass('btn-default');
-    $('#logo').addClass('btn-default');
-
-  $('body').on 'click', '#graphics',->
-    $(this).removeClass('btn-default');
-    $('#team_name').removeClass('btn-primary');
-    $('#numbering').removeClass('btn-primary');
-    $('#logo').removeClass('btn-primary');
-    $(this).addClass('btn-primary');
-    $('#team_name').addClass('btn-default');
-    $('#numbering').addClass('btn-default');
-    $('#logo').addClass('btn-default');
-
-  $('body').on 'click', '#logo',->
-    $(this).removeClass('btn-default');
-    $('#team_name').removeClass('btn-primary');
-    $('#numbering').removeClass('btn-primary');
-    $('#graphics').removeClass('btn-primary');
-    $(this).addClass('btn-primary');
-    $('#team_name').addClass('btn-default');
-    $('#numbering').addClass('btn-default');
-    $('#graphics').addClass('btn-default');
-
+$(document).on "turbolinks:load", ->
   $('.panel-collapse').on 'show.bs.collapse', ->
     $(this).siblings('.panel-heading').addClass 'active'
     return
@@ -100,14 +60,14 @@ $ ->
   $('body').on 'input', '#text_team_name', ->
     text_value  = $('#text_team_name').val()
 
-#    document.getElementById('PL10_Text_Back').textContent = text_value;
+    #    document.getElementById('PL10_Text_Back').textContent = text_value;
     document.getElementById('PL1_Text_Front').textContent = text_value;
 
   $('body').on 'input', '#text_team_number', ->
     text_value  = $('#text_team_number').val()
 
     document.getElementById('PL10_Text_Back').textContent = text_value;
-#    document.getElementById('PL1_Text_Front').textContent = text_value;
+  #    document.getElementById('PL1_Text_Front').textContent = text_value;
 
   $('body').on 'change', '#text_size_id',->
     size = $(this).data('size');
@@ -149,7 +109,7 @@ $ ->
     d_color = $(this).data('color')
     color   = $('select#text_decoration_color option:selected').text();
     if d_color == "front"
-     $('#PL1_Text_Front').css({'fill': color});
+      $('#PL1_Text_Front').css({'fill': color});
     if d_color == "back"
       $('#PL10_Text_Back').css({'fill': color});
 
@@ -159,7 +119,7 @@ $ ->
     if t_family == 'front'
       $('#PL1_Text_Front').css({'font-family': family});
     if t_family == "back"
-     $('#PL10_Text_Back').css({'font-family': family});
+      $('#PL10_Text_Back').css({'font-family': family});
 
 
   $('#select-decoration').on 'click', ->
@@ -169,21 +129,6 @@ $ ->
     document.getElementById('PL10_Text_Back').textContent = text;
     document.getElementById('PL16_Text_Back').textContent = text1;
     document.getElementById('PL6_Text_Front').textContent = text1;
-
-  $('.decoration-package').on 'click', ->
-
-    decoration = $(this).data("show")
-    if decoration == 2
-      document.getElementById('sidebar-1').classList.remove("display-sidebar")
-      document.getElementById('sidebar-1').classList.add("hide-sidebar")
-      document.getElementById("sidebar-2").classList.remove("hide-sidebar")
-      document.getElementById("sidebar-2").classList.add("display-sidebar")
-    if decoration == 3
-      document.getElementById("sidebar-2").classList.add("hide-sidebar")
-      document.getElementById("sidebar-2").classList.remove("display-sidebar")
-      document.getElementById("sidebar-3").classList.remove("hide-sidebar")
-      document.getElementById("sidebar-3").classList.add("display-sidebar")
-    return false
 
   $('.select-placement').on 'click', ->
     placement_code = $(this).data('placement')
@@ -207,7 +152,7 @@ $ ->
   $('body').on  'click',  '#color_selection', ->
     document.getElementById('sidebar-5').classList.remove("hide-sidebar")
     $('[data-select-logo-layer]').attr('id', $(this).attr('data-logo-layer-id'))
-#    color = $('#color_selection').val();
+  #    color = $('#color_selection').val();
 
 
   $('body').on 'click', '#cancel_btn', ->
@@ -240,6 +185,65 @@ $ ->
     clearTimeout timer
     timer = setTimeout(searchCategory, 1100)
 
+    # Todo: Hide existing placement if decoration method is switched
+#  $('body').on 'click', '#decoration-buttons .decoration-buttons-wrapper a', ->
+#    $('#PL2').find('svg').hide()
 
+  $('body').on 'click', '#numbering',->
+    $(this).removeClass('btn-default');
+    $(this).addClass('btn-primary');
+    $('#graphics').removeClass('btn-primary');
+    $('#team_name').removeClass('btn-primary');
+    $('#logo').removeClass('btn-primary');
+    $('#graphics').addClass('btn-default');
+    $('#team_name').addClass('btn-default');
+    $('#logo').addClass('btn-default');
+
+  $('body').on 'click', '#team_name',->
+    $(this).removeClass('btn-default');
+    $('#graphics').removeClass('btn-primary');
+    $('#numbering').removeClass('btn-primary');
+    $('#logo').removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $('#graphics').addClass('btn-default');
+    $('#numbering').addClass('btn-default');
+    $('#logo').addClass('btn-default');
+
+  $('body').on 'click', '#graphics',->
+    $(this).removeClass('btn-default');
+    $('#team_name').removeClass('btn-primary');
+    $('#numbering').removeClass('btn-primary');
+    $('#logo').removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $('#team_name').addClass('btn-default');
+    $('#numbering').addClass('btn-default');
+    $('#logo').addClass('btn-default');
+
+  $('body').on 'click', '#logo',->
+    $(this).removeClass('btn-default');
+    $('#team_name').removeClass('btn-primary');
+    $('#numbering').removeClass('btn-primary');
+    $('#graphics').removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $('#team_name').addClass('btn-default');
+    $('#numbering').addClass('btn-default');
+    $('#graphics').addClass('btn-default');
+
+  $('body').on 'click', '.add-location, .next-step', ->
+    decoration = $(this).data("show")
+    if decoration
+      if decoration == 2
+        document.getElementById('sidebar-1').classList.remove("display-sidebar")
+        document.getElementById('sidebar-1').classList.add("hide-sidebar")
+        document.getElementById("sidebar-2").classList.remove("hide-sidebar")
+        document.getElementById("sidebar-2").classList.add("display-sidebar")
+      if decoration == 3
+        document.getElementById("sidebar-2").classList.add("hide-sidebar")
+        document.getElementById("sidebar-2").classList.remove("display-sidebar")
+        document.getElementById("sidebar-3").classList.remove("hide-sidebar")
+        document.getElementById("sidebar-3").classList.add("display-sidebar")
+      return false
+    else
+      alert 'Step is not present.'
 #  $('body').on 'click', '#logo_form', ->
 #    document.getElementById("logo-form").submit();
