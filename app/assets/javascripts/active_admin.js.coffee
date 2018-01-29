@@ -16,6 +16,7 @@ $ ->
 
     return true
 
+  # aahmed: * Logo Upload Here *
   $('input#logo_image').on 'change', ->
     fileInput = $(this)
     file = this.files[0];
@@ -24,9 +25,12 @@ $ ->
       $.get fr.result, ((svg) ->
         validPrefix = true
         xmlDoc = $($.parseXML(svg))
-        ids = xmlDoc.find('path').map(->
+        # **/ All Elems who have id attr. This depends on svg. Svg must have id with fill attr for color \**
+        filledElems = xmlDoc.find('[id]')
+        ids = filledElems.map(->
           $(@).attr('id')
         ).get()
+
         i = 0
         while i < ids.length
           validPrefix = logoValidPrefix(ids[i])
@@ -35,14 +39,14 @@ $ ->
 
         if validPrefix
           $('#display_default_colors').empty()
-          xmlDoc.find('path').map(->
+          filledElems.map(->
             $('#display_default_colors').append(
               "<span style='background: #{$(@).attr('fill')}; padding: 4px 12px; margin-right: 4px;'></span>"
             )
           )
-          $('#logo_default_colors').val(xmlDoc.find('path').map(->
+          $('#logo_default_colors').val(filledElems.map(->
             $(@).attr('fill')
-          ).get().join(', ')) if xmlDoc.find('path').length > 0
+          ).get().join(', ')) if filledElems.length > 0
           return
         else
           $('#logo_default_colors').val('')
@@ -51,6 +55,8 @@ $ ->
       ), 'text'
 
     fr.readAsDataURL(file);
+  # aahmed: * Logo Upload Here *
+
   $('body').on 'change', "#style_color_tiles", (e) ->
     selected_tile = $("#style_color_tiles option:selected").text()
     if selected_tile == "1 Tile"

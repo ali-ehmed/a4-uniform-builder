@@ -8,13 +8,13 @@ class LogosController < ApplicationController
   end
 
   def index
-    @logos = Logo.where(category: params[:category])
+    @logos = Logo.where(category: params[:category]).order('category')
   end
 
   def logo_colors
     # @logo_colors = Color.where(is_tile_one: true)#@logo.colors
     @logo_layer_ids = params[:logo_layer_ids].try(:split, ', ').try(:flatten)
-    @logo_colors = @logo.default_colors.try(:split, ', ')#@logo.colors
+    @logo_colors = @logo.default_colors.try(:split, ', ').map(&:upcase) #@logo.colors
     render "logo_colors.js.erb"
   end
 
@@ -31,7 +31,11 @@ class LogosController < ApplicationController
     @style          = Style.find_by_id(params[:style_id] || current_user.try(:style))
 
     @user_selected_colors = Color.find_by(id: current_user.color).try(:hex_code).try(:split, ',')
-    @selected_colors= (@user_selected_colors + @logo.default_colors.try(:split, ', ')).uniq
+    @selected_colors =  begin
+                          (@user_selected_colors.map(&:upcase) + @logo.default_colors.try(:split, ', ').map(&:upcase)).uniq
+                        rescue StandardError
+                                             []
+                        end
 
     @placement      = Placement.find_by_id(params[:placement_id] || current_user.try(:placement))
   end

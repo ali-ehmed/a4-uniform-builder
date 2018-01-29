@@ -1,10 +1,15 @@
 <div class="color-selection search-box">
   <strong class="heading">Select <%=images.first.try(:class).try(:name)%></strong>
-  <ul class="logo-list">
+  <ul class="logo-list list-inline">
+    <% placement = current_user.try(:placement) %>
+    <% placement_pos = current_user.try(:placement_pos) %>
     <%-images.each do |obj|%>
-        <li>
-          <a class="active" href="#" data-remote="true" >
-            <img src="<%=obj.image.url%>" class="graphic-image" data-model="<%=obj.class.name == "Logo" ? "logo" : "graphic"%>" data-placement="<%=current_user.try(:placement)%>" data-object="<%=obj.try(:id)%>" data-placement-pos="<%=current_user.try(:placement_pos)%>" data-image="<%=obj.image%>"></a><span class="tile-view-text"><%=obj.try(:category)%></span></li>
+        <li class="col-md-3">
+          <a href="#" data-remote="true" class="select-populated-<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-model="<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-placement="<%= placement %>" data-object="<%= obj.try(:id) %>" data-placement-pos="<%= placement_pos %>" data-image-path="<%= obj.image %>">
+            <img src="<%=obj.image.url%>" class="img-responsive">
+          </a>
+          <span class="tile-view-text"><%=obj.try(:category)%></span>
+        </li>
     <%end%>
   </ul>
 </div>

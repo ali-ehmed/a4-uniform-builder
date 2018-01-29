@@ -10,7 +10,7 @@
     <li class="form-group">
       <label class="title" >Select Graphic</label>
       <div class="form-holder">
-        <%= link_to((image_tag "", id: "set_image"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id], placement: current_user.try(:placement_pos)}, remote: true)%>
+        <%= link_to((image_tag "", id: "set_preview_graphic"), "#", class: "form-control", id:"graphic_selection", data:{style: params[:style_id], placement: current_user.try(:placement_pos)}, remote: true)%>
         <%#= f.input :image, class: "form-control hide-sidebar" %>
       </div>
     </li>

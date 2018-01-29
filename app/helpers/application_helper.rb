@@ -16,9 +16,9 @@ module ApplicationHelper
 
   def logo_size
     [
-        10,
-        15,
-        20
+        70,
+        100,
+        130
     ]
   end
 end

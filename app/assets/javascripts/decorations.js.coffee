@@ -1,3 +1,50 @@
+# Fetching SVG from SVG path
+window.fetchSvg = (svgPath, callback) ->
+  $.get svgPath, ((svg) ->
+    xmlDoc = $($.parseXML(svg))
+    # **/ All Elems who have id attr. This depends on svg. Svg must have id with fill attr for color \**
+    filledElems = xmlDoc.find('[id]')
+
+    layerIds =  filledElems.map(-> $(this).attr('id')).get()
+
+    $('[data-logo-layers]').attr('id', layerIds.join(', '))
+
+    document.getElementById('sidebar-4').classList.add("hide-sidebar")
+
+    callback(svg, layerIds)
+
+    return
+  ), 'text'
+
+# aahmed: ** Setting attributes (width, height, x, y) to selected svg **
+# This is because the selected svg has different attrs so we need adjust it
+# according to placement size (width, height, x, y)
+# and taking attributes from '[data-logo-placement-attribute]' as we are setting in it
+# in function "setExistingPlacementAttrs". **
+window.placedSvgUpdatedAttributes = (placementElem, setAttributes) ->
+  updateFromElem = $('[data-logo-placement-attribute]')
+  placedSvg = placementElem.find('svg')
+
+  placedSvg.attr('width', updateFromElem.attr('width'))
+  placedSvg.attr('height', updateFromElem.attr('height'))
+  placedSvg.attr('x', updateFromElem.attr('x'))
+  placedSvg.attr('y', updateFromElem.attr('y'))
+
+  if setAttributes.length
+    setAttributes.forEach (value) ->
+      placedSvg.attr(value[0], value[1])
+
+# aahmed: ** For right now we are specific to "PL2" placement only for logo therefore
+# before placing selected logo we take the existing image tag inside PL2
+# and save it's attrs in "[data-logo-placement-attribute]" that keeps the attrs for the selected svg.
+# So taking setting attrs from there. **
+window.setExistingPlacementAttrs = (updateFromElem) ->
+  logoPlacementAttrKeeperElem = $('[data-logo-placement-attribute]')
+  logoPlacementAttrKeeperElem.attr('width', updateFromElem.attr('width'))
+  logoPlacementAttrKeeperElem.attr('height', updateFromElem.attr('height'))
+  logoPlacementAttrKeeperElem.attr('x', updateFromElem.attr('x'))
+  logoPlacementAttrKeeperElem.attr('y', updateFromElem.attr('y'))
+
 $ ->
   $('body').on 'click', '#numbering',->
     $(this).removeClass('btn-default');
@@ -164,211 +211,11 @@ $ ->
     $('[data-select-logo-layer]').attr('id', $(this).attr('data-logo-layer-id'))
 #    color = $('#color_selection').val();
 
-  truncateSelectedValues = (transforProperyValues, resetElem) ->
-    values = transforProperyValues.split(' ').filter((v) -> return v != '')
-    transforProperyValues.split(' ').filter((v) -> return v != '').forEach (value, index) ->
-      console.log(index)
-      console.log(value)
-      console.log(value.indexOf('scale'))
-      console.log(value.indexOf('translate'))
-      if value.indexOf('scale') || value.indexOf('translate')
-        values.splice($.inArray(value, values), 1)
-
-    resetElem.attr('transform', values.join(', ')) if values != undefined && values.length
-
-  $('body').on  'change',  '#mirror-view', ->
-    styleSvg = $("#placed-svg-on-style")
-    styleSvgSelectedAttributes = $('[data-style-logo-selected-attributes]')
-    headerSvg = $("#placed-svg-on-header")
-    input = $(this)
-    viewBoxWidth = styleSvg.prop('viewBox').animVal.width
-
-    if input.val() == "0"
-      input.val("1")
-      styleSvgTransformValue = "scale(-1,1) translate(#{-viewBoxWidth},0)"
-      styleSvg.find('g').attr('transform', "#{styleSvgTransformValue}")
-
-      styleSvgSelectedAttributes.attr('data-values', styleSvgTransformValue)
-      headerSvg.attr('transform', 'scale(-1,1)')
-    else
-      input.val("0")
-
-#      transformPropertyValue = styleSvg.find('g').attr('transform')
-#      if transformPropertyValue
-#        truncateSelectedValues(transformPropertyValue, styleSvg.find('g'))
-#
-#      if styleSvgSelectedAttributes.attr('data-values')
-#        truncateSelectedValues(styleSvgSelectedAttributes.attr('data-values'), styleSvgSelectedAttributes)
-      styleSvgTransformValue = "scale(1,1) translate(0,0)"
-      styleSvgSelectedAttributes.attr('data-values', styleSvgTransformValue)
-      styleSvg.find('g').attr('transform', "#{styleSvgTransformValue}")
-      headerSvg.attr('transform', styleSvgTransformValue)
-
-  $('body').on 'click', '.select-size', (e) ->
-    e.preventDefault()
-    mainSvg = $('#placed-svg-on-style')
-    maxSize = $(this).attr("data-max-size")
-    size = parseFloat($(this).attr("data-size"))
-
-    width = parseFloat(mainSvg.attr('width').slice(0,-2))
-    height = parseFloat(mainSvg.attr('height').slice(0,-2))
-
-    if !mainSvg.attr('data-size') || parseFloat(mainSvg.attr('data-size')) != size
-      mainSvg.attr('data-size', size)
-      if size < width
-        mainSvg.attr('width', "#{(width - size)}px")
-        mainSvg.attr('height', "#{(height - size)}px")
-      else
-        mainSvg.attr('width', "#{(width + size)}px")
-        mainSvg.attr('height', "#{(height + size)}px")
-
-  placedSvgUpdateAttributes = (placementElem, attrs) ->
-    updateFromElem = $('[data-placement-attribute]')
-    placedSvg = placementElem.find('svg')
-
-    placedSvg.attr('width', updateFromElem.attr('width'))
-    placedSvg.attr('height', updateFromElem.attr('height'))
-    placedSvg.attr('x', updateFromElem.attr('x'))
-    placedSvg.attr('y', updateFromElem.attr('y'))
-
-    if attrs.length
-      attrs.forEach (value) ->
-        placedSvg.attr(value[0], value[1])
-
-  $('body').on 'keypress', '#logo-desc', ->
-    if($("#img_inpput").val().length > 0)
-      $('#submit_btn').prop('disabled', false)
-
-  $('body').on 'change', '#img_inpput', ->
-    if($("#logo-desc").val().length > 0)
-      $('#submit_btn').prop('disabled', false)
-
-  $('body').on 'click', '#submit_btn', ->
-    input = $(this)
-    fileInput = $("#img_inpput")
-    logoDescInput = $("#logo-desc")
-    if logoDescInput.val().length == 0
-      input.prop('disabled', true)
-      return false
-    else
-      input.prop('disabled', false)
-      $("#logo-desc-content").show()
-      $("#logo-desc-content").find('p').text(logoDescInput.val())
-
-    file = fileInput[0].files[0]
-
-    if fileInput.val().length > 0
-      input.prop('disabled', false)
-      fr = new FileReader();
-      fr.onload = ->
-        document.getElementById('set_image').src = fr.result;
-        $.get fr.result, ((svg) ->
-          xmlDoc = $($.parseXML(svg))
-
-          updateFromElem = $('#PL2_Front_Logo')
-          if updateFromElem.length
-            $('[data-placement-attribute]').attr('width', updateFromElem.attr('width'))
-            $('[data-placement-attribute]').attr('height', updateFromElem.attr('height'))
-            $('[data-placement-attribute]').attr('x', updateFromElem.attr('x'))
-            $('[data-placement-attribute]').attr('y', updateFromElem.attr('y'))
-
-          svgPlacementOnStyle = $('#PL2')
-          svgPlacementOnHeader = $('#header_img')
-
-          svgPlacementOnStyle.html(svg)
-          svgPlacementOnHeader.html(svg)
-
-          placedSvgUpdateAttributes(svgPlacementOnStyle, [['id', 'placed-svg-on-style']])
-          placedSvgUpdateAttributes(svgPlacementOnHeader, [['id', 'placed-svg-on-header']])
-
-          document.getElementById('sidebar-4').classList.add("hide-sidebar")
-          $("[data-logo-colors]").empty()
-        ), 'text'
-
-      fr.readAsDataURL(file);
-
-      fileInput.val('')
-      logoDescInput.val('')
-    else
-      input.prop('disabled', true)
-      return false
-#    placemnet = $('#img_inpput').data('placement')
-#    output  = document.getElementById('set_image')
-#    output1 = document.getElementById('header_img')
-#    output2 = document.getElementById(placemnet)
-#    output.src = URL.createObjectURL(event.target.files[0])
-#    output1.src = URL.createObjectURL(event.target.files[0])
-#    output2.href.baseVal = URL.createObjectURL(event.target.files[0])
-#    output2.src = URL.createObjectURL(event.target.files[0])
-#    return
-
-  $('body').on  'click',  '.graphic-image', ->
-    graphic         = $(this).data('image');
-    placement       = $(this).data('placement');
-    placement_pos   = $(this).data('placement-pos');
-    object_id       = $(this).data('object');
-    model           = $(this).data('model');
-
-    $.get graphic, ((svg) ->
-      xmlDoc = $($.parseXML(svg))
-      layerIds =  xmlDoc.find('path').map(-> $(this).attr('id')).get()
-      $('[data-logo-layers]').attr('id', layerIds.join(', '))
-
-      updateFromElem = $('#PL2_Front_Logo')
-      if updateFromElem.length
-        $('[data-placement-attribute]').attr('width', updateFromElem.attr('width'))
-        $('[data-placement-attribute]').attr('height', updateFromElem.attr('height'))
-        $('[data-placement-attribute]').attr('x', updateFromElem.attr('x'))
-        $('[data-placement-attribute]').attr('y', updateFromElem.attr('y'))
-
-      svgPlacementOnStyle = $('#PL2')
-      svgPlacementOnHeader = $('#header_img')
-
-      svgPlacementOnStyle.html(svg)
-      svgPlacementOnHeader.html(svg)
-
-      placedSvgUpdateAttributes(svgPlacementOnStyle, [['id', 'placed-svg-on-style']])
-      placedSvgUpdateAttributes(svgPlacementOnHeader, [['id', 'placed-svg-on-header']])
-
-      document.getElementById('set_image').src = graphic;
-      document.getElementById('sidebar-4').classList.add("hide-sidebar")
-
-      if model == "logo"
-        $.get("/logos/logo_colors", { id: object_id, logo_layer_ids: layerIds }, ->
-          if $("#mirror-view").length
-            $("#mirror-view").prop('checked', false)
-            $("#mirror-view").val('0')
-          console.log('Success')
-
-          $("[data-uploaded-logo]").empty()
-          $("#logo-desc-content").hide()
-        )
-      else
-        $.getScript("/graphics/graphic_colors?id=#{object_id}")
-      return
-    ), 'text'
-
-  $('body').on  'click',  '.select_logo_color', ->
-    selectedLogoLayer = $('[data-select-logo-layer]').attr('id')
-    color = $(this).data('color');
-
-    $(".default-logo-color[data-logo-layer-id='#{selectedLogoLayer}']").css('backgroundColor', color)
-
-    styleSvg = $("#placed-svg-on-style")
-    headerSvg = $("#placed-svg-on-header")
-
-    styleSvg.find("##{selectedLogoLayer}").css fill: color
-    headerSvg.find("##{selectedLogoLayer}").css fill: color
-
-    document.getElementById('sidebar-5').classList.add("hide-sidebar")
-
-#    selected_graphic = $('select#text_image option:selected').text();
-#    document.getElementById('PL2_Front_Logo').href.animVal = selected_graphic;
-#    document.getElementById('PL2_Front_Logo').href.baseVal = selected_graphic;
 
   $('body').on 'click', '#cancel_btn', ->
     document.getElementById('sidebar-4').classList.add("hide-sidebar")
-    document.getElementById('sidebar-5').classList.add("hide-sidebar")
+    sidebar5 = document.getElementById('sidebar-5')
+    sidebar5.classList.add("hide-sidebar") if sidebar5
 
   timer = null
 

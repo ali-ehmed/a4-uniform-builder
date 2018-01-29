@@ -25,7 +25,8 @@
 <!-- Logo Default Colors -->
 <div data-select-logo-layer></div>
 
-<div data-style-logo-selected-attributes></div>
+<!-- This div contain Logo Svg transform attribute for mirror and rotation -->
+<div data-logo-svg-transform-value></div>
 
 <!-- Logo Color Selection -->
 <li class="form-group">
@@ -38,13 +39,12 @@
 
 <li class="form-group">
   <label>Sizes</label>
-  <ul id="sizes">
+  <select data-max-size="50" id="select-size" class="form-control">
+    <option value="">--Select Size--</option>
     <% (1..3).each_with_index do |size, index| %>
-        <li>
-          <a href="#" class="select-size" data-max-size="50 "data-size="<%= logo_size[index] %>">Size-<%= size %></a>
-        </li>
+        <option value="<%= logo_size[index] %>">Size-<%= size %></option>
     <% end %>
-  </ul>
+  </select>
 </li>
 
 <li class="form-group">
@@ -59,36 +59,41 @@
 <br />
 <script>
   $( function() {
-    var rangeSlider = document.getElementById('rotate-slider');
-    slider = noUiSlider.create(rangeSlider, {
+    var rangeSliderElem = document.getElementById('rotate-slider');
+    var slider = noUiSlider.create(rangeSliderElem, {
       start: [ 0 ],
+      step: 45,
       range: {
-        'min': [  0 ],
+        'min': [ 0 ],
         'max': [ 360 ]
-      }
+      },
+      format: wNumb({
+        decimals: 0
+      })
     });
 
-    slider.on('change', function(e){
-      if ($("#mirror-view").is(':checked')) {
-        $("#mirror-view").val('0');
-        $("#mirror-view").prop('checked', false);
-        $("#mirror-view").change()
-      }
-      var styleSvg = $("#placed-svg-on-style"),
+    $(rangeSliderElem).find('.noUi-handle').text("0");
+
+    slider.on('update', function(values, handle){
+      var deg = values[handle];
+      var styleSvg = $("#placed-logo-svg-on-style"),
           viewBoxWidth = (styleSvg.prop('viewBox').animVal.width / 2),
           viewBoxHeight = (styleSvg.prop('viewBox').animVal.height / 2),
-          styleSvgSelectedAttributes = $('[data-style-logo-selected-attributes]'),
-          styleSvgRotationValue = "rotate("+ parseInt(e) +" "+ viewBoxWidth +" "+ viewBoxHeight +") ";
+          styleSvgSelectedAttributes = $('[data-logo-svg-transform-value]'),
+          preSetMirrorValue = styleSvgSelectedAttributes.attr('data-mirror-value'),
+          styleSvgRotationValue = "rotate("+ parseInt(deg) +" "+ viewBoxWidth +" "+ viewBoxHeight +") ";
 
+      styleSvgSelectedAttributes.attr('data-rotation-value', styleSvgRotationValue);
+      $(rangeSliderElem).find('.noUi-handle').text(parseInt(deg));
+//
+      styleSvgRotationValue += (preSetMirrorValue || "");
       // Rotate Nested SVG so rotate group attribute "g" instead of "svg"
       // for rotation from center we need to set svg viewBox width & height as the rotation x, y values
       // rotate(deg x y)
-      styleSvg.find('g').attr(
+      styleSvg.find("g:not([id])").first().attr(
           'transform',
           styleSvgRotationValue
       );
-
-      styleSvgSelectedAttributes.attr('data-values', styleSvgRotationValue)
     });
   } );
 </script>
@@ -103,6 +108,14 @@
   #rotate-slider {
     padding: 0px 20px;
     margin: 12px 0px;
+  }
+  #rotate-slider .noUi-handle {
+    text-align: center;
+    padding: 3px 0;
+  }
+  #rotate-slider .noUi-handle:after, .noUi-handle:before {
+    content: '';
+    width: 0;
   }
 </style>
 

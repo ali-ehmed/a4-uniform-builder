@@ -10,6 +10,9 @@
 # Ignore database.ym;
 config/database.yml
 
+# Ignoring Rubymine stupid files
+.idea/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep

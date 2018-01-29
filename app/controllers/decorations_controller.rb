@@ -11,7 +11,6 @@ class DecorationsController < ApplicationController
     @color = (@colors.try(:last) || @user_color).try(:hex_code).split(',')
     @decorations        = Decoration.all
     @placements         = Placement.all
-    @decoration_packges = Decoration.all
     @texts              = Text.all
     @graphics           = Graphic.all
   end
@@ -34,15 +33,15 @@ class DecorationsController < ApplicationController
     @texts          = Text.all
     @partial        = params[:partial]
     @graphics       = Graphic.all
-    @logos          = Logo.all
+    @logos          = Logo.all.order('category')
     @colors         = Color.where(is_tile_one: true)
     @style          = Style.find_by_id(params[:style_id] || current_user.try(:style))
     @selected_colors= @style.colors.where(is_tile_one: true)
     @placement      = Placement.find_by_id(params[:placement_id] || current_user.try(:placement))
-    @partial == "graphic" && (@object=Graphic.all) && render(partial: "graphic.js.erb" )
-    @partial == "numbering" && render("form.js.erb" )
-    @partial == "team_name" && render(partial: "team_name.js.erb")
-    @partial == "logo" && (@object=Logo.all) && render(partial: "logo.js.erb")
+    @partial == 'graphic' && (@object = @graphics) && render(partial: 'graphic.js.erb')
+    @partial == 'numbering' && render('form.js.erb')
+    @partial == 'team_name' && render(partial: 'team_name.js.erb')
+    @partial == 'logo' && (@object = @logos) && render(partial: 'logo.js.erb')
   end
 
   def graphic_selection
