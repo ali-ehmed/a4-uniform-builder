@@ -7,7 +7,7 @@
         <% placement_pos = current_user.try(:placement_pos) %>
         <%- images.each do |obj| %>
             <li class="col-md-3">
-              <a href="#">
+              <a href="#" onclick="return false;">
                 <img src="<%=obj.image.url%>" class="img-responsive select-populated-<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-model="<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-placement="<%= placement %>" data-object="<%= obj.try(:id) %>" data-placement-pos="<%= placement_pos %>" data-image-path="<%= obj.image %>">
               </a>
               <span class="tile-view-text"><%=obj.try(:category)%></span>

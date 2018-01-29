@@ -13,12 +13,4 @@ module ApplicationHelper
   def category
     Category.find_by_id(current_user.category_id)
   end
-
-  def logo_size
-    [
-        70,
-        100,
-        130
-    ]
-  end
 end

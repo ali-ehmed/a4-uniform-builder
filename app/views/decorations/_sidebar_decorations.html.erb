@@ -22,6 +22,13 @@
               <%=link_to 'Team Name', apply_model_decorations_path(model_name: 'text', team_name: true, partial: 'team_name'), class: 'btn btn-default',remote: true, id: 'team_name'%>
             </div>
             <div data-render></div>
+
+            <!-- Placement Attr Elem for Logo to get the placement specific size (width, height, x, y) -->
+            <div data-logo-placement-attribute></div>
+
+            <!-- Placement Attr Elem for Graphic to get the placement specific size (width, height, x, y) -->
+            <div data-graphic-placement-attribute></div>
+
           </div>
         </div>
       </div>

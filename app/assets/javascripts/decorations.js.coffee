@@ -7,8 +7,6 @@ window.fetchSvg = (svgPath, callback) ->
 
     layerIds =  filledElems.map(-> $(this).attr('id')).get()
 
-    $('[data-logo-layers]').attr('id', layerIds.join(', '))
-
     document.getElementById('sidebar-4').classList.add("hide-sidebar")
 
     return callback(svg, layerIds)
@@ -19,14 +17,13 @@ window.fetchSvg = (svgPath, callback) ->
 # according to placement size (width, height, x, y)
 # and taking attributes from '[data-logo-placement-attribute]' as we are setting in it
 # in function "setExistingPlacementAttrs". **
-window.placedSvgUpdatedAttributes = (placementElem, setAttributes) ->
-  updateFromElem = $('[data-logo-placement-attribute]')
+window.placedSvgUpdatedAttributes = (placementElem, updateFromElem, setAttributes) ->
   placedSvg = placementElem.find('svg')
-
   placedSvg.attr('width', updateFromElem.attr('width'))
   placedSvg.attr('height', updateFromElem.attr('height'))
   placedSvg.attr('x', updateFromElem.attr('x'))
   placedSvg.attr('y', updateFromElem.attr('y'))
+  placedSvg.attr('viewBox', updateFromElem.attr('view-box'))
 
   if setAttributes.length
     setAttributes.forEach (value) ->
@@ -36,12 +33,12 @@ window.placedSvgUpdatedAttributes = (placementElem, setAttributes) ->
 # before placing selected logo we take the existing image tag inside PL2
 # and save it's attrs in "[data-logo-placement-attribute]" that keeps the attrs for the selected svg.
 # So taking setting attrs from there. **
-window.setExistingPlacementAttrs = (updateFromElem) ->
-  logoPlacementAttrKeeperElem = $('[data-logo-placement-attribute]')
-  logoPlacementAttrKeeperElem.attr('width', updateFromElem.attr('width'))
-  logoPlacementAttrKeeperElem.attr('height', updateFromElem.attr('height'))
-  logoPlacementAttrKeeperElem.attr('x', updateFromElem.attr('x'))
-  logoPlacementAttrKeeperElem.attr('y', updateFromElem.attr('y'))
+window.setExistingPlacementAttrs = (updateFromElem, updateToElem) ->
+  updateToElem.attr('width', updateFromElem.attr('width'))
+  updateToElem.attr('height', updateFromElem.attr('height'))
+  updateToElem.attr('x', updateFromElem.attr('x'))
+  updateToElem.attr('y', updateFromElem.attr('y'))
+  updateToElem.attr('view-box', updateFromElem.attr('viewBox'))
 
 $(document).on "turbolinks:load", ->
   $('.panel-collapse').on 'show.bs.collapse', ->
@@ -149,11 +146,12 @@ $(document).on "turbolinks:load", ->
     #document.getElementById(placement).href.baseVal    = graphic;
     document.getElementById('sidebar-4').classList.remove("hide-sidebar")
 
+  $('body').on 'click', '.cancel-button-side-bar-4', ->
+    document.getElementById('sidebar-4').classList.add("hide-sidebar")
+
   $('body').on  'click',  '#color_selection', ->
     document.getElementById('sidebar-5').classList.remove("hide-sidebar")
-    $('[data-select-logo-layer]').attr('id', $(this).attr('data-logo-layer-id'))
-  #    color = $('#color_selection').val();
-
+    $('[data-selected-layer]').attr('id', $(this).attr('data-layer-id'))
 
   $('body').on 'click', '#cancel_btn', ->
     document.getElementById('sidebar-4').classList.add("hide-sidebar")

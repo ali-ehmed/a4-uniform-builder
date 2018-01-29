@@ -1,5 +1,4 @@
 <%=simple_form_for Logo.new, url: logos_path, method: :post do |f|%>
-
     <li class="form-group">
       <label class="title" >Select Logo</label>
       <div class="form-holder">
@@ -15,16 +14,14 @@
       <span class="desc"></span>
     </li>
 
-    <!-- Logo Default Colors -->
+    <!-- Logo Default Layers -->
     <div data-logo-layers></div>
+
     <!-- Logo Default Colors -->
     <div data-logo-colors></div>
 
     <!-- Uploaded Logo Description -->
     <div data-uploaded-logo></div>
-
-    <!-- Placement Attr Elem for Logo to get the placement specific size (width, height, x, y) -->
-    <div data-logo-placement-attribute></div>
 
     <li class="form-group">
       <div class="graphic-area hide-sidebar" id="sidebar-4">
@@ -33,11 +30,11 @@
     </li>
     <div class="footer">
       <%= f.button :button, 'Cancel', type: :reset, class: 'btn btn-default highlight graphics', data: {graphics: "false"} %>
-      <%=f.button :submit,  'Complete', class: 'btn btn-danger highlight graphics', data: {graphics: "true"}, id: "logo_form", remote: true%>
+      <%= f.button :submit,  'Complete', class: 'btn btn-danger highlight graphics', data: {graphics: "true"}, id: "logo_form", remote: true%>
     </div>
-<%end%>
+<% end %>
+
 <script>
     var text_value = $('#text_team_number').val();
     document.getElementById('PL10_Text_Back').textContent = text_value;
-
 </script>

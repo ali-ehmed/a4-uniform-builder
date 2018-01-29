@@ -12,6 +12,7 @@ class LogosController < ApplicationController
   end
 
   def logo_colors
+    @model_name = 'Logo'
     @logo_layer_ids = @logo.svg_default_layers.try(:split, ', ')
     @logo_colors    = @logo.svg_default_colors.try(:split, ', ').map(&:upcase)
 

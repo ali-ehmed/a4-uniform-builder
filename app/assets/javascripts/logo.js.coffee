@@ -98,6 +98,8 @@ uploadLogo = ->
         document.getElementById('set_preview_logo').src = fr.result;
 
         window.fetchSvg fr.result, (svg, layerIds) ->
+          $('[data-logo-layers]').attr('id', layerIds.join(', '))
+
           logoPlacement(svg)
 
           # When selecting logo from Upload, we need to clear the changes for Selecting Logo from Logo Selection
@@ -126,6 +128,7 @@ updateSelectedLogoOnPlacement = ->
     window.fetchSvg svgPath, (svg, layerIds) ->
       logoPlacement(svg)
 
+      $('[data-logo-layers]').attr('id', layerIds.join(', '))
       document.getElementById('set_preview_logo').src = svgPath;
 
       $.get("/logos/logo_colors", { id: object_id, logo_layer_ids: layerIds }, ->
@@ -144,10 +147,10 @@ updateSelectedLogoOnPlacement = ->
 # aahmed: ** Select Logo Color from Selection Popup and apply on Style and Header Logo only
 selectLogoColor = ->
   $('body').on  'click',  '.select_logo_color', ->
-    selectedLogoLayer = $('[data-select-logo-layer]').attr('id')
+    selectedLogoLayer = $('[data-selected-layer]').attr('id')
     color = $(this).data('color');
 
-    $(".default-logo-color[data-logo-layer-id='#{selectedLogoLayer}']").css('backgroundColor', color)
+    $(".default-color[data-layer-id='#{selectedLogoLayer}']").css('backgroundColor', color)
 
     styleSvg = $("#placed-logo-svg-on-style")
     headerSvg = $("#placed-logo-svg-on-header")
@@ -168,7 +171,7 @@ logoPlacement = (svg) ->
   # Todo: Right Now specific to PL2 later will be dynamic
   updateFromElem = $('#PL2_Front_Logo')
   if updateFromElem.length
-    window.setExistingPlacementAttrs(updateFromElem)
+    window.setExistingPlacementAttrs(updateFromElem, $('[data-logo-placement-attribute]'))
 
   svgPlacementOnStyle = $('#PL2')
   svgPlacementOnHeader = $('#header_img')
@@ -177,8 +180,8 @@ logoPlacement = (svg) ->
     svgPlacementOnStyle.html(svg)
     svgPlacementOnHeader.html(svg)
 
-    window.placedSvgUpdatedAttributes(svgPlacementOnStyle, [['id', 'placed-logo-svg-on-style'], ['style', 'overflow: visible;']])
-    window.placedSvgUpdatedAttributes(svgPlacementOnHeader, [['id', 'placed-logo-svg-on-header'], ['style', 'overflow: visible;']])
+    window.placedSvgUpdatedAttributes(svgPlacementOnStyle, $('[data-logo-placement-attribute]'), [['id', 'placed-logo-svg-on-style'], ['style', 'overflow: visible;']])
+    window.placedSvgUpdatedAttributes(svgPlacementOnHeader, $('[data-logo-placement-attribute]'), [['id', 'placed-logo-svg-on-header'], ['style', 'overflow: visible;']])
   , 100)
 
 truncateSelectedValues = (transforProperyValues, resetElem) ->

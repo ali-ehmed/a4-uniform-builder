@@ -1,1 +1,1 @@
-$('[data-render-color]').html("<%= j render partial: "decorations/object_colors" , locals: { model_colors: @graphic_colors, colors: @colors, selected_colors: @selected_colors, placement: @placement } %>");
+$('[data-render-color]').html("<%= j render partial: 'decorations/object_colors' , locals: { model_name: @model_name, model_colors: @graphic_colors, layer_ids: @graphic_layer_ids, colors: @colors, selected_colors: @selected_colors, placement: @placement } %>");
