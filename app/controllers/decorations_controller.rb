@@ -18,6 +18,7 @@ class DecorationsController < ApplicationController
   def apply
     @object = params[:model_name].capitalize.constantize.order(id: :desc)
   end
+
   def show
     @object         = params[:model_name].capitalize.constantize.order(id: :desc)
     @style_methods  = StyleMethod.all.collect{|s_m| [s_m.code,s_m.id]}

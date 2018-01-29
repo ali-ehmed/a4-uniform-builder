@@ -11,9 +11,7 @@ window.fetchSvg = (svgPath, callback) ->
 
     document.getElementById('sidebar-4').classList.add("hide-sidebar")
 
-    callback(svg, layerIds)
-
-    return
+    return callback(svg, layerIds)
   ), 'text'
 
 # aahmed: ** Setting attributes (width, height, x, y) to selected svg **

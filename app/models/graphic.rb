@@ -1,4 +1,7 @@
 class Graphic < ApplicationRecord
+  include Graphicable
+  GRAPHIC_CATEGORIES = ['Multiline', 'Single Line']
+
   mount_uploader :image, ImageUploader
   belongs_to  :gender
   belongs_to  :decoration

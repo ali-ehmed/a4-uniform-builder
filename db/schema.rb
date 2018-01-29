@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127084529) do
+ActiveRecord::Schema.define(version: 20180129112418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20180127084529) do
     t.string "colour_1"
     t.string "colour_2"
     t.string "colour_3"
+    t.string "default_layers"
   end
 
   create_table "layouts", force: :cascade do |t|
@@ -195,7 +196,7 @@ ActiveRecord::Schema.define(version: 20180127084529) do
     t.string "colour_1"
     t.string "colour_2"
     t.string "colour_3"
-    t.string "default_colors"
+    t.string "default_layers"
   end
 
   create_table "notifications", force: :cascade do |t|

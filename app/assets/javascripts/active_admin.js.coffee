@@ -7,52 +7,104 @@ $ ->
   $('#three_tile_th').show()
   $('#three_tile').show()
 
-  logoValidPrefix = (value) ->
-    logoLayerPrefix = 'LOGO_Color'
-
-    if value.indexOf(logoLayerPrefix) == -1
-      alert "The Prefix of SVG layer (#{value}) is not valid. Logo SVG layer prefix should be `#{logoLayerPrefix}` leading with ids (if multiple)"
-      return false
+  svgValidPrefix = (value, prefix, prefixType) ->
+    if prefixType == 'Graphic'
+      if value.indexOf(prefix[0]) == -1 and value.indexOf(prefix[1]) == -1
+        alert "The Prefix of SVG layer (#{value}) is not valid. SVG layer prefix should be in `#{prefix}` leading with ids (if multiple)"
+        return false
+    else
+      if value.indexOf(prefix[0]) == -1
+        alert "The Prefix of SVG layer (#{value}) is not valid. SVG layer prefix should be `#{prefix[0]}` leading with ids (if multiple)"
+        return false
 
     return true
 
-  # aahmed: * Logo Upload Here *
-  $('input#logo_image').on 'change', ->
+  fetchSvgAndValidate = (svgPath, prefix, prefixType, callback) ->
+    $.get svgPath, ((svg) ->
+      validPrefix = true
+      xmlDoc = $($.parseXML(svg))
+      # **/ All Elems who have id attr. This depends on svg. Svg must have id with fill attr for color \**
+      filledElems = xmlDoc.find('[id]')
+
+      ids = filledElems.map(->
+        $(@).attr('id')
+      ).get()
+
+      if prefixType == 'Graphic'
+        ids = jQuery.grep ids, (value) ->
+          return value.indexOf('GRAPHICS_') == 0
+
+        filledElems = jQuery.grep filledElems, (value) ->
+          return $(value).attr('id').indexOf('GRAPHICS_') == 0
+
+      layers = []
+
+      if ids.length == 0
+        alert "There are no Valid IDs in SVG. The prefix of IDs should be in `LOGO_, GRAPHICS_`"
+        return callback(false, layers, filledElems)
+
+      i = 0
+      while i < ids.length
+        validPrefix = svgValidPrefix(ids[i], prefix, prefixType)
+
+        if validPrefix
+          layers.push({
+            "#{ids[i]}":  $(filledElems[i]).attr('fill')
+          })
+        else
+          return callback(validPrefix, layers, filledElems)
+        ++i
+
+      callback(validPrefix, layers, filledElems)
+    ), 'text'
+
+  # aahmed: * Graphic Upload Here *
+  $("input#graphic_image").on 'change', ->
+    graphicLayerPrefix = ['GRAPHICS_Text', 'GRAPHICS_Color']
+
     fileInput = $(this)
     file = this.files[0];
     fr = new FileReader();
     fr.onload = ->
-      $.get fr.result, ((svg) ->
-        validPrefix = true
-        xmlDoc = $($.parseXML(svg))
-        # **/ All Elems who have id attr. This depends on svg. Svg must have id with fill attr for color \**
-        filledElems = xmlDoc.find('[id]')
-        ids = filledElems.map(->
-          $(@).attr('id')
-        ).get()
+      fetchSvgAndValidate fr.result, graphicLayerPrefix, 'Graphic', (isValidPrefix, layers, filledElems) ->
+        if isValidPrefix
+          $('#display_graphic_default_colors').empty()
+          filledElems.map((v)->
+            $('#display_graphic_default_colors').append(
+              "<span style='background: #{$(v).attr('fill')}; padding: 4px 12px; margin-right: 4px;'></span>"
+            )
+          )
+          $('#graphic_default_layers').val(JSON.stringify(layers)) if layers.length > 0
+          return
+        else
+          $('#graphic_default_layers').val('')
+          $('#display_graphic_default_colors').empty()
+          fileInput.val('')
 
-        i = 0
-        while i < ids.length
-          validPrefix = logoValidPrefix(ids[i])
-          return false unless validPrefix
-          ++i
+    fr.readAsDataURL(file);
+  # aahmed: * Graphic Upload Here *
 
-        if validPrefix
-          $('#display_default_colors').empty()
+  # aahmed: * Logo Upload Here *
+  $('input#logo_image').on 'change', ->
+    logoLayerPrefix = ['LOGO_Color']
+    fileInput = $(this)
+    file = this.files[0];
+    fr = new FileReader();
+    fr.onload = ->
+      fetchSvgAndValidate fr.result, logoLayerPrefix, 'Logo', (isValidPrefix, layers, filledElems) ->
+        if isValidPrefix
+          $('#display_logo_default_colors').empty()
           filledElems.map(->
-            $('#display_default_colors').append(
+            $('#display_logo_default_colors').append(
               "<span style='background: #{$(@).attr('fill')}; padding: 4px 12px; margin-right: 4px;'></span>"
             )
           )
-          $('#logo_default_colors').val(filledElems.map(->
-            $(@).attr('fill')
-          ).get().join(', ')) if filledElems.length > 0
+          $('#logo_default_layers').val(JSON.stringify(layers)) if layers.length > 0
           return
         else
-          $('#logo_default_colors').val('')
-          $('#display_default_colors').empty()
+          $('#logo_default_layers').val('')
+          $('#display_logo_default_colors').empty()
           fileInput.val('')
-      ), 'text'
 
     fr.readAsDataURL(file);
   # aahmed: * Logo Upload Here *

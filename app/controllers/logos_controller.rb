@@ -12,10 +12,10 @@ class LogosController < ApplicationController
   end
 
   def logo_colors
-    # @logo_colors = Color.where(is_tile_one: true)#@logo.colors
-    @logo_layer_ids = params[:logo_layer_ids].try(:split, ', ').try(:flatten)
-    @logo_colors = @logo.default_colors.try(:split, ', ').map(&:upcase) #@logo.colors
-    render "logo_colors.js.erb"
+    @logo_layer_ids = @logo.svg_default_layers.try(:split, ', ')
+    @logo_colors    = @logo.svg_default_colors.try(:split, ', ').map(&:upcase)
+
+    render 'logo_colors.js.erb'
   end
 
   private
@@ -32,9 +32,9 @@ class LogosController < ApplicationController
 
     @user_selected_colors = Color.find_by(id: current_user.color).try(:hex_code).try(:split, ',')
     @selected_colors =  begin
-                          (@user_selected_colors.map(&:upcase) + @logo.default_colors.try(:split, ', ').map(&:upcase)).uniq
+                          (@user_selected_colors.map(&:upcase) + @logo.svg_default_colors.try(:split, ', ').map(&:upcase)).uniq
                         rescue StandardError
-                                             []
+                          []
                         end
 
     @placement      = Placement.find_by_id(params[:placement_id] || current_user.try(:placement))

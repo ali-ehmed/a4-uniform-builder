@@ -174,11 +174,13 @@ logoPlacement = (svg) ->
   svgPlacementOnStyle = $('#PL2')
   svgPlacementOnHeader = $('#header_img')
 
-  svgPlacementOnStyle.html(svg)
-  svgPlacementOnHeader.html(svg)
+  setTimeout(->
+    svgPlacementOnStyle.html(svg)
+    svgPlacementOnHeader.html(svg)
 
-  window.placedSvgUpdatedAttributes(svgPlacementOnStyle, [['id', 'placed-logo-svg-on-style'], ['style', 'overflow: visible;']])
-  window.placedSvgUpdatedAttributes(svgPlacementOnHeader, [['id', 'placed-logo-svg-on-header'], ['style', 'overflow: visible;']])
+    window.placedSvgUpdatedAttributes(svgPlacementOnStyle, [['id', 'placed-logo-svg-on-style'], ['style', 'overflow: visible;']])
+    window.placedSvgUpdatedAttributes(svgPlacementOnHeader, [['id', 'placed-logo-svg-on-header'], ['style', 'overflow: visible;']])
+  , 100)
 
 truncateSelectedValues = (transforProperyValues, resetElem) ->
   values = transforProperyValues.split(' ').filter((v) -> return v != '')
