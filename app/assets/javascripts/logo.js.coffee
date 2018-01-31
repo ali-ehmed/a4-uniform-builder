@@ -118,7 +118,7 @@ uploadLogo = ->
 # aahmed: ** Place Logo SVG on Style (On Shirt), Header (Sidebar Header) and Preview Box (From where logo selection popup opens) **
 updateSelectedLogoOnPlacement = ->
   $('body').on  'click',  '.select-populated-logo', (e) ->
-    $(this).closest('ul.logo-list').find('a.active').removeClass("active")
+    $(this).closest('#image-selection').find('.image-item.active').removeClass("active")
     $(this).parent().addClass("active")
     svgPath         = $(this).data('image-path');
     placement       = $(this).data('placement');
@@ -132,16 +132,11 @@ updateSelectedLogoOnPlacement = ->
       document.getElementById('set_preview_logo').src = svgPath;
 
       $.get("/logos/logo_colors", { id: object_id, logo_layer_ids: layerIds }, ->
-        if $("#mirror-view").length
-          $("#mirror-view").prop('checked', false)
-          $("#mirror-view").val('0')
-
         console.log('Success')
 
         $("[data-uploaded-logo]").empty()
         $("#logo-desc-content").hide()
       )
-
 # aahmed: ** Place Logo SVG on Style (On Shirt), Header (Sidebar Header) and Preview Box (From where logo selection popup opens) **
 
 # aahmed: ** Select Logo Color from Selection Popup and apply on Style and Header Logo only

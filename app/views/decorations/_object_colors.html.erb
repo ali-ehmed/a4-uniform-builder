@@ -8,22 +8,22 @@
             <%= render_color_item(index, color, layer_ids[index]) %>
           <% end %>
         <% else %>
-          <%#- graphic_texts = model_colors['Text Colors'] %>
-
           <%- model_colors.each_pair do |color_type, layers_with_color|%>
-            <li style="border-bottom: 1px solid #ccc;">
-              <strong><%= color_type %></strong>
-            </li>
-            <% layers_with_color.each_with_index do |item, index|%>
-              <%- layer_id = item.keys.first %>
-              <%- color = item.values.first %>
-              <% if color_type == 'Text Colors' %>
-                <li>
-                  <label>Text:</label>
-                  <%= text_field_tag :graphic_text_input, nil, class: 'form-control', id: "graphic_text_for_#{layer_id}", data: { 'layer-id': layer_id }, onkeyup: 'updateGraphicText(this)' %>
-                </li>
+            <% if layers_with_color.present? %>
+              <li style="border-bottom: 1px solid #ccc;">
+                <strong><%= color_type %></strong>
+              </li>
+              <% layers_with_color.each_with_index do |item, index|%>
+                <%- layer_id = item.keys.first %>
+                <%- color = item.values.first %>
+                <% if color_type == 'Text Colors' %>
+                  <li>
+                    <label>Text:</label>
+                    <%= text_field_tag :graphic_text_input, nil, class: 'form-control', id: "graphic_text_for_#{layer_id}", data: { 'layer-id': layer_id }, onkeyup: 'updateGraphicText(this)' %>
+                  </li>
+                <% end %>
+                <%= render_color_item(index, color, layer_id) %>
               <% end %>
-              <%= render_color_item(index, color, layer_id) %>
             <% end %>
           <% end %>
         <% end %>

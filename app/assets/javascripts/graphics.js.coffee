@@ -1,13 +1,13 @@
 # aahmed: ** Place Graphic SVG on Style (On Shirt), Header (Sidebar Header) and Preview Box (From where logo selection popup opens) **
 updateSelectedGraphicOnPlacement = ->
   $('body').on  'click',  '.select-populated-graphic', (e) ->
-    $(this).closest('ul.logo-list').find('a.active').removeClass("active")
+    $(this).closest('#image-selection').find('.image-item.active').removeClass("active")
     $(this).parent().addClass("active")
 
-    svgPath         = $(this).data('image-path');
-    placement       = $(this).data('placement');
-    placement_pos   = $(this).data('placement-pos');
-    object_id       = $(this).data('object');
+    svgPath         = $(this).data('image-path')
+    placement       = $(this).data('placement')
+    placement_pos   = $(this).data('placement-pos')
+    object_id       = $(this).data('object')
 
     window.fetchSvg svgPath, (svg, layerIds) ->
       $('[data-graphic-layers]').attr('id', layerIds.join(', '))
@@ -17,7 +17,7 @@ updateSelectedGraphicOnPlacement = ->
       if updateFromElem.length
         window.setExistingPlacementAttrs(updateFromElem, $('[data-graphic-placement-attribute]'))
 
-      svgPlacementOnStyle = $('#PL1')
+      svgPlacementOnStyle  = $('#PL1')
       svgPlacementOnHeader = $('#header_img')
 
       svgPlacementOnStyle.find('svg').replaceWith(svg)
