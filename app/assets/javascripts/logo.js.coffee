@@ -60,8 +60,21 @@ logoSizes = ->
 
     if !mainSvg.attr('data-size') || parseFloat(mainSvg.attr('data-size')) != size
       mainSvg.attr('data-size', size)
-      mainSvg.attr('width', "#{((width * size) / 100)}px")
-      mainSvg.attr('height', "#{((height * size) / 100)}px")
+
+      xVal = parseFloat(mainSvg.attr('x').slice(0,-2))
+      yVal = parseFloat(mainSvg.attr('y').slice(0,-2))
+
+      newWidth = ((width * size) / 100)
+      newHeight = ((height * size) / 100)
+
+      newXVal = ((width - newWidth) / 2) + xVal
+      newYVal = ((height - newHeight) / 2) + yVal
+
+      mainSvg.attr('width', "#{newWidth}px")
+      mainSvg.attr('height', "#{newHeight}px")
+
+      mainSvg.attr('x', "#{newXVal}px")
+      mainSvg.attr('y', "#{newYVal}px")
 
 
 # aahmed: -> Logo Sizes
@@ -72,14 +85,19 @@ uploadLogo = ->
     if($("#img_inpput").val().length > 0)
       $('#submit_btn').prop('disabled', false)
 
+  $('body').on 'keypress', '#color-desc', ->
+    if($("#img_inpput").val().length > 0)
+      $('#submit_btn').prop('disabled', false)
+
   $('body').on 'change', '#img_inpput', ->
-    if($("#logo-desc").val().length > 0)
+    if($("#logo-desc").val().length > 0 and $("#color-desc").val().length > 0)
       $('#submit_btn').prop('disabled', false)
 
   $('body').on 'click', '#submit_btn', ->
     input = $(this)
     fileInput = $("#img_inpput")
     logoDescInput = $("#logo-desc")
+    colorDescInput = $("#color-desc")
 
     if logoDescInput.val().length == 0
       input.prop('disabled', true)
@@ -88,6 +106,9 @@ uploadLogo = ->
       input.prop('disabled', false)
       $("#logo-desc-content").show()
       $("#logo-desc-content").find('.desc').text(logoDescInput.val())
+
+      $("#color-desc-content").show()
+      $("#color-desc-content").find('.color-desc').text(colorDescInput.val())
 
     file = fileInput[0].files[0]
 
@@ -110,6 +131,7 @@ uploadLogo = ->
       # Clearing Upload fields
       fileInput.val('')
       logoDescInput.val('')
+      colorDescInput.val('')
     else
       input.prop('disabled', true)
       return false
@@ -131,12 +153,15 @@ updateSelectedLogoOnPlacement = ->
       $('[data-logo-layers]').attr('id', layerIds.join(', '))
       document.getElementById('set_preview_logo').src = svgPath;
 
-      $.get("/logos/logo_colors", { id: object_id, logo_layer_ids: layerIds }, ->
-        console.log('Success')
+      setTimeout(->
+        $.get("/logos/logo_colors", { id: object_id, logo_layer_ids: layerIds }, ->
+          console.log('Success')
 
-        $("[data-uploaded-logo]").empty()
-        $("#logo-desc-content").hide()
-      )
+          $("[data-uploaded-logo]").empty()
+          $("#logo-desc-content").hide()
+          $("#color-desc-content").hide()
+        )
+      , 100)
 # aahmed: ** Place Logo SVG on Style (On Shirt), Header (Sidebar Header) and Preview Box (From where logo selection popup opens) **
 
 # aahmed: ** Select Logo Color from Selection Popup and apply on Style and Header Logo only
@@ -157,16 +182,18 @@ selectLogoColor = ->
 # aahmed: ** Select Logo Color from Selection Popup and apply on Style and Header Logo only
 
 
-
-
 # ***** Private Methods *****
 
 logoPlacement = (svg) ->
+  parsedSvg = $($.parseXML(svg))
   # Placement
   # Todo: Right Now specific to PL2 later will be dynamic
   updateFromElem = $('#PL2_Front_Logo')
   if updateFromElem.length
-    window.setExistingPlacementAttrs(updateFromElem, $('[data-logo-placement-attribute]'))
+    updateToElem = $('[data-logo-placement-attribute]')
+    window.setExistingPlacementAttrs(updateFromElem, updateToElem)
+
+    updateToElem.attr('view-box', parsedSvg.attr('viewBox'))
 
   svgPlacementOnStyle = $('#PL2')
   svgPlacementOnHeader = $('#header_img')

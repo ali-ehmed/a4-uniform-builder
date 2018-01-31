@@ -17,16 +17,20 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
+        <!-- Upload Logo -->
         <div role="tabpanel" class="tab-pane" id="upload_logo_tab">
           <div class="form-group">
             <label class="title" >Upload Logo</label>
-            <%= form.input_field :image, type: :file, multiple: true, class: "form-control", id:"img_inpput", data: {placement: current_user.try(:placement_pos)} %>
+            <%= form.input_field :image, type: :file, multiple: true, class: 'form-control', id: 'img_inpput', data: {placement: current_user.try(:placement_pos)} %>
           </div>
           <div class="form-group">
-            <label class="title" >Enter Description</label>
+            <label class="title" >Logo Description</label>
             <%= text_field_tag :uploaded_logo_description, nil, class: 'form-control', id: 'logo-desc' %>
           </div>
-
+          <div class="form-group">
+            <label class="title" >Color Description</label>
+            <%= text_area :uploaded_color_description, nil, class: 'form-control', id: 'color-desc', row: 3 %>
+          </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in active" id="select_logo_tab">
           <div class="clearfix sub-section">
@@ -78,5 +82,8 @@
     width: inherit !important;
     padding: 6px 9px;
     margin: 6px 0px;
+  }
+  #upload_logo_tab {
+    padding: 0px 15px;
   }
 </style>

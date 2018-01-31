@@ -10,12 +10,17 @@ updateSelectedGraphicOnPlacement = ->
     object_id       = $(this).data('object')
 
     window.fetchSvg svgPath, (svg, layerIds) ->
+      parsedSvg = $($.parseXML(svg))
       $('[data-graphic-layers]').attr('id', layerIds.join(', '))
       # Placement
       # Todo: Right Now specific to PL1 later will be dynamic
       updateFromElem = $('#PL1_Front_Graphic')
       if updateFromElem.length
-        window.setExistingPlacementAttrs(updateFromElem, $('[data-graphic-placement-attribute]'))
+        updateToElem = $('[data-graphic-placement-attribute]')
+        window.setExistingPlacementAttrs(updateFromElem, updateToElem)
+
+        # setting view box from "parsedSvg" (Selected SVG)
+        updateToElem.attr('view-box', parsedSvg.attr('viewBox'))
 
       svgPlacementOnStyle  = $('#PL1')
       svgPlacementOnHeader = $('#header_img')

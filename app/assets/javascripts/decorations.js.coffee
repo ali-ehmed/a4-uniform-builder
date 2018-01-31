@@ -38,7 +38,9 @@ window.setExistingPlacementAttrs = (updateFromElem, updateToElem) ->
   updateToElem.attr('height', updateFromElem.attr('height'))
   updateToElem.attr('x', updateFromElem.attr('x'))
   updateToElem.attr('y', updateFromElem.attr('y'))
-  updateToElem.attr('view-box', updateFromElem.attr('viewBox'))
+
+  # for logo only
+#  updateToElem.attr('view-box', updateFromElem.attr('viewBox'))
 
 $(document).on "turbolinks:load", ->
   $('.panel-collapse').on 'show.bs.collapse', ->
@@ -185,8 +187,13 @@ $(document).on "turbolinks:load", ->
 
     # Todo: Hide existing placement if decoration method is switched
   $('body').on 'click', '#decoration-buttons .decoration-buttons-wrapper a', ->
-    $("#placed-graphic-svg-on-style").html('')
-    $("#placed-logo-svg-on-style").html('')
+    # these ids needs to be present on dom, so that next time any placement occurs
+    # will get set in these svgs ids
+    $("#placed-graphic-svg-on-style").html('').hide()
+    $("#placed-logo-svg-on-style").html('').hide()
+
+    $("#placed-graphic-svg-on-header").html('').hide()
+    $("#placed-logo-svg-on-header").html('').hide()
 
   $('body').on 'click', '#numbering',->
     $(this).removeClass('btn-default');
