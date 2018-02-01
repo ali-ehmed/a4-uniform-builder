@@ -1,0 +1,13 @@
+<main id="main">
+  <div class="container">
+    <div class="custom-container">
+      <div class="main-heading">
+        <h1>CATEGORY</h1>
+      </div>
+      <div class="category-btn">
+        <%=link_to "Stock", styles_path(category: "Stock"), class: (current_user.category == "Stock" && "btn btn-primary" || "btn btn-default")%>
+        <%=link_to "Custom Sublimation", styles_path(category: "Sublimation"), class: (current_user.category == "Sublimation" && "btn btn-primary" || "btn btn-default")%>
+      </div>
+    </div>
+  </div>
+</main>

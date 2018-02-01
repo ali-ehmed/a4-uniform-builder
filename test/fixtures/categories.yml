@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  garment_category: MyString
+  acs_garment_category_description: MyText
+  acs_garment_category_code: MyString
+  gender_id: 1
+
+two:
+  garment_category: MyString
+  acs_garment_category_description: MyText
+  acs_garment_category_code: MyString
+  gender_id: 1

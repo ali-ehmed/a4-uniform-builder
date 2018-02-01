@@ -25,5 +25,7 @@ module A4Configurator
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('/app/assets/fonts')
+    config.generators.assets = false
+    config.generators.helper = false
   end
 end

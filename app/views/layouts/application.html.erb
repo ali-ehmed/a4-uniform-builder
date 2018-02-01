@@ -7,17 +7,24 @@
   <title>A4Configurator</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!-- Bootstrap -->
+
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%- unless params[:controller] == "home"%>
+      <div id="wrapper" class="gender">
+        <%=render partial: "layouts/header"%>
+      </div>
+  <%end%>
 
 <%= yield %>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<%= javascript_include_tag( 'bootstrap.min.js' ) %>
+<%#= javascript_include_tag( 'bootstrap.min.js' ) %>
 </body>
 </html>

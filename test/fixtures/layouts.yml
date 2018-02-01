@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  decoration_id: 1
+  layout1: MyString
+  layout2: MyString
+  layout3: MyString
+
+two:
+  decoration_id: 1
+  layout1: MyString
+  layout2: MyString
+  layout3: MyString

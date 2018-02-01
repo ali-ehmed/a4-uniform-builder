@@ -8,11 +8,14 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+ruby '2.4.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg', '~> 0.20.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'therubyracer'
+gem 'execjs'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -35,7 +38,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'country_select'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -45,3 +50,9 @@ group :development, :test do
 end
 gem 'rails_12factor', group: :production
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'elevatezoom-rails'
+gem 'inline_svg'
+gem 'simple_form'
+gem 'simple_form_fancy_uploads'
+gem 'ransack', github: 'activerecord-hackery/ransack'

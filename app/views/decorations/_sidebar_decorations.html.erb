@@ -1,0 +1,44 @@
+<div class="options-btn sidebar-btn">
+  <a href="#" class="btn btn-default">UJLJSGM - MENS CUSTOm Baseball Jersey....</a>
+</div>
+<div class="panel-group selected-decoration" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading active" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class=""><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-minus"></span> <span class="tabtitle">Center Back</span></a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" style="">
+      <div class="panel-body">
+        <div class="tile-view">
+          <div class="img-holder" id="header_img">
+            <!--<img src="images/img-16.png" style="width: 30px; height: 25px">-->
+          </div>
+          <div id="decoration-buttons" class="btn-holder text-center">
+            <div class="decoration-buttons-wrapper">
+              <%=link_to 'Graphic', apply_model_decorations_path(model_name: 'text', partial: 'graphic'), class: 'btn btn-default', remote: true, id: 'graphics' %>
+              <%=link_to 'Logo', apply_model_decorations_path(model_name: 'text', partial: 'logo'), class: 'btn btn-default', remote:true, id: 'logo' %>
+              <%=link_to 'Numbering', apply_model_decorations_path(model_name: 'text', partial: 'numbering'), class: 'btn btn-default',remote:true, id: 'numbering'%>
+              <%=link_to 'Team Name', apply_model_decorations_path(model_name: 'text', team_name: true, partial: 'team_name'), class: 'btn btn-default',remote: true, id: 'team_name'%>
+            </div>
+            <div data-render></div>
+
+            <!-- Placement Attr Elem for Logo to get the placement specific size (width, height, x, y) -->
+            <div data-logo-placement-attribute></div>
+
+            <!-- Placement Attr Elem for Graphic to get the placement specific size (width, height, x, y) -->
+            <div data-graphic-placement-attribute></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="options-btn option-btn-side">-->
+  <!--<a href="#" class="btn btn-default">Close</a>-->
+  <!--<a href="#" class="btn btn-primary" data-show="4">Complete</a>-->
+<!--</div>-->
+<!--<div class="options-btn sidebar-btn">
+    <a href="#" class="btn btn-default location">Add a Location</a>
+</div>-->

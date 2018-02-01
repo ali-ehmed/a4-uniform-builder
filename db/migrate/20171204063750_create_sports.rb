@@ -1,11 +1,10 @@
 class CreateSports < ActiveRecord::Migration[5.1]
   def change
     create_table :sports do |t|
-      t.string    :category
       t.string    :image
-      t.datetime  :available_till
-      t.integer   :items_in_stock
-      t.string    :acs_code
+      t.string    :acs_sales_category_code
+      t.text      :acs_sales_category_description
+      t.string    :marketing_category
 
       t.timestamps
     end

@@ -1,0 +1,7 @@
+var modalName = "#signinModal";
+$(modalName).remove();
+$("body").append("<%= j render "new" %>");
+$(modalName).modal("show");
+$(modalName).on('hidden.bs.modal', function (e) {
+  $(modalName).remove();
+});

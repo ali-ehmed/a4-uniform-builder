@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  color: MyString
+  design_id: 1
+  style_id: 1
+  sport_id: 1
+
+two:
+  code: MyString
+  color: MyString
+  design_id: 1
+  style_id: 1
+  sport_id: 1

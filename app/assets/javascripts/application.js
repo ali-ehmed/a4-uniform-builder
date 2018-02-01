@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap-sprockets
+//= require jquery.elevatezoom
+//= require jquery_ujs
+//= require jquery.elevateZoom-3.0.8.min
+//= require nouislider
+//= require wNumb
 //= require_tree .

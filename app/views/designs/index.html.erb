@@ -1,0 +1,29 @@
+<main id="main">
+  <div class="container">
+    <div class="custom-container">
+      <div class="main-heading">
+        <h1>Design</h1>
+      </div>
+      <div class="content-info">
+        <span class="available-date">Available May 2018</span>
+        <span class="available-info">UJLJSGM - MENS CUSTOm Baseball Jersey....</span>
+      </div>
+      <div class="card">
+        <div class="four-col">
+          <%-@designs.each do |design|%>
+            <a href="<%=options_path(design: design.id)%>" class="col">
+              <div class="layout"></div>
+              <div class="image-holder">
+                <%= image_tag(design.image.try(:url) || "img-des1.png", :alt => "img") %>
+              </div>
+              <div class="design-info">
+                <span class="design-code"><%=design.name%></span>
+                <span class="design-name"><%=design.category%></span>
+              </div>
+            </a>
+          <%end%>  
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

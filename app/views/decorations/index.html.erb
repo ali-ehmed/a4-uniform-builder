@@ -1,0 +1,177 @@
+<main id="main">
+  <div class="container">
+    <div class="custom-container">
+      <div class="main-heading">
+        <h1>Decoration</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div class="options-btn">
+            <a href="#" class="btn btn-default">Save</a>
+            <a href="#" class="btn btn-primary">Place Order</a>
+            <a href="#" class="btn btn-default">Share</a>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <div class="box">
+                <span class="corner1"></span>
+                <span class="corner2"></span>
+                <span class="corner3"></span>
+                <span class="corner4"></span>
+                <div class="image-holder">
+                  <%= show_svg(@style.try(:front).try(:url)) if @style.try(:front) %>
+                </div>
+                <!--<div class="scale">-->
+                  <!--<a href="#" class="scaltext">+</a>-->
+                  <!--<span href="#" class="scale slide">-->
+                <!--<a href="#" class="slidebtn"></a>-->
+                <!--</span>-->
+                  <!--<a href="#" class="scaltext">-</a>-->
+                <!--</div>-->
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6" id="color_1" data-color1="<%= @color.try(:first)%>">
+              <div class="box" id="color_3" data-color3="<%= @color.try(:count) > 1 && @color[2]%>">
+                <span class="corner1 active"></span>
+                <span class="corner2 active"></span>
+                <span class="corner3 active"></span>
+                <span class="corner4 active"></span>
+                <div class="image-holder" id="color_2" data-color2="<%= @color.try(:second)%>">
+                  <%=show_svg(@style.try(:back).try(:url)) if @style.try(:back)%>
+                </div>
+                <!--<div class="scale">-->
+                  <!--<a href="#" class="scaltext">+</a>-->
+                  <!--<span href="#" class="scale slide">-->
+                <!--<a href="#" class="slidebtn"></a>-->
+                <!--</span>-->
+                  <!--<a href="#" class="scaltext">-</a>-->
+                <!--</div>-->
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive table-area">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Color</th>
+                <th>XS</th>
+                <th>S</th>
+                <th>M</th>
+                <th>L</th>
+                <th>XL</th>
+                <th>2XL</th>
+                <th>3XL</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>A4 Finder</td>
+                <td>36</td>
+                <td>36</td>
+                <td>36</td>
+                <td>36</td>
+                <td>36</td>
+                <td>36</td>
+                <td>36</td>
+                <td>Case QTY</td>
+              </tr>
+              <tr>
+                <td><input type="color" name=""></td>
+                <td>13.65</td>
+                <td>13.65</td>
+                <td>13.65</td>
+                <td>13.65</td>
+                <td>13.65</td>
+                <td>13.65</td>
+                <td>13.65</td>
+                <td>Frosh Price</td>
+              </tr>
+              <tr>
+                <td>Scarlet</td>
+                <td>10.20</td>
+                <td>10.20</td>
+                <td>10.20</td>
+                <td>10.20</td>
+                <td>11.20</td>
+                <td>13.20</td>
+                <td>12.20</td>
+                <td>Prime Price</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="sidebar col-lg-4 col-md-4 col-sm-12 display-sidebar", id="sidebar-1">
+          <%=render partial: "sidebar_decoration_package", locals: {placements: @placements}%>
+        </div>
+        <div class="sidebar col-lg-4 col-md-4 col-sm-12 hide-sidebar", id="sidebar-2">
+          <%=render partial: "sidebar_placements", locals: {placements: @placements}%>
+        </div>
+        <div class="sidebar col-lg-4 col-md-4 col-sm-12 hide-sidebar", id="sidebar-3">
+          <%=render partial: "sidebar_decorations", locals: {decorations: @decorations, texts:@texts,graphics:@graphics}%>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<<script>
+    var color1_tile1, color1_tile2, color1_tile3, color_1, color_2, color_3;
+
+    color_1 = $('#color_1');
+
+    color_2 = $('#color_2');
+
+    color_3 = $('#color_3');
+
+    color1_tile1 = color_1.data('color1');
+
+    color1_tile2 = color_2.data('color2');
+
+    color1_tile3 = color_3.data('color3');
+
+    if (!color1_tile2 && !color1_tile3) {
+        $('#FrontColor1').css({
+            fill: color1_tile1
+        });
+        $('#BackColor1').css({
+            fill: color1_tile1
+        });
+    }
+
+    if (!color1_tile3) {
+        $('#FrontColor1').css({
+            fill: color1_tile1
+        });
+        $('#FrontColor2').css({
+            fill: color1_tile2
+        });
+        $('#BackColor1').css({
+            fill: color1_tile1
+        });
+        $('#BackColor2').css({
+            fill: color1_tile2
+        });
+    }
+
+    if (color1_tile1 && color1_tile2 && color1_tile3) {
+        $('#FrontColor1').css({
+            fill: color1_tile1
+        });
+        $('#FrontColor3').css({
+            fill: color1_tile2
+        });
+        $('#FrontColor2').css({
+            fill: color1_tile3
+        });
+        $('#BackColor1').css({
+            fill: color1_tile1
+        });
+        $('#BackColor3').css({
+            fill: color1_tile2
+        });
+        $('#BackColor2').css({
+            fill: color1_tile3
+        });
+    }
+</script>

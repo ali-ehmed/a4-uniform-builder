@@ -1,0 +1,51 @@
+<div id="header">
+  <div class="container">
+  <%=render partial: "layouts/login"%>
+  </div>
+</div>
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%=link_to(image_tag("logo.png", :alt => "LOGO"), :root, class: "navbar-brand") %>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Home", root_path%></li>
+          <li class="<%=params[:controller] == "sports" && "active"%>">
+            <%=link_to "Sports", :sports %>
+          </li>
+          <li class="<%=params[:controller] == "genders" && "active"%>">
+            <%=link_to "Gender",:genders%>
+          </li>
+          <li class="<%=params[:controller] == "categories" ? "active" : ""%>">
+            <%=link_to "CATEGORY",    :categories%>
+          </li>
+          <li class="<%=params[:controller] == "styles" && "active"%>">
+            <%=link_to "Style",       :styles%>
+          </li>
+          <li class="<%=params[:controller] == "designs" && "active"%>">
+            <%=link_to "Design",      :designs%>
+          </li>
+          <li class="<%=params[:controller] == "options" && "active"%>">
+            <%=link_to "Options",     :options%>
+          </li>
+          <li class="<%=params[:controller] == "decorations" && "active"%>">
+            <%=link_to "Decoration",  :decorations,class: params[:controller] == "options" && "hide-next", id: "next_btn_header"%>
+          </li>
+          <li class="<%=params[:controller] == "summaries" && "active"%>">
+            <%=link_to "Summary",     :summaries  %>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>

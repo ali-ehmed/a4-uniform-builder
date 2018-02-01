@@ -1,0 +1,45 @@
+<%=simple_form_for Logo.new, url: logos_path, method: :post do |f|%>
+    <li class="form-group">
+      <label class="title" >Select Logo</label>
+      <div class="form-holder">
+        <%= link_to '#', id: 'graphic_selection', data: { style: params[:style_id], placement: current_user.try(:placement_pos) }, remote: true do %>
+          <%= image_tag 'default-image.jpg', id: 'set_preview_logo', class: 'img-responsive' %>
+        <% end %>
+        <%= f.input_field :image, class: 'form-control hide-sidebar' %>
+      </div>
+    </li>
+
+    <li id="logo-desc-content" style="display: none;">
+      <label class="title" style="margin: 0;">Logo Description</label>
+      <span class="desc"></span>
+    </li>
+
+    <li id="color-desc-content" style="display: none;">
+      <label class="title" style="margin: 0;">Color Description</label>
+      <span class="color-desc"></span>
+    </li>
+
+    <!-- Logo Default Layers -->
+    <div data-logo-layers></div>
+
+    <!-- Logo Default Colors -->
+    <div data-logo-colors></div>
+
+    <!-- Uploaded Logo Description -->
+    <div data-uploaded-logo></div>
+
+    <li class="form-group">
+      <div class="graphic-area hide-sidebar" id="sidebar-4">
+        <%=render partial: 'logo_selection', locals: { logos: logos, placement: placement, form: f } %>
+      </div>
+    </li>
+    <div class="footer">
+      <%= f.button :button, 'Cancel', type: :reset, class: 'btn btn-default highlight graphics', data: {graphics: "false"} %>
+      <%= f.button :submit,  'Complete', class: 'btn btn-danger highlight graphics', data: {graphics: "true"}, id: "logo_form", remote: true%>
+    </div>
+<% end %>
+
+<script>
+    var text_value = $('#text_team_number').val();
+    document.getElementById('PL10_Text_Back').textContent = text_value;
+</script>

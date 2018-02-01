@@ -1,0 +1,32 @@
+<main id="main">
+  <div class="container">
+    <div class="custom-container">
+      <div class="main-heading">
+        <h1>Select Your Sport</h1>
+      </div>
+      <div class="check-list">
+        <div class="row">
+          <%-@sports.each do |sport|%>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <%= form_for sport, url: genders_path(sport_id: sport.id),html: {class: "nice-form card-area", id: "redirect-request-#{sport.id}"}, method: :get do |f|%>
+              <!-- <form action="#" class="nice-form card-area"> -->
+                <%= f.hidden_field :id, value: sport.id %>
+                <label for="check-<%=sport.id%>">
+                  <%=f.check_box :is_selected,type: "checkbox",id: "check-#{sport.id}",class: "selected-checbox",checked: (current_user.sport == sport.id ? true : false), data: {sport: sport.id} %>
+                  <!-- <input id="check-2" checked="checked" type="checkbox"> -->
+                  <span class="fake-input"></span>
+                  <span class="fake-label">
+                                <span class="image-holder">
+                                  <%= image_tag(sport.try(:sport_image).try(:url) || "img-02.png") %>
+                                </span>
+                                <span class="text"><%=sport.sport_name%></span>
+                              </span>
+                </label>
+              <%end%>
+            </div>
+          <%end%>  
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

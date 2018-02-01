@@ -1,11 +1,7 @@
 <body class="home-page">
 <div id="wrapper" class="home-wrapper">
   <div id="header">
-    <ul class="login-area">
-      <li class="item1"><a href="#">Item1</a></li>
-      <li class="signin"><a href="#">Sign In</a></li>
-      <li class="signin"><a href="#">Sign Out</a></li>
-    </ul>
+    <%=render partial: "layouts/login"%>
   </div>
   <main id="main">
     <div class="content">
@@ -17,27 +13,19 @@
           <h1>Uniform Builder</h1>
           <p>By selecting START, you will begin at Step 1 of the uniform building process. It is easy to use, just follow along through the steps! If you have saved a uniform and want to revisit it, select MY MOCK-UPS and you can pick-up where you left off or move efficiently toward placing your order!</p>
           <div class="btn-holder">
-            <%=link_to "Start NOw", pages_sports_path, class: "btn btn-primary"%>
-            <%=link_to "How to use configurator", pages_sports_path, class: "btn btn-primary"%>
+            <%=link_to "Start NOw", :sports, class: "btn btn-primary"%>
+            <%=link_to "How to use configurator", :sports, class: "btn btn-primary"%>
           </div>
         </div>
         <div class="img-holder">
           <ul>
-            <li>
-              <div class="img-holder">
-                <%=link_to((image_tag "img-02.jpg", alt:"image description"),pages_gender_path)%>
-              </div>
-            </li>
-            <li>
-              <div class="img-holder">
-                <%=link_to((image_tag "img-03.jpg", alt:"image description"), pages_gender_path)%>
-              </div>
-            </li>
-            <li>
-              <div class="img-holder">
-                <%=link_to((image_tag "img-04.jpg", alt:"image description"), pages_gender_path)%>
-              </div>
-            </li>
+            <%-@featured_image.each do |feature_image|%>
+              <li>
+                <div class="img-holder">
+                  <%=link_to(image_tag(feature_image.image.try(:url)||"img-03.jpg"),genders_path(sport: feature_image.id, request: "home"))%>
+                </div>
+              </li>
+            <%end%>  
           </ul>
         </div>
       </div>

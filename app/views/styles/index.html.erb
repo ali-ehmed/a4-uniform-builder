@@ -1,0 +1,30 @@
+<main id="main">
+  <div class="container">
+    <div class="custom-container">
+      <div class="main-heading">
+        <h1>style</h1>
+      </div>
+      <div class="card">
+        <div class="four-col">
+          <%- @styles.each do |style|%>
+            <div class="col">
+              <div class="layout"></div>
+              <div class="image-holder">
+                <%=image_tag(style.try(:thumbnail).try(:url) || "img-des5.png",alt: "image description")%>
+              </div>
+              <div class="design-info">
+                <span class="design-code"><%=style.style_code%></span>
+                <span class="design-name"><%=style.acs_style%></span>
+                <%-if @style_category == "Stock"%>
+                  <%=link_to "Select", options_path(style: style.id)%>
+                <%else%>
+                  <%=link_to "Select", designs_path(style: style.id)%>
+                <%end%>
+              </div>
+            </div>
+          <%end%>  
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

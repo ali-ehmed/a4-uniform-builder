@@ -1,0 +1,68 @@
+<div class="selection-area">
+  <div class="header">
+    <strong class="">
+      Graphic Selection
+    </strong>
+    <a href="#" class="close-btn">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+  </div>
+  <div class="content-holder">
+    <div class="panel-group" id="graphicCategoryAccordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="graphicCategoryAccordionHeadingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#graphicCategoryAccordion" href="#multiLineGraphics" aria-expanded="true" aria-controls="multiLineGraphics">
+              <span class="glyphicon glyphicon-plus"></span>
+              <span class="glyphicon glyphicon-minus"></span>
+              <span class="tabtitle">Multiline</span>
+            </a>
+          </h4>
+        </div>
+        <div id="multiLineGraphics" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="graphicCategoryAccordionHeadingOne">
+          <div class="panel-body">
+            <%= render partial: 'populate_images', locals:{ images: @multiline_graphics, placement: placement, model: 'graphic' } %>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="graphicCategoryAccordionHeadingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#graphicCategoryAccordion" href="#singleLineGraphic" aria-expanded="false" aria-controls="singleLineGraphic">
+              <span class="glyphicon glyphicon-plus"></span>
+              <span class="glyphicon glyphicon-minus"></span>
+              <span class="tabtitle">Single Line</span>
+            </a>
+          </h4>
+        </div>
+        <div id="singleLineGraphic" class="panel-collapse collapse" role="tabpanel" aria-labelledby="graphicCategoryAccordionHeadingTwo">
+          <div class="panel-body">
+            <%= render partial: 'populate_images', locals:{ images: @single_line_graphics, placement: placement, model: 'graphic' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="clearfix sub-section">-->
+      <!--<label class="title" >Search</label>-->
+
+      <!--<div class="form-holder">-->
+        <!--<input type="text" placeholder="Enter your Search..." class="form-control", id="search_image" data-graphic="true">-->
+      <!--</div>-->
+
+    <!--</div>-->
+
+    <!--<%#=render partial: "populate_images", locals: {images: graphics, placement: placement}%>-->
+    <!--<div class="footer">-->
+      <!--<input type="button" value="Cancel" class="btn btn-danger" id="cancel_btn">-->
+    <!--</div>-->
+  </div>
+
+  <div class="footer">
+    <input type="button" value="Cancel" class="btn btn-danger cancel-button-side-bar-4" id="cancel_btn">
+    <input type="button" value="Submit" class="btn btn-danger" id="submit_btn" style="display: none;">
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+</script>

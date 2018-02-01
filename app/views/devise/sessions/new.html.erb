@@ -1,0 +1,33 @@
+<div id="signinModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <a class="navbar-brand" href="#">
+            <%=image_tag "loginlogo.png"%>
+          </a>
+        </div>
+
+        <div class="form-area">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= f.email_field :user_name, placeholder: "User Name", name: "username" %>
+              <%= f.password_field :password, placeholder: "Password", name: "password",type:"password" %>
+
+              <%= f.submit "Login", class:"btn btn-primary" %>
+              <!--<button type="button" class="btn btn-primary">Login</button>-->
+              <div class="link-area">
+                <%=link_to "Create a New Account", new_user_registration_path, class: "style-link"%>"
+                <%=link_to "Forgot My Password", new_user_password_path, class: "style-link"%>"
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%#= render "devise/shared/links" %>

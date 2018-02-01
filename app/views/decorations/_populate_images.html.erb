@@ -1,0 +1,23 @@
+<% if images.present? %>
+    <div id="image-selection" class="color-selection search-box">
+      <strong class="heading">Select <%= images.first.try(:class).try(:name) %></strong>
+      <div class="row">
+        <% placement     = current_user.try(:placement) %>
+        <% placement_pos = current_user.try(:placement_pos) %>
+
+        <%- images.each do |obj| %>
+          <div class="image-wrapper col-md-4">
+            <div class="image-item">
+              <img src="<%= obj.image.url %>" class="img-responsive select-populated-<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-model="<%= obj.class.name == 'Logo' ? 'logo' : 'graphic' %>" data-placement="<%= placement %>" data-object="<%= obj.try(:id) %>" data-placement-pos="<%= placement_pos %>" data-image-path="<%= obj.image %>">
+              <span class="tile-view-text"><%= obj.try(:category) %></span>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+<% else %>
+  <div class="alert alert-info text-center">
+    No Images Present
+  </div>
+<% end %>

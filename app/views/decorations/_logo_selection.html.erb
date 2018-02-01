@@ -1,0 +1,89 @@
+<div class="selection-area">
+  <div class="header">
+    <strong class="">
+      Logo Selection
+    </strong>
+    <a href="#" class="close-btn">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+  </div>
+  <div class="content-holder">
+    <div id="logo-tabs">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="#upload_logo_tab" aria-controls="upload_logo_tab" role="tab" data-toggle="tab">Upload Logo</a></li>
+        <li role="presentation" class="active"><a href="#select_logo_tab" aria-controls="select_logo_tab" role="tab" data-toggle="tab">Select Logo</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!-- Upload Logo -->
+        <div role="tabpanel" class="tab-pane" id="upload_logo_tab">
+          <div class="form-group">
+            <label class="title" >Upload Logo</label>
+            <%= form.input_field :image, type: :file, multiple: true, class: 'form-control', id: 'img_inpput', data: {placement: current_user.try(:placement_pos)} %>
+          </div>
+          <div class="form-group">
+            <label class="title" >Logo Description</label>
+            <%= text_field_tag :uploaded_logo_description, nil, class: 'form-control', id: 'logo-desc' %>
+          </div>
+          <div class="form-group">
+            <label class="title" >Color Description</label>
+            <%= text_area :uploaded_color_description, nil, class: 'form-control', id: 'color-desc', row: 3 %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in active" id="select_logo_tab">
+          <div class="clearfix sub-section">
+            <label class="title" >Search</label>
+            <div class="form-holder">
+              <input type="text" placeholder="Enter your Search..." class="form-control", id="search_image">
+            </div>
+
+          </div>
+          <div class="clearfix sub-section">
+            <label class="title" >Select Category</label>
+            <%= simple_form_for :logo, url: logos_path, html: { class: 'form-holder' } do |f|%>
+                <%f.input_field :category, as: :select, collection: logos.map(&:category).uniq.collect{|c| [c, c]}, class: 'form-control', prompt: '--Select Logo Category--', id: 'serach_category' %>
+            <%end%>
+          </div>
+
+          <%= render partial: 'populate_images', locals:{ images: logos, placement: placement, model: 'logo' } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <input type="button" value="Cancel" class="btn btn-danger cancel-button-side-bar-4" id="cancel_btn">
+      <input type="button" value="Submit" class="btn btn-danger" id="submit_btn" style="display: none;">
+    </div>
+  </div>
+</div>
+
+<script !src="">
+  $(function () {
+    $('#logo-tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      if($(this).attr('href') === '#upload_logo_tab') {
+        $('#submit_btn').show()
+      } else {
+        $('#submit_btn').hide()
+      }
+    });
+  });
+</script>
+
+<style>
+  #logo-tabs ul.nav-tabs li a {
+    height: inherit !important;
+    width: inherit !important;
+    padding: 6px 9px;
+    margin: 6px 0px;
+  }
+  #upload_logo_tab {
+    padding: 0px 15px;
+  }
+</style>

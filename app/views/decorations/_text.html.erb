@@ -1,0 +1,17 @@
+<ul class="method">
+    <%= simple_form_for :style_method,  url: form_decoration_path(team_name:team_name, partial:@partial), html: {id: "form"} do |f|  %>
+      <li class="form-group">
+        <label class="title" >Method</label>
+        <div class="form-holder">
+          <%= f.input_field :code, as: :select, collection: style_methods, prompt: '--Select Method--',  class: 'form-control', data: {team: team_name, partial: @partial } %>
+        </div>
+      </li>
+    <%end%>
+
+
+  <div data-render-form></div>
+  <!--<div class="options-btn option-btn-side">-->
+    <!--<a href="#" class="btn btn-default">Close</a>-->
+    <!--<a href="#" class="btn btn-primary" data-show="4">Complete</a>-->
+  <!--</div>-->
+</ul>

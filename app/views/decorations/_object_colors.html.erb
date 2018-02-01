@@ -1,0 +1,139 @@
+<!-- Logo Default Colors -->
+<li class="form-group">
+  <div class="graphic-area hide-colors" id="sidebar-color">
+    <% if model_colors.present? %>
+      <ul>
+        <% if @model_name == 'Logo' %>
+          <%- model_colors.each_with_index do |color, index|%>
+            <%= render_color_item(index, color, layer_ids[index]) %>
+          <% end %>
+        <% else %>
+          <%- model_colors.each_pair do |color_type, layers_with_color|%>
+            <% if layers_with_color.present? %>
+              <li style="border-bottom: 1px solid #ccc;">
+                <strong><%= color_type %></strong>
+              </li>
+              <% layers_with_color.each_with_index do |item, index|%>
+                <%- layer_id = item.keys.first %>
+                <%- color = item.values.first %>
+                <% if color_type == 'Text Colors' %>
+                  <li>
+                    <label>Text:</label>
+                    <%= text_field_tag :graphic_text_input, nil, class: 'form-control', id: "graphic_text_for_#{layer_id}", data: { 'layer-id': layer_id }, onkeyup: 'updateGraphicText(this)' %>
+                  </li>
+                <% end %>
+                <%= render_color_item(index, color, layer_id) %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No default colors present.</p>
+    <% end %>
+  </div>
+</li>
+
+
+<!-- Logo Color Selection -->
+<li class="form-group">
+  <div class="graphic-area hide-sidebar" id="sidebar-5">
+    <%= render partial: 'decorations/color_selection', locals: { model_name: model_name, colors: colors, selected_colors: selected_colors }%>
+  </div>
+</li>
+
+<!-- When Color is selected from Listed Colors, the layer id is set in this element -->
+<div data-selected-layer></div>
+
+<% if model_name == 'Logo' %>
+  <!-- This div contain Logo Svg transform attribute for mirror and rotation -->
+  <div data-logo-svg-transform-value></div>
+
+  <!-- Sizes -->
+  <li class="form-group">
+    <label>Sizes</label>
+    <select data-max-size="50" id="select-size" class="form-control">
+      <option value="">--Select Size--</option>
+      <% (1..3).each_with_index do |size, index| %>
+          <option value="<%= logo_size[index] %>">Size-<%= size %></option>
+      <% end %>
+    </select>
+  </li>
+
+  <br />
+
+  <li class="form-group">
+    <label>Mirror</label> |
+    <input type="checkbox" value="0" id="mirror-view">
+  </li>
+
+  <li class="form-group">
+    <label>Rotate</label>
+    <div id="rotate-slider"></div>
+  </li>
+
+  <br />
+
+  <script>
+    $( function() {
+      var rangeSliderElem = document.getElementById('rotate-slider');
+      var slider = noUiSlider.create(rangeSliderElem, {
+        start: [ 0 ],
+        step: 45,
+        range: {
+          'min': [ 0 ],
+          'max': [ 360 ]
+        },
+        format: wNumb({
+          decimals: 0
+        })
+      });
+
+      $(rangeSliderElem).find('.noUi-handle').text("0");
+
+      slider.on('update', function(values, handle){
+        var deg = values[handle];
+        var styleSvg = $("#placed-logo-svg-on-style"),
+            viewBoxWidth = (styleSvg.prop('viewBox').animVal.width / 2),
+            viewBoxHeight = (styleSvg.prop('viewBox').animVal.height / 2),
+            styleSvgSelectedAttributes = $('[data-logo-svg-transform-value]'),
+            preSetMirrorValue = styleSvgSelectedAttributes.attr('data-mirror-value'),
+            styleSvgRotationValue = "rotate("+ parseInt(deg) +" "+ viewBoxWidth +" "+ viewBoxHeight +") ";
+
+        styleSvgSelectedAttributes.attr('data-rotation-value', styleSvgRotationValue);
+        $(rangeSliderElem).find('.noUi-handle').text(parseInt(deg));
+
+        styleSvgRotationValue += (preSetMirrorValue || "");
+        // Rotate Nested SVG so rotate group attribute "g" instead of "svg"
+        // for rotation from center we need to set svg viewBox width & height as the rotation x, y values
+        // rotate(deg x y)
+        styleSvg.find("g:not([id])").first().attr(
+            'transform',
+            styleSvgRotationValue
+        );
+      });
+    } );
+  </script>
+
+  <style>
+    #sizes li a {
+      height: auto;
+      width: inherit;
+      border: inherit;
+    }
+
+    #rotate-slider {
+      padding: 0px 20px;
+      margin: 12px 0px;
+    }
+    #rotate-slider .noUi-handle {
+      text-align: center;
+      padding: 3px 0;
+    }
+    #rotate-slider .noUi-handle:after, .noUi-handle:before {
+      content: '';
+      width: 0;
+    }
+  </style>
+<% end %>
+

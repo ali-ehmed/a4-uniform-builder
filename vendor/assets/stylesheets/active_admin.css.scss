@@ -52,3 +52,121 @@ table.google-visualization-orgchart-table {
     }
   }
 }
+#header {
+    background-color: #CC2639;
+    background-image: linear-gradient(180deg, #CC2639, #CC2639);
+    z-index: 900;
+    border-bottom: 1px solid #CC2639;
+  h1 {
+    color: #cdcdcd;
+    font-size: 3.3em;
+    font-weight: bold;
+  }
+}
+#title_bar {
+    background-color: #CC2639;
+    background-image: linear-gradient(180deg, #CC2639, #CC2639);
+    border: solid 1px #CC2639;
+}
+#header ul.tabs > li ul {
+  background: #7b8389;
+}
+#header a, #header a:link {
+  color: #ffffff;
+}
+.sidebar_section {
+  background: #CC2639;
+}
+body.logged_out h2 {
+  background-image: linear-gradient(180deg, #CC2639, #4d5256);    
+}
+form input[type=submit], form input[type=button], form button {
+  background-image: linear-gradient(180deg, #CC2639, #414549);
+}
+#header ul.tabs>li ul li a {
+  background: #CC2639;
+}
+#header h1 {
+  background-image: url(image_path('A4-img_w.png'));
+  width: 113px;
+  //background-color: #fff;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-position: 1px -7px;
+  float: left;
+  margin: 0px 122px 0px 8px;
+  height: 76px;
+  text-indent: -9999px;
+}
+#header ul.tabs>li {
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.7em;
+}
+.sidebar_section label {
+  color: white;
+  font-size: 1.1em;
+}
+h1, h2, h3, h4, h5, h6 {
+      color: white;
+}
+.breadcrumb a, .breadcrumb a:link, .breadcrumb a:visited, .breadcrumb a:active {
+  color: white;
+}
+.set-margin {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.button-adjustment {
+  width: 200px;
+  height: 75px;
+  margin-left: 15px;
+}
+.btn-area {
+  overflow: hidden;
+  text-align: center;
+  .btn-holder {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20.5%;
+    box-sizing: content-box;
+    margin: 0 1%;
+    height: 139px;
+    font-size: 15px;
+    text-align: center;
+    background: none;
+    border: 2px solid #868686;
+    BORDER-RADIUS: 5PX;
+    .count {
+      display: block;
+      padding: 23px 0 10px;
+      font-size: 34px;
+      line-height: 50px;
+    }
+    .text{
+      display: block;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+}
+.stylecheckBox{
+  overflow: hidden;
+  li{
+    float: left;
+    overflow: hidden;
+    label{
+      float: left;
+      width: auto;
+      input[type="checkbox"]{
+        float: left;
+        margin: 1px 4px 0 0;
+      }
+    }
+  }
+}
+//label {
+//  display: inline-block;
+//  width: auto;
+//}

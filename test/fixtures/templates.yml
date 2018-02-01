@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_code: MyString
+  stellar_code: MyString
+  sport_code: MyString
+  method_id: 1
+  gender_id: 1
+  price_by_method: MyString
+  price_to_factory: MyString
+  factory_graphic_code: MyString
+  image: MyString
+  decoration_id: 1
+  placement_id: 1
+  layout_factory_code: MyString
+  svg: MyString
+  layouts: MyString
+  description: MyText
+
+two:
+  product_code: MyString
+  stellar_code: MyString
+  sport_code: MyString
+  method_id: 1
+  gender_id: 1
+  price_by_method: MyString
+  price_to_factory: MyString
+  factory_graphic_code: MyString
+  image: MyString
+  decoration_id: 1
+  placement_id: 1
+  layout_factory_code: MyString
+  svg: MyString
+  layouts: MyString
+  description: MyText

@@ -1,32 +1,46 @@
 Rails.application.routes.draw do
-  # devise_for :users
-  get 'pages/decoration'
+  mount ActionCable.server => '/cable'
+  root to: 'home#index'
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+  }
 
-  get 'pages/design'
-
-  get 'pages/options'
-
-  get 'pages/style'
-
-  get 'pages/summary'
-
-  get 'pages/login'
-
-  get 'pages/register'
-
-  get 'pages/index'
-
-  get 'pages/sports'
-
-  get 'pages/gender'
-
-  get 'pages/category'
-
+  #, controllers: {registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks', sessions: "users/sessions", passwords: "users/passwords"}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, ActiveAdmin::Devise.config
 
-  root to: 'home#index'
+
+  resources :designs
+  resources :sports
+  resources :genders
+  resources :styles
+  resources :summaries
+  resources :texts
+  resources :graphics do
+    collection do
+      put :assign_color
+      get :graphic_colors
+    end
+  end
+  resources :logos do
+    collection do
+      get :logo_colors
+    end
+  end
+  resources :decorations do
+    collection do
+      put :apply_model
+    end
+    member do
+      get :form
+      get :graphic_selection
+    end
+  end
+  resources :options do
+  end
+
+  resources :colors
+  resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
